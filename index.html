@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4PYE0MEK12');
+  </script>
+
   <link rel="stylesheet" href="style.css">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Insight Gaps | Forensic Data Journalism and Preservation Analysis">
+  
   <title>Insight Gaps | Investigative Data Journalism</title>
 </head>
 
@@ -11,13 +22,12 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <h1 class="logo">Insight Gaps</h1>
+    <a href="/" class="logo">INSIGHT GAPS</a>
     <nav class="main-nav">
       <a href="/">Home</a>
       <a href="/investigations/">Investigations</a>
       <a href="/methods/">Methods</a>
       <a href="/preservation/">Preservation Analysis</a>
-      <a href="/about/">About</a>
     </nav>
   </div>
 </header>
@@ -26,7 +36,6 @@
 
   <section class="content-layout">
 
-    <!-- LEFT: APPLIED ANALYSIS (SUBTLE) -->
     <aside class="applied-analysis">
       <div class="analysis-card">
         <h3>Applied Data Analysis</h3>
@@ -40,15 +49,17 @@
           <li>Vendor performance indicators</li>
         </ul>
         <a href="/preservation/" class="analysis-link">
-          View preservation analysis →
+          View preservation analysis &rarr;
         </a>
+      </div>
+
+      <div style="margin-top: 30px; opacity: 0.8;">
+         <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Finsightgaps.com&count_bg=%23002b36&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Readers&edge_flat=true" alt="Visitor Count"/>
       </div>
     </aside>
 
-    <!-- CENTER: JOURNALISM -->
     <section class="journalism">
 
-      <!-- FEATURED STORY -->
       <article class="featured-story">
         <span class="story-label">Featured Investigation</span>
         <h2>The Maintenance Deficit</h2>
@@ -56,56 +67,21 @@
           A forensic investigation into how documentation failures
           quietly compound losses across property preservation workflows.
         </p>
-        <a href="/investigations/maintenance-deficit.html">
-          Read investigation →
+        <a href="/investigations/maintenance-deficit.html" class="read-btn">
+          Read Investigation &rarr;
         </a>
       </article>
 
-      <!-- RECENT STORIES -->
       <section class="recent-stories">
-        <h3>Recent Findings</h3>
+        <h3 style="font-family: sans-serif; text-transform: uppercase; font-size: 0.9rem; color: #888;">Recent Findings</h3>
 
         <article class="story-item">
           <h4>How Photo Failures Escalate Before QC</h4>
           <p>
             Why quality control often reacts too late to prevent rework and loss.
           </p>
-          <a href="#">Read →</a>
+          <a href="#" style="color: var(--teal-dark); font-weight: bold; text-decoration: none;">Read &rarr;</a>
         </article>
 
         <article class="story-item">
-          <h4>Why Rework Loops Are Structural, Not Vendor Errors</h4>
-          <p>
-            Examining systemic incentives that produce repeated documentation failures.
-          </p>
-          <a href="#">Read →</a>
-        </article>
-
-        <article class="story-item">
-          <h4>The Hidden Cost of Duplicate Photos</h4>
-          <p>
-            How redundancy in submissions inflates review time and deductions.
-          </p>
-          <a href="#">Read →</a>
-        </article>
-      </section>
-
-    </section>
-
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <nav>
-      <a href="/methods/">Methods</a>
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-    <p>© 2026 Insight Gaps · Investigative Data Journalism</p>
-  </div>
-</footer>
-
-</body>
-</html>
+          <h4>Why Rework Loops Are
