@@ -1,50 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4PYE0MEK12');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="cGpt13xVSg5s0IRLIKKKZPUxwQQei6rN1DLdkSGYvzuU" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4PYE0MEK12');
-</script>
-    <title>Insight Gaps | Forensic Data Journalism</title>
+    
+    <title>Insight Gaps | Forensic Data Bureau</title>
+    
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #1a1a1a; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #fdfdfd; }
-        header { border-bottom: 3px solid #000; margin-bottom: 50px; padding-bottom: 20px; }
-        h1 { font-size: 2.5rem; margin: 0; letter-spacing: -1px; text-transform: uppercase; }
-        .tagline { font-size: 1.1rem; color: #666; margin-top: 5px; font-weight: 300; }
-        section { margin-bottom: 40px; }
-        h2 { font-size: 1.5rem; border-left: 4px solid #000; padding-left: 15px; margin-bottom: 20px; }
-        .service-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        footer { margin-top: 100px; font-size: 0.8rem; color: #999; border-top: 1px solid #eee; padding-top: 20px; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; }
+        header { background: #002b36; color: white; padding: 60px 20px; text-align: center; }
+        h1 { margin: 0; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; }
+        .container { max-width: 1100px; margin: -40px auto 40px; padding: 20px; }
+        
+        /* PreserveDesk-Style Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 5px solid #002b36;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: #002b36; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .card p { color: #666; font-size: 0.95em; line-height: 1.6; }
+        
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.85em; border-top: 1px solid #ddd; }
+        .counter-badge { margin-top: 20px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Insight Gaps</h1>
-        <div class="tagline">Investigating structural failures and blind spots in property data.</div>
-    </header>
 
-    <section>
-        <h2>Latest Investigation</h2>
-        <p><em>Coming Soon:</em> <strong>The Maintenance Deficit</strong> — A data-driven deep dive into regional asset preservation trends and systemic vendor failures.</p>
-    </section>
+<header>
+    <h1>Insight Gaps</h1>
+    <p>Investigating structural failures and blind spots in property data.</p>
+</header>
 
-    <section>
-        <h2>Professional Services</h2>
-        <div class="service-card">
-            <p><strong>Field QC & Auditing:</strong> We provide AI-powered quality control and forensic photo auditing for the property preservation industry, closing the "insight gaps" between field work and office compliance.</p>
+<div class="container">
+    <div class="dashboard-grid">
+        <div class="card">
+            <h3>Profit Leakage Patterns</h3>
+            <p>Identifying hidden SLA deductions and monitoring receivables at risk across high-volume asset portfolios.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Vendor Performance</h3>
+            <p>Automated scorecards tracking photo documentation quality and regional field accuracy signals.</p>
+        </div>
+        <div class="card">
+            <h3>Data Integrity</h3>
+            <p>Eliminating manual entry errors with validated, forensic-grade datasets for large-scale preservation operations.</p>
+        </div>
+    </div>
+</div>
 
-    <footer>
-        &copy; 2026 Insight Gaps. All rights reserved. | hello@insightgaps.com
-    </footer>
+<footer>
+    &copy; 2026 Insight Gaps | Forensic Data Journalism & Field Auditing Bureau
+    <br>Contact: hello@insightgaps.com
+    <div class="counter-badge">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Finsightgaps.com&count_bg=%23002b36&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Total+Visitors&edge_flat=false" alt="Visitor Count"/>
+    </div>
+</footer>
+
 </body>
 </html>
