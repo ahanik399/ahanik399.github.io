@@ -1,79 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4PYE0MEK12');
-    </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="cGpt13xVSg5s0IRLIKKKZPUxwQQei6rN1DLdkSGYvzuU" />
-    
-    <title>Insight Gaps | Forensic Data Bureau</title>
-    
-    <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background: #f4f7f6; color: #333; }
-        header { background: #002b36; color: white; padding: 60px 20px; text-align: center; }
-        h1 { margin: 0; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; }
-        .container { max-width: 1100px; margin: -40px auto 40px; padding: 20px; }
-        
-        /* PreserveDesk-Style Dashboard Grid */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-top: 5px solid #002b36;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .card:hover { transform: translateY(-10px); }
-        .card h3 { color: #002b36; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .card p { color: #666; font-size: 0.95em; line-height: 1.6; }
-        
-        footer { text-align: center; padding: 40px; color: #888; font-size: 0.85em; border-top: 1px solid #ddd; }
-        .counter-badge { margin-top: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insight Gaps | Investigative Data Journalism</title>
 </head>
+
 <body>
 
-<header>
-    <h1>Insight Gaps</h1>
-    <p>Investigating structural failures and blind spots in property data.</p>
+<header class="site-header">
+  <div class="header-inner">
+    <h1 class="logo">Insight Gaps</h1>
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/investigations/">Investigations</a>
+      <a href="/methods/">Methods</a>
+      <a href="/preservation/">Preservation Analysis</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-    <div class="dashboard-grid">
-        <div class="card">
-            <h3>Profit Leakage Patterns</h3>
-            <p>Identifying hidden SLA deductions and monitoring receivables at risk across high-volume asset portfolios.</p>
-        </div>
-        <div class="card">
-            <h3>Vendor Performance</h3>
-            <p>Automated scorecards tracking photo documentation quality and regional field accuracy signals.</p>
-        </div>
-        <div class="card">
-            <h3>Data Integrity</h3>
-            <p>Eliminating manual entry errors with validated, forensic-grade datasets for large-scale preservation operations.</p>
-        </div>
-    </div>
-</div>
+<main class="page-container">
 
-<footer>
-    &copy; 2026 Insight Gaps | Forensic Data Journalism & Field Auditing Bureau
-    <br>Contact: hello@insightgaps.com
-    <div class="counter-badge">
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Finsightgaps.com&count_bg=%23002b36&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Total+Visitors&edge_flat=false" alt="Visitor Count"/>
-    </div>
+  <section class="content-layout">
+
+    <!-- LEFT: APPLIED ANALYSIS (SUBTLE) -->
+    <aside class="applied-analysis">
+      <div class="analysis-card">
+        <h3>Applied Data Analysis</h3>
+        <p>
+          We apply documented failure patterns from our investigations
+          to operational analysis for preservation organizations.
+        </p>
+        <ul>
+          <li>Documentation risk signals</li>
+          <li>Workflow breakdowns</li>
+          <li>Vendor performance indicators</li>
+        </ul>
+        <a href="/preservation/" class="analysis-link">
+          View preservation analysis →
+        </a>
+      </div>
+    </aside>
+
+    <!-- CENTER: JOURNALISM -->
+    <section class="journalism">
+
+      <!-- FEATURED STORY -->
+      <article class="featured-story">
+        <span class="story-label">Featured Investigation</span>
+        <h2>The Maintenance Deficit</h2>
+        <p class="story-summary">
+          A forensic investigation into how documentation failures
+          quietly compound losses across property preservation workflows.
+        </p>
+        <a href="/investigations/maintenance-deficit.html">
+          Read investigation →
+        </a>
+      </article>
+
+      <!-- RECENT STORIES -->
+      <section class="recent-stories">
+        <h3>Recent Findings</h3>
+
+        <article class="story-item">
+          <h4>How Photo Failures Escalate Before QC</h4>
+          <p>
+            Why quality control often reacts too late to prevent rework and loss.
+          </p>
+          <a href="#">Read →</a>
+        </article>
+
+        <article class="story-item">
+          <h4>Why Rework Loops Are Structural, Not Vendor Errors</h4>
+          <p>
+            Examining systemic incentives that produce repeated documentation failures.
+          </p>
+          <a href="#">Read →</a>
+        </article>
+
+        <article class="story-item">
+          <h4>The Hidden Cost of Duplicate Photos</h4>
+          <p>
+            How redundancy in submissions inflates review time and deductions.
+          </p>
+          <a href="#">Read →</a>
+        </article>
+      </section>
+
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav>
+      <a href="/methods/">Methods</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <p>© 2026 Insight Gaps · Investigative Data Journalism</p>
+  </div>
 </footer>
 
 </body>
