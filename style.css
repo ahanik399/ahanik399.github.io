@@ -1,125 +1,267 @@
-body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: #f4f7f6;
-  color: #1a1a1a;
+/* --- 1. GLOBAL VARIABLES & RESET --- */
+:root {
+    --news-black: #1a1a1a;
+    --teal-dark: #002b36;
+    --teal-accent: #2aa198;
+    --paper-bg: #ffffff;
+    --gray-light: #f4f7f6;
+    --urgent-red: #c0392b;
 }
 
+body {
+    margin: 0;
+    font-family: 'Georgia', 'Times New Roman', serif; /* Journalism Authority */
+    background: var(--paper-bg);
+    color: var(--news-black);
+    line-height: 1.6;
+}
+
+/* --- 2. HEADER (Fixed for Logo Visibility) --- */
 .site-header {
-  background: #002b36;
-  color: white;
-  padding: 20px 0;
+    background: #ffffff; /* White background for logo */
+    border-bottom: 1px solid #e0e0e0; /* Subtle newspaper border */
+    padding: 20px 0;
+    margin-bottom: 40px;
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .logo {
-  margin: 0;
-  font-size: 1.5em;
-  letter-spacing: 1px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .main-nav a {
-  color: #ddd;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 0.95em;
+    color: #555555; /* Dark text to be visible on white */
+    margin-left: 25px;
+    text-decoration: none;
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Clean UI font */
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
+.main-nav a:hover {
+    color: var(--teal-dark);
+}
+
+/* Highlight the Business Link */
+a[href="/preservation/"] {
+    color: var(--teal-dark);
+    border: 1px solid var(--teal-dark);
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* --- 3. LAYOUT GRID --- */
 .page-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .content-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sidebar | Content */
+    gap: 60px;
 }
 
+/* --- 4. SIDEBAR (Applied Analysis) --- */
 .applied-analysis {
-  position: sticky;
-  top: 40px;
-  height: fit-content;
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+    border-right: 1px solid #eee;
+    padding-right: 30px;
 }
 
 .analysis-card {
-  background: #ffffff;
-  padding: 20px;
-  border-left: 4px solid #002b36;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    background: var(--gray-light);
+    padding: 25px;
+    border-top: 4px solid var(--teal-dark); /* Top accent instead of left */
+    border-radius: 4px;
 }
 
 .analysis-card h3 {
-  margin-top: 0;
-  font-size: 1.1em;
+    margin-top: 0;
+    font-size: 1rem;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    text-transform: uppercase;
+    color: var(--teal-dark);
 }
 
-.analysis-card ul {
-  padding-left: 18px;
+.analysis-card p, .analysis-card li {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: #444;
 }
 
 .analysis-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: #002b36;
-  font-weight: bold;
-  text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--teal-dark);
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.9rem;
 }
 
-.journalism .featured-story {
-  margin-bottom: 50px;
+/* --- 5. JOURNALISM FEED --- */
+.journalism {
+    padding-bottom: 60px;
+}
+
+.featured-story {
+    margin-bottom: 60px;
 }
 
 .story-label {
-  font-size: 0.75em;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #777;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--urgent-red);
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .featured-story h2 {
-  font-size: 2em;
-  margin: 10px 0;
+    font-size: 3em; /* Big Headline */
+    margin: 10px 0;
+    line-height: 1.1;
 }
 
 .story-summary {
-  font-size: 1.1em;
-  line-height: 1.6;
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 25px;
 }
 
-.recent-stories h3 {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+.read-btn {
+    background: var(--news-black);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    display: inline-block;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+/* Recent Stories */
+.recent-stories {
+    border-top: 1px solid var(--news-black);
+    padding-top: 20px;
+    margin-top: 60px;
 }
 
 .story-item {
-  margin-top: 25px;
+    margin-top: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
 }
 
 .story-item h4 {
-  margin: 0 0 5px;
+    font-size: 1.4em;
+    margin: 0 0 10px;
 }
 
+/* --- 6. FULL WIDTH NEWSLETTER BAND --- */
+.full-width-band {
+    grid-column: 1 / -1; /* Spans across entire width */
+    background-color: var(--teal-dark);
+    color: white;
+    padding: 60px 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.band-content { max-width: 600px; margin: 0 auto; }
+
+.full-width-band h3 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.full-width-band p { color: #e0e0e0; margin-bottom: 30px; }
+
+.signup-form { display: flex; gap: 10px; justify-content: center; }
+
+.signup-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    width: 60%;
+}
+
+.signup-form button {
+    background-color: var(--teal-accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.signup-form button:hover { background-color: #1d7a72; }
+
+/* --- 7. FOOTER --- */
 .site-footer {
-  border-top: 1px solid #ddd;
-  padding: 30px 0;
-  margin-top: 60px;
-  font-size: 0.85em;
-  color: #555;
+    border-top: 1px solid #ddd;
+    padding: 40px 0;
+    margin-top: 60px;
+    background: #f9f9f9;
+    text-align: center;
 }
 
 .footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-inner nav a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.9em;
+}
+
+/* --- 8. MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .content-layout {
+        grid-template-columns: 1fr; /* Stack vertically */
+    }
+    .applied-analysis {
+        order: 2; /* Move sidebar to bottom on mobile */
+        border-right: none;
+        border-top: 1px solid #eee;
+        padding-top: 40px;
+        margin-top: 40px;
+        position: static;
+    }
+    .signup-form {
+        flex-direction: column;
+    }
+    .signup-form input, .signup-form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
