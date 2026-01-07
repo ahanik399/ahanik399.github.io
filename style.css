@@ -6,6 +6,7 @@
     --paper-bg: #ffffff;
     --sidebar-bg: #f9f7f2; /* Light editorial beige */
     --urgent-red: #c0392b;
+    --gray-light: #f4f7f6;
 }
 
 body {
@@ -33,10 +34,10 @@ body {
     padding: 0 20px;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.logo img {
+    height: 50px;
+    width: auto;
+    vertical-align: middle;
 }
 
 .main-nav a {
@@ -49,7 +50,7 @@ body {
 }
 .main-nav a:hover { color: var(--teal-dark); }
 
-/* --- 3. LAYOUT GRID (The 70/30 Split) --- */
+/* --- 3. LAYOUT GRID --- */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -58,13 +59,12 @@ body {
 
 .content-layout {
     display: grid;
-    /* LEFT (2.5) | RIGHT (1) -> Matches the reference image structure */
     grid-template-columns: 2.5fr 1fr; 
     gap: 60px;
     align-items: start;
 }
 
-/* --- 4. LEFT COLUMN: JOURNALISM --- */
+/* --- 4. JOURNALISM FEED --- */
 .journalism { padding-bottom: 40px; }
 
 .story-label {
@@ -82,14 +82,12 @@ body {
     font-size: 2.8em;
     margin: 10px 0 15px 0;
     line-height: 1.1;
-    color: var(--news-black);
 }
 
 .story-summary {
     font-size: 1.25em;
     color: #444;
     margin-bottom: 25px;
-    max-width: 90%;
 }
 
 .read-btn {
@@ -99,41 +97,49 @@ body {
     color: var(--teal-dark);
     text-decoration: none;
     border-bottom: 2px solid var(--teal-dark);
-    padding-bottom: 2px;
 }
 
-/* Recent Findings List */
-.recent-stories {
-    margin-top: 50px;
-    border-top: 1px solid #ddd;
-    padding-top: 30px;
+/* --- 5. SIDEBAR (Applied Analysis) --- */
+.applied-analysis {
+    position: sticky;
+    top: 40px;
 }
 
-.story-item {
-    margin-bottom: 35px;
+.analysis-card {
+    background: var(--sidebar-bg);
+    padding: 30px;
+    border-left: 4px solid var(--teal-dark);
+    border-radius: 2px;
 }
 
-.story-item h4 {
-    font-size: 1.3em;
-    margin: 0 0 8px 0;
-}
-
-.story-item p {
+.analysis-card h3 {
+    margin: 0 0 15px 0;
     font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 0.95em;
-    color: #666;
-    margin: 0 0 8px 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #777;
+    text-transform: uppercase;
 }
 
-.read-link {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-weight: bold;
-    font-size: 0.9em;
-    color: var(--teal-dark);
-    text-decoration: none;
+/* --- 6. ANALYSIS DOMAIN GRID (New Support) --- */
+.domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-/* Inline Newsletter (Matches Reference) */
+.domain-card { 
+    padding: 30px; 
+    background: var(--sidebar-bg); 
+    border-left: 4px solid var(--teal-dark); 
+    text-decoration: none; 
+    color: inherit; 
+    transition: transform 0.2s ease;
+}
+.domain-card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+/* --- 7. NEWSLETTER --- */
 .newsletter-inline {
     background-color: var(--gray-light);
     padding: 30px;
@@ -145,67 +151,16 @@ body {
 .signup-form input { padding: 10px; border: 1px solid #ccc; flex-grow: 1; }
 .signup-form button { background: var(--teal-dark); color: white; border: none; padding: 10px 20px; cursor: pointer; }
 
-/* --- 5. RIGHT COLUMN: SIDEBAR (Applied Analysis) --- */
-.applied-analysis {
-    position: sticky;
-    top: 40px; /* Stays visible when scrolling */
-}
-
-.analysis-card {
-    background: var(--sidebar-bg); /* Light beige/grey */
-    padding: 30px;
-    border-left: 4px solid var(--teal-dark); /* Left Accent Bar */
-    border-radius: 2px;
-}
-
-.analysis-card h3 {
-    margin-top: 0;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    color: #777;
-    text-transform: uppercase;
-}
-
-.analysis-card p {
-    font-size: 1.1em;
-    font-style: italic; /* Editorial touch */
-    color: #222;
-    margin-bottom: 20px;
-}
-
-.analysis-card ul {
-    padding-left: 20px;
-    margin-bottom: 25px;
-}
-.analysis-card li {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 0.9rem;
-    color: #444;
-    margin-bottom: 8px;
-}
-
-.analysis-link {
-    display: inline-block;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--teal-dark);
-    text-decoration: none;
-}
-
-/* --- 6. FOOTER --- */
+/* --- 8. FOOTER --- */
 .site-footer {
     border-top: 1px solid #ddd;
     padding: 40px 0;
     margin-top: 80px;
     text-align: center;
 }
-.footer-inner nav a { color: #666; margin: 0 15px; text-decoration: none; font-family: sans-serif; font-size: 0.9em; }
 
-/* --- 7. MOBILE RESPONSIVENESS --- */
+/* --- 9. MOBILE --- */
 @media (max-width: 768px) {
-    .content-layout { grid-template-columns: 1fr; } /* Stack vertically */
-    .applied-analysis { order: 2; margin-top: 40px; } /* Sidebar goes below on mobile */
-    .journalism { order: 1; }
+    .content-layout { grid-template-columns: 1fr; }
+    .applied-analysis { order: 2; margin-top: 40px; }
 }
