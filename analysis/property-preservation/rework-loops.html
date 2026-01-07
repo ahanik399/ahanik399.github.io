@@ -10,8 +10,7 @@
   </script>
   <meta charset="UTF-8">
   <title>Work Order Breakdown | Insight Gaps</title>
-  
-  <link rel="stylesheet" href="../../style.css?v=7">
+  <link rel="stylesheet" href="../../style.css?v=8">
   <link rel="icon" href="../../favicon.png" type="image/png">
 </head>
 
@@ -30,20 +29,27 @@
 <main class="page-container">
   <div style="margin-bottom: 40px;">
     <a href="/analysis/property-preservation/" style="text-decoration: none; color: #777; font-size: 0.9rem;">&larr; Back to Property Preservation</a>
+    
+    <nav class="report-subnav">
+      <a href="financial-health.html" class="subnav-link">Financial Health</a>
+      <a href="photo-qc-signals.html" class="subnav-link">Leakage Breakdown</a>
+      <a href="rework-loops.html" class="subnav-link active">Work Order Breakdown</a>
+    </nav>
+
     <h1 style="margin-top: 10px; font-size: 2.2rem;">Work Order Breakdown</h1>
     <p style="font-size: 1.1rem; color: #555;">Leakage risk matrix by order type and status.</p>
   </div>
 
-  <div style="position: relative; padding-bottom: 65%; height: 0; overflow: hidden; border: 1px solid #ddd; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      
-      <iframe 
-          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_wzh2g7q9yd" 
-          frameborder="0" 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: calc(100% + 40px); border:0;" 
-          allowfullscreen
-          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-      </iframe>
-      
+  <div style="position: relative; width: 100%; overflow: hidden; border: 1px solid #ddd; background: #fff; border-radius: 4px;">
+    <div style="height: 1100px; overflow: hidden; position: relative;">
+        <iframe 
+            src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_wzh2g7q9yd" 
+            frameborder="0" 
+            style="position: absolute; top: 0; left: -35px; width: calc(100% + 70px); height: 1140px; border:0;" 
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+    </div>
   </div>
 </main>
 
