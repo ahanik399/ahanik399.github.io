@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4PYE0MEK12');
+  </script>
+
   <meta charset="UTF-8">
-  <title>Analysis | Insight Gaps</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operational Analysis | Insight Gaps</title>
+  
+  <link rel="stylesheet" href="../style.css?v=5">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  
   <meta name="description" content="Illustrative operational analyses demonstrating how investigative findings translate into actionable intelligence.">
 </head>
 
@@ -12,7 +24,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <img src="/logo.png" alt="Insight Gaps">
+      <img src="../logo.png" alt="Insight Gaps">
     </a>
     <nav class="main-nav">
       <a href="/">Home</a>
@@ -24,30 +36,41 @@
 
 <main class="page-container">
 
-  <section class="analysis-intro">
-    <h1>Operational Analysis</h1>
-    <p>
+  <section class="analysis-intro" style="padding: 60px 0; border-bottom: 1px solid #eee; margin-bottom: 40px;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Operational Analysis</h1>
+    <p style="font-size: 1.2rem; color: #555; max-width: 800px; line-height: 1.6;">
       Illustrative analyses demonstrating how documented investigative findings
       translate into operational intelligence.
     </p>
-    <p style="color:#777;font-size:0.9rem;">
+    <p style="color:#777; font-size:0.9rem; margin-top: 15px;">
       All examples use anonymized or simulated datasets.
     </p>
   </section>
 
   <section class="domain-grid">
-
     <a href="/analysis/property-preservation/" class="domain-card">
+      <span style="font-size: 0.8rem; font-weight: bold; color: #777; display:block; margin-bottom:10px;">AVAILABLE DOMAIN</span>
       <h3>Property Preservation</h3>
       <p>
         Risk signals across preservation workflows, including documentation quality,
         rework loops, and vendor variance.
       </p>
+      <span style="font-weight: bold; color: #002b36; font-size: 0.9rem;">View Domain &rarr;</span>
     </a>
-
   </section>
 
 </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav>
+      <a href="/methods/">Methods</a>
+      <a href="/about/">About</a>
+      <a href="mailto:hello@insightgaps.com">Contact</a>
+    </nav>
+    <p style="margin-top: 20px;">&copy; 2026 Insight Gaps</p>
+  </div>
+</footer>
 
 </body>
 </html>
