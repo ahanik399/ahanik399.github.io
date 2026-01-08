@@ -9,8 +9,7 @@
     gtag('config', 'G-4PYE0MEK12');
   </script>
 
-  <link rel="stylesheet" href="style.css?v=3">
-
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="icon" href="favicon.png" type="image/png">
   
   <meta charset="UTF-8">
@@ -25,7 +24,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <img src="logo.png" alt="Insight Gaps" style="height: 50px; width: auto; vertical-align: middle;">
+      <img src="logo.png" alt="Insight Gaps">
     </a>
     <nav class="main-nav">
       <a href="/">Home</a>
@@ -37,85 +36,94 @@
 
 <main class="page-container">
 
-  <section class="content-layout">
+  <div class="content-layout">
 
-    <section class="journalism">
+    <section class="journalism-stream">
 
       <article class="featured-story">
-        <span class="story-label">Featured Investigation</span>
+        <div class="meta-line">
+          <span class="story-label">Featured Investigation</span>
+        </div>
         <h2>The Maintenance Deficit</h2>
-        <p class="story-summary">
-          A forensic investigation into how documentation failures
-          quietly compound losses across property preservation workflows.
+        <p class="story-deck">
+          A forensic investigation into how documentation failures quietly compound losses across property preservation workflows.
         </p>
-        <a href="/investigations/maintenance-deficit.html" class="read-btn">
-          Read Investigation &rarr;
-        </a>
+        <div class="action-row">
+          <a href="/investigations/maintenance-deficit.html" class="text-link">Read Investigation</a>
+        </div>
       </article>
 
+      <hr class="divider">
+
       <section class="recent-stories">
-        <h3 style="font-family: sans-serif; text-transform: uppercase; font-size: 0.85rem; color: #888; letter-spacing: 1px;">Recent Findings</h3>
+        <h3 class="section-label">Recent Findings</h3>
 
         <article class="story-item">
           <h4>How Photo Failures Escalate Before QC</h4>
           <p>Why quality control often reacts too late to prevent rework and loss.</p>
-          <a href="#" class="read-link">Read &rarr;</a>
+          <a href="#" class="text-link small">Read Report</a>
         </article>
 
         <article class="story-item">
           <h4>Why Rework Loops Are Structural, Not Vendor Errors</h4>
           <p>Examining systemic incentives that produce repeated documentation failures.</p>
-          <a href="#" class="read-link">Read &rarr;</a>
+          <a href="#" class="text-link small">Read Report</a>
         </article>
 
         <article class="story-item">
           <h4>The Hidden Cost of Duplicate Photos</h4>
           <p>How redundancy in submissions inflates review time and deductions.</p>
-          <a href="#" class="read-link">Read &rarr;</a>
+          <a href="#" class="text-link small">Read Report</a>
         </article>
       </section>
 
       <div class="newsletter-inline">
         <h3>The Watchdog Newsletter</h3>
-        <p>Get alerts on new profit leakage patterns and forensic reports directly to your inbox.</p>
+        <p>Get alerts on new profit leakage patterns and forensic reports.</p>
         <form class="signup-form">
-          <input type="email" placeholder="Enter your email address..." required>
+          <input type="email" placeholder="Email address" required>
           <button type="submit">Subscribe</button>
         </form>
       </div>
 
     </section>
 
-    <aside class="applied-analysis">
+    <aside class="applied-analysis-sidebar">
       <div class="analysis-card">
-        <h3>APPLIED ANALYSIS</h3>
-        <p>
-          We apply documented failure patterns from our investigations
-          to operational intelligence for preservation organizations.
-        </p>
-        <ul>
-          <li>Documentation risk signals</li>
-          <li>Workflow diagnostics</li>
-          <li>Vendor performance indicators</li>
-        </ul>
-        <a href="/analysis/" class="analysis-link">
-          View operational reports &rarr;
-        </a>
+        <header class="card-header">
+          <h3>Applied Analysis</h3>
+        </header>
+        <div class="card-body">
+          <p>
+            We apply documented failure patterns from our investigations
+            to operational intelligence for preservation organizations.
+          </p>
+          <ul class="capabilities-list">
+            <li>Documentation risk signals</li>
+            <li>Workflow diagnostics</li>
+            <li>Vendor performance indicators</li>
+          </ul>
+        </div>
+        <footer class="card-footer">
+          <a href="/analysis/" class="btn-text">View Operational Reports &rarr;</a>
+        </footer>
       </div>
     </aside>
 
-  </section>
+  </div>
 
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <nav>
+    <div class="footer-nav">
       <a href="/methods/">Methods</a>
       <a href="/about/">About</a>
       <a href="mailto:hello@insightgaps.com">Contact</a>
-    </nav>
-    <p style="margin-top: 20px; color: #aaa; font-size: 0.8rem; font-family: sans-serif;">&copy; 2026 Insight Gaps | Forensic Data Journalism Bureau</p>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
+    </div>
   </div>
 </footer>
 
