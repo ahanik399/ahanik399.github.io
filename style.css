@@ -57,7 +57,7 @@ body {
 }
 
 .logo img {
-  height: 44px; /* Reduced slightly for refinement */
+  height: 44px;
   width: auto;
   display: block;
 }
@@ -78,16 +78,16 @@ body {
   color: var(--accent-color);
 }
 
-/* --- 3. LAYOUT --- */
+/* --- 3. LAYOUT (Homepage) --- */
 .page-container {
   max-width: 1100px;
-  margin: 64px auto 120px; /* Generous vertical whitespace */
+  margin: 64px auto 120px;
   padding: 0 24px;
 }
 
 .content-layout {
   display: grid;
-  grid-template-columns: 2.2fr 1fr; /* Optimized ratio */
+  grid-template-columns: 2.2fr 1fr;
   gap: 80px;
   align-items: start;
 }
@@ -123,7 +123,7 @@ body {
   font-size: 20px;
   line-height: 1.45;
   color: var(--text-secondary);
-  max-width: 38ch; /* Optimal reading measure */
+  max-width: 38ch;
   margin-bottom: 24px;
 }
 
@@ -132,7 +132,7 @@ body {
   border: 0;
   border-top: 1px solid var(--border-color);
   margin: 48px 0;
-  width: 100px; /* Editorial accent */
+  width: 100px;
 }
 
 .section-label {
@@ -164,7 +164,7 @@ body {
   max-width: 55ch;
 }
 
-/* Text Links (The "Read" actions) */
+/* Text Links */
 .text-link {
   font-family: var(--font-sans);
   font-size: 14px;
@@ -186,7 +186,6 @@ body {
 }
 
 /* --- 5. SIDEBAR (APPLIED ANALYSIS) --- */
-/* Designed to look like a tool/widget, not a story */
 .applied-analysis-sidebar {
   position: sticky;
   top: 40px;
@@ -217,7 +216,7 @@ body {
 }
 
 .card-body p {
-  font-family: var(--font-sans); /* Switch to Sans for "Data" context */
+  font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-primary);
@@ -255,11 +254,11 @@ body {
   text-decoration: underline;
 }
 
-/* --- 6. NEWSLETTER (Utilitarian) --- */
+/* --- 6. NEWSLETTER --- */
 .newsletter-inline {
   margin-top: 64px;
   padding-top: 40px;
-  border-top: 4px solid var(--border-strong); /* Distinct visual break */
+  border-top: 4px solid var(--border-strong);
 }
 
 .newsletter-inline h3 {
@@ -347,7 +346,7 @@ body {
   color: var(--text-meta);
 }
 
-/* --- 8. MOBILE RESPONSIVENESS --- */
+/* --- 8. MOBILE RESPONSIVENESS (Global) --- */
 @media (max-width: 768px) {
   .header-inner {
     flex-direction: column;
@@ -388,4 +387,174 @@ body {
   .applied-analysis-sidebar {
     position: static;
   }
+}
+
+/* =========================================
+   ARTICLE / LONG-FORM READING STYLES
+   (Added for Investigation Pages)
+   ========================================= */
+
+/* Center the article and restrict width for optimal reading (60-75 chars) */
+.longform-article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* --- Article Header --- */
+.article-header {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.meta-kicker {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-color);
+  margin-bottom: 24px;
+}
+
+.meta-kicker a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: 48px; 
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.dek {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.article-meta-row {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-meta);
+  border-top: 1px solid transparent; 
+}
+
+.divider.center {
+  margin: 40px auto 60px 0; 
+  width: 60px;
+  border-color: var(--text-primary);
+}
+
+/* --- Article Body Typography --- */
+.article-body {
+  font-family: var(--font-serif);
+  font-size: 19px; 
+  line-height: 1.6;
+  color: #222;
+}
+
+.article-body p {
+  margin-bottom: 28px;
+}
+
+.article-body h2 {
+  font-family: var(--font-sans); 
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 56px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- The Lead Block (Executive Summary) --- */
+.lead-block p {
+  font-size: 21px;
+  font-weight: 400;
+  color: #111;
+}
+
+.lead-block p:first-child::first-letter {
+  float: left;
+  font-size: 80px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  font-weight: 700;
+}
+
+/* --- Key Findings "Data Box" --- */
+.key-findings-box {
+  background-color: var(--bg-sidebar);
+  border-left: 4px solid var(--accent-color);
+  padding: 32px;
+  margin: 48px 0;
+}
+
+.key-findings-box h3 {
+  color: var(--accent-color);
+  margin-top: 0;
+}
+
+.key-findings-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.key-findings-box li {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.key-findings-box li:last-child {
+  margin-bottom: 0;
+}
+
+.key-findings-box strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* --- Footer CTA --- */
+.article-footer-cta {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+
+.article-footer-cta h4 {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-meta);
+  margin-bottom: 8px;
+}
+
+/* Mobile Adjustments for Article */
+@media (max-width: 768px) {
+  .headline { font-size: 36px; }
+  .dek { font-size: 19px; }
+  .article-body { font-size: 18px; }
+  .key-findings-box { padding: 24px; }
 }
