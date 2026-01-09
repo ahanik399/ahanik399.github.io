@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Property Preservation Analysis & Operational Forensics | Insight Gaps</title>
-  <meta name="description" content="Investigative analysis of property preservation workflows. Identify systemic risk, profit leakage, and documentation failures in remote and domestic operations.">
+  <meta name="description" content="Investigative analysis of property preservation workflows. Identify systemic risk, profit leakage, and documentation failures.">
   <link rel="canonical" href="https://insightgaps.com/preservation/">
   
   <meta property="og:title" content="Property Preservation Analysis | Insight Gaps">
@@ -17,45 +17,189 @@
     "@context": "https://schema.org",
     "@type": "Report",
     "name": "Property Preservation Operational Analysis",
-    "author": {
-      "@type": "Organization",
-      "name": "Insight Gaps"
-    },
+    "author": { "@type": "Organization", "name": "Insight Gaps" },
     "description": "Analysis of systemic risk and profit leakage in property preservation workflows."
   }
   </script>
 
   <style>
-    /* Basic layout styles to ensure scannability */
-    :root { --ink: #1a1a1a; --slate: #4a4a4a; --accent: #0056b3; }
-    body { font-family: 'Georgia', serif; line-height: 1.6; color: var(--ink); max-width: 900px; margin: 0 auto; padding: 20px; }
-    h1, h2, h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
-    .analysis-grid { display: grid; gap: 40px; margin: 40px 0; }
-    .analysis-card { border-left: 4px solid var(--ink); padding-left: 20px; }
-    .tagline { font-style: italic; color: var(--slate); margin-bottom: 10px; display: block; }
-    .btn-report { display: inline-block; margin-top: 15px; font-weight: bold; text-decoration: none; color: var(--accent); }
-    .disclaimer { font-size: 0.85rem; color: #777; border-top: 1px solid #ddd; padding-top: 20px; margin-top: 60px; }
+    /* --- INTEGRATED FORENSIC CSS --- */
+    /* This style block is now part of the page. It cannot break. */
+
+    :root {
+      /* Brand Colors */
+      --ink: #111111;           /* Deepest Black */
+      --slate: #555555;         /* Reading Grey */
+      --accent: #004d40;        /* Authority Teal */
+      --border: #e0e0e0;        /* Light Grey Dividers */
+      --bg-card: #f8f9fa;       /* Very Light Grey for Cards */
+      
+      /* Typography */
+      --font-serif: 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Base Reset */
+    * { box-sizing: border-box; }
+    body { 
+      font-family: var(--font-serif); 
+      line-height: 1.6; 
+      color: var(--ink); 
+      margin: 0; 
+      padding: 0; 
+      background: #ffffff;
+    }
+
+    h1, h2, h3 { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.02em; }
+    p { margin-bottom: 1.5rem; font-size: 1.125rem; }
+
+    /* --- HEADER (Fixed Sizing) --- */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      background: #fff;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Ensures navigation sits correctly */
+    .main-nav a {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    
+    .main-nav a:hover { color: var(--accent); }
+
+    /* --- PAGE LAYOUT --- */
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .page-intro h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; }
+    
+    .lead { 
+      font-size: 1.3rem; 
+      color: var(--slate); 
+      border-left: 4px solid var(--accent); 
+      padding-left: 20px; 
+      margin: 30px 0; 
+    }
+
+    hr { border: 0; border-top: 1px solid var(--border); margin: 60px 0; }
+
+    /* --- THE FORENSIC CARDS --- */
+    .analysis-grid { 
+      display: grid; 
+      gap: 40px; 
+      margin: 40px 0; 
+    }
+
+    .analysis-card { 
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--ink); 
+      padding: 30px; 
+      background: var(--bg-card);
+      transition: transform 0.2s ease;
+    }
+
+    .analysis-card:hover { transform: translateY(-3px); }
+
+    .tagline { 
+      font-family: var(--font-sans);
+      font-size: 0.75rem; 
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent); 
+      margin-bottom: 10px; 
+      display: block; 
+    }
+
+    .analysis-card h3 { margin-top: 0; font-size: 1.5rem; }
+    .analysis-card p { font-size: 1rem; color: var(--slate); }
+
+    .btn-report { 
+      display: inline-block; 
+      margin-top: 15px; 
+      font-family: var(--font-sans);
+      font-weight: 700; 
+      font-size: 0.9rem;
+      text-decoration: none; 
+      color: var(--ink); 
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* --- CONTENT SECTIONS --- */
+    .content-section { margin-bottom: 60px; }
+    .content-section h2 { font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid var(--ink); display: inline-block; padding-bottom: 5px;}
+    
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; font-size: 1.05rem; }
+
+    /* --- DISCLAIMER & FOOTER --- */
+    .disclaimer { 
+      font-size: 0.9rem; 
+      background: #f4f4f4; 
+      padding: 20px; 
+      color: #666; 
+      margin-top: 80px; 
+      border-top: 1px solid var(--border);
+    }
+    
+    .site-footer {
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #999;
+      font-family: var(--font-sans);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+      .header-inner { flex-direction: column; text-align: center; }
+      .main-nav { margin-top: 15px; }
+      .main-nav a { margin: 0 10px; display: inline-block; }
+      .page-intro h1 { font-size: 2.2rem; }
+    }
   </style>
 </head>
 
 <body>
 
 <header class="site-header">
-  <nav class="main-nav">
-    <a href="/">Home</a>
-    <a href="/investigations/">Investigations</a>
-    <a href="/methods/">Methods</a>
-    <strong><a href="/preservation/">Preservation Analysis</a></strong>
-    <a href="/about/">About</a>
-  </nav>
+  <div class="header-inner">
+    <a href="/" style="font-weight:800; text-decoration:none; color:#000; font-size:1.5rem; font-family:sans-serif;">Insight Gaps</a>
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/investigations/">Investigations</a>
+      <a href="/methods/">Methods</a>
+      <a href="/preservation/" style="color:var(--accent);">Preservation Analysis</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
 </header>
 
 <main>
   <section class="page-intro">
     <h1>Preservation Analysis</h1>
-    <p class="lead">
+    <div class="lead">
       <strong>Operational forensics examining the friction between high-volume workflows and bottom-line retention.</strong>
-    </p>
+    </div>
     <p>
       In property preservation, activity is often mistaken for progress. High volume can mask a business that is structurally leaking cash through hand-off friction and remote disconnects. This portal examines the "Gaps" where profit is quietly lost.
     </p>
@@ -70,21 +214,21 @@
       <article class="analysis-card">
         <span class="tagline">The Survival Metric</span>
         <h3>Financial Health: The Cash Chain of Custody</h3>
-        <p>Most preservation firms don't fail because the work stops; they fail because the cash disappears between invoicing and collection. This analysis tracks the survival rate of every dollar, forcing revenue, leakage, and receivables into the same room.</p>
+        <p>Most preservation firms don't fail because the work stops; they fail because the cash disappears between invoicing and collection. This analysis tracks the survival rate of every dollar.</p>
         <a href="/analysis/financial-health" class="btn-report">View Forensic Briefing →</a>
       </article>
 
       <article class="analysis-card">
         <span class="tagline">The Paper-Cut Effect</span>
         <h3>Leakage Breakdown: Structural Autopsy</h3>
-        <p>Profit isn't lost in a single crash; it is bled out through a thousand repeatable failures. We isolate the DNA of leakage—categorized by vendor behavior and geographic friction zones—to determine if your loss is incidental or systemic.</p>
+        <p>Profit isn't lost in a single crash; it is bled out through a thousand repeatable failures. We isolate the DNA of leakage—by vendor behavior and geographic friction—to see if loss is systemic.</p>
         <a href="/analysis/leakage-breakdown" class="btn-report">View Forensic Briefing →</a>
       </article>
 
       <article class="analysis-card">
         <span class="tagline">The Risk Matrix</span>
         <h3>Work Order Breakdown: Growth vs. Drain</h3>
-        <p>Not all volume is created equal. This matrix identifies "metabolic drains"—high-volume services that look profitable on a single invoice but create disproportionate operational noise and rework loops at scale.</p>
+        <p>Not all volume is created equal. This matrix identifies "metabolic drains"—high-volume services that look profitable on a single invoice but create disproportionate rework loops at scale.</p>
         <a href="/analysis/work-order-breakdown" class="btn-report">View Forensic Briefing →</a>
       </article>
 
@@ -116,17 +260,7 @@
     <p>The reports and visualizations provided in this portal utilize anonymized or simulated data for analytical demonstration. These workflows reflect the mathematical reality of property preservation without representing real-world entities, specific vendors, or proprietary client data.</p>
   </section>
 
-  <section class="contact-section">
+  <section class="contact-section" style="margin-bottom: 80px;">
     <h2>Conversation</h2>
     <p>If your organization recognizes these patterns, you may reach out to discuss how investigative findings translate into operational insight.</p>
-    <p><strong>hello@insightgaps.com</strong></p>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <p>© 2026 Insight Gaps · Applied Preservation Intelligence</p>
-</footer>
-
-</body>
-</html>
+    <p style="font-
