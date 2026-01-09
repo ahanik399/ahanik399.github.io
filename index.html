@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,318 +9,154 @@
   <link rel="canonical" href="https://insightgaps.com/">
   <link rel="icon" href="favicon.png" type="image/png">
 
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
-
-  <style>
-    /* --- CORE STYLES --- */
-    :root {
-      --bg-page: #ffffff;
-      --bg-sidebar: #f8f9fa;
-      --text-primary: #111111;
-      --text-secondary: #555555;
-      --text-meta: #767676;
-      --accent-color: #004d40; /* Deep Teal */
-      --accent-hover: #00695c;
-      --border-color: #e0e0e0;
-      --font-serif: 'Charter', 'Bitstream Charter', Cambria, serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    }
-
-    body { margin: 0; padding: 0; font-family: var(--font-serif); color: var(--text-primary); background: var(--bg-page); line-height: 1.6; }
-    * { box-sizing: border-box; }
-
-    /* HEADER FIX */
-    .site-header { border-bottom: 1px solid var(--border-color); padding: 0; position: relative; z-index: 1000; background: #fff; }
-    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
-    
-    .logo img { height: 45px; width: auto; display: block; }
-
-    /* --- MEGA MENU NAVIGATION STYLES (NEW) --- */
-    .main-nav { display: flex; align-items: center; height: 100%; }
-    
-    .nav-item {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      margin-left: 25px;
-    }
-
-    .nav-link {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      text-decoration: none;
-      padding: 10px 0;
-      display: inline-block;
-      transition: color 0.2s;
-    }
-    .nav-link:hover { color: var(--accent-color); }
-
-    /* The Dropdown Container */
-    .mega-menu-container {
-      position: absolute;
-      top: 100%; /* Push exactly below header */
-      right: -100px; /* Adjust centering based on layout */
-      width: 900px;
-      background: #fff;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.2s ease;
-      display: flex;
-    }
-
-    /* Show Menu on Hover */
-    .nav-item:hover .mega-menu-container {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    /* Left Sidebar of Menu */
-    .mega-sidebar {
-      width: 250px;
-      border-right: 1px solid var(--border-color);
-      background: #fff;
-      padding: 10px 0;
-    }
-
-    .mega-sidebar-link {
-      display: block;
-      padding: 12px 20px;
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .mega-sidebar-link:hover {
-      background: #f4f4f4;
-      color: var(--text-primary);
-    }
-
-    /* The Active Sidebar Item (Mimics the Green tab in your image) */
-    .mega-sidebar-link.active {
-      background: var(--accent-color);
-      color: #fff;
-      position: relative;
-    }
-    
-    /* Right Content Area */
-    .mega-content {
-      flex: 1;
-      padding: 30px;
-      background: #fff;
-    }
-
-    /* The Grid Layout */
-    .mega-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px 30px;
-    }
-
-    .mega-grid-link {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      padding-bottom: 8px;
-      border-bottom: 1px dotted #ccc; /* The dotted line style */
-      display: block;
-    }
-
-    .mega-grid-link:hover {
-      color: var(--accent-color);
-      border-bottom-color: var(--accent-color);
-    }
-
-
-    /* --- ORIGINAL LAYOUT STYLES --- */
-    .page-container { max-width: 1100px; margin: 60px auto; padding: 0 24px; }
-    .content-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
-
-    .story-label { color: #b71c1c; font-family: var(--font-sans); font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; }
-    h2 { font-size: 42px; line-height: 1.1; margin: 0 0 15px 0; font-family: var(--font-serif); letter-spacing: -0.02em; }
-    .story-deck { font-size: 22px; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.4; }
-    .text-link { font-family: var(--font-sans); font-weight: 700; color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--border-color); }
-    
-    .divider { border: 0; border-top: 1px solid var(--border-color); margin: 50px 0; width: 100px; }
-    
-    .story-item { margin-bottom: 35px; }
-    .story-item h4 { font-family: var(--font-sans); font-size: 20px; margin: 0 0 8px 0; font-weight: 700; }
-    .story-item p { margin: 0 0 10px 0; font-size: 16px; color: var(--text-secondary); }
-
-    /* SIDEBAR STYLES */
-    .analysis-card { background: var(--bg-sidebar); border: 1px solid var(--border-color); }
-    .card-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-    .card-header h3 { margin: 0; font-family: var(--font-sans); font-size: 12px; text-transform: uppercase; color: #777; }
-    .card-body { padding: 20px; }
-    .capabilities-list { padding: 0; list-style: none; font-family: var(--font-sans); font-size: 14px; }
-    .capabilities-list li { margin-bottom: 10px; padding-left: 10px; border-left: 2px solid var(--border-color); }
-    .card-footer { padding: 15px 20px; background: #f1f3f4; border-top: 1px solid var(--border-color); }
-    .btn-text { font-family: var(--font-sans); font-size: 13px; font-weight: 700; text-decoration: none; color: var(--accent-color); }
-
-    /* FOOTER */
-    .site-footer { border-top: 1px solid var(--border-color); padding: 40px 0; margin-top: 80px; text-align: center; font-family: var(--font-sans); font-size: 13px; color: #999; }
-    .footer-nav a { margin: 0 15px; color: #555; text-decoration: none; }
-
-    @media (max-width: 768px) {
-      .content-layout { grid-template-columns: 1fr; }
-      .header-inner { flex-direction: column; height: auto; padding: 20px; }
-      .main-nav { margin-top: 15px; flex-direction: column; }
-      .nav-item { margin: 5px 0; }
-      /* Hide mega menu on mobile for simplicity in this demo */
-      .mega-menu-container { display: none; }
-    }
-  </style>
 </head>
 
 <body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Insight Gaps Home">
+        <img src="logo.png" alt="Insight Gaps" width="auto" height="45">
+      </a>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="logo">
-      <img src="logo.png" alt="Insight Gaps">
-    </a>
-    
-    <nav class="main-nav">
-      <div class="nav-item">
-        <a href="/" class="nav-link">Home</a>
-      </div>
-      <div class="nav-item">
-        <a href="/investigations/" class="nav-link">Investigations</a>
-      </div>
-      
-      <div class="nav-item">
-        <a href="/analysis/" class="nav-link">Analysis ▾</a>
-        
-        <div class="mega-menu-container">
-          <div class="mega-sidebar">
-            <a href="#" class="mega-sidebar-link active">Operational Risks</a>
-            <a href="#" class="mega-sidebar-link">Financial Erosion</a>
-            <a href="#" class="mega-sidebar-link">Compliance Gaps</a>
-            <a href="#" class="mega-sidebar-link">Workflow Friction</a>
-            <a href="#" class="mega-sidebar-link">Vendor Retention</a>
-            <a href="#" class="mega-sidebar-link">Tech Audits</a>
-          </div>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="/investigations/" class="nav-link">Investigations</a>
+        </div>
+        <div class="nav-item">
+          <a href="/analysis/" class="nav-link">Analysis ▾</a>
 
-          <div class="mega-content">
-            <div class="mega-grid">
-              <a href="#" class="mega-grid-link">CRM Sync Failures</a>
-              <a href="#" class="mega-grid-link">GeoTagging Risks</a>
-              <a href="#" class="mega-grid-link">Metadata Loss</a>
-              
-              <a href="#" class="mega-grid-link">Invoice Syntax Errors</a>
-              <a href="#" class="mega-grid-link">Documentation Lag</a>
-              <a href="#" class="mega-grid-link">Bid Accuracy</a>
-              
-              <a href="#" class="mega-grid-link">PCR Score Drift</a>
-              <a href="#" class="mega-grid-link">HUD P&P Alignment</a>
-              <a href="#" class="mega-grid-link">Denial Appeals</a>
-              
-              <a href="#" class="mega-grid-link">Photo Redundancy</a>
-              <a href="#" class="mega-grid-link">Trip Charge Leakage</a>
-              <a href="#" class="mega-grid-link">Scope Creep</a>
-              
-              <a href="#" class="mega-grid-link">API Latency</a>
-              <a href="#" class="mega-grid-link">Bulk Upload Issues</a>
-              <a href="#" class="mega-grid-link">Mobile Sync Gaps</a>
+          <div class="mega-menu-container">
+            <div class="mega-sidebar">
+              <a href="#" class="mega-sidebar-link active">Operational Risks</a>
+              <a href="#" class="mega-sidebar-link">Financial Erosion</a>
+              <a href="#" class="mega-sidebar-link">Compliance Gaps</a>
+              <a href="#" class="mega-sidebar-link">Workflow Friction</a>
+              <a href="#" class="mega-sidebar-link">Vendor Retention</a>
+              <a href="#" class="mega-sidebar-link">Tech Audits</a>
+            </div>
+
+            <div class="mega-content">
+              <div class="mega-grid">
+                <a href="#" class="mega-grid-link">CRM Sync Failures</a>
+                <a href="#" class="mega-grid-link">GeoTagging Risks</a>
+                <a href="#" class="mega-grid-link">Metadata Loss</a>
+
+                <a href="#" class="mega-grid-link">Invoice Syntax Errors</a>
+                <a href="#" class="mega-grid-link">Documentation Lag</a>
+                <a href="#" class="mega-grid-link">Bid Accuracy</a>
+
+                <a href="#" class="mega-grid-link">PCR Score Drift</a>
+                <a href="#" class="mega-grid-link">HUD P&P Alignment</a>
+                <a href="#" class="mega-grid-link">Denial Appeals</a>
+
+                <a href="#" class="mega-grid-link">Photo Redundancy</a>
+                <a href="#" class="mega-grid-link">Trip Charge Leakage</a>
+                <a href="#" class="mega-grid-link">Scope Creep</a>
+
+                <a href="#" class="mega-grid-link">API Latency</a>
+                <a href="#" class="mega-grid-link">Bulk Upload Issues</a>
+                <a href="#" class="mega-grid-link">Mobile Sync Gaps</a>
+              </div>
             </div>
           </div>
         </div>
-        </div>
-    </nav>
-  </div>
-</header>
+      </nav>
+    </div>
+  </header>
 
-<main class="page-container">
-  <div class="content-layout">
-    
-    <section class="journalism-stream">
-      <article class="featured-story">
-        <span class="story-label">Featured Investigation</span>
-        <h2>The Maintenance Deficit</h2>
-        <p class="story-deck">
-          A forensic investigation into how documentation failures quietly compound losses across property preservation workflows.
-        </p>
-        <a href="/investigations/maintenance-deficit.html" class="text-link">Read Investigation →</a>
-      </article>
+  <main class="page-container" role="main">
+    <div class="content-layout">
 
-      <hr class="divider">
-
-      <section class="recent-stories">
-        <h3 style="font-family:var(--font-sans); font-size:12px; text-transform:uppercase; color:#777; margin-bottom:30px;">Recent Findings</h3>
-
-        <article class="story-item">
-          <h4>How Photo Failures Escalate Before QC</h4>
-          <p>Why quality control often reacts too late to prevent rework and loss.</p>
-          <a href="#" class="text-link" style="font-size:13px;">Read Report</a>
-        </article>
-
-        <article class="story-item">
-          <h4>Why Rework Loops Are Structural</h4>
-          <p>Examining systemic incentives that produce repeated documentation failures.</p>
-          <a href="#" class="text-link" style="font-size:13px;">Read Report</a>
-        </article>
-
-        <article class="story-item">
-          <h4>The Hidden Cost of Duplicate Photos</h4>
-          <p>How redundancy in submissions inflates review time and deductions.</p>
-          <a href="#" class="text-link" style="font-size:13px;">Read Report</a>
-        </article>
-      </section>
-    </section>
-
-    <aside class="applied-analysis-sidebar">
-      <div class="analysis-card">
-        <header class="card-header">
-          <h3>Applied Analysis</h3>
-        </header>
-        <div class="card-body">
-          <p style="font-size:14px; margin-bottom:20px;">
-            We apply documented failure patterns from our investigations to operational intelligence.
+      <section class="journalism-stream">
+        <article class="featured-story">
+          <span class="story-label">Featured Investigation</span>
+          <h1>The Maintenance Deficit</h1>
+          <p class="story-deck">
+            A forensic investigation into how documentation failures quietly compound losses across property
+            preservation workflows.
           </p>
-          <ul class="capabilities-list">
-            <li>Documentation risk signals</li>
-            <li>Workflow diagnostics</li>
-            <li>Vendor performance indicators</li>
-          </ul>
+          <a href="/investigations/" class="text-link">Read Investigation →</a>
+        </article>
+
+        <hr class="divider">
+
+        <section class="recent-stories">
+          <h2 class="section-label">Recent Findings</h2>
+
+          <article class="story-item">
+            <h3>How Photo Failures Escalate Before QC</h3>
+            <p>Why quality control often reacts too late to prevent rework and loss.</p>
+            <a href="#" class="text-link">Read Report</a>
+          </article>
+
+          <article class="story-item">
+            <h3>Why Rework Loops Are Structural</h3>
+            <p>Examining systemic incentives that produce repeated documentation failures.</p>
+            <a href="#" class="text-link">Read Report</a>
+          </article>
+
+          <article class="story-item">
+            <h3>The Hidden Cost of Duplicate Photos</h3>
+            <p>How redundancy in submissions inflates review time and deductions.</p>
+            <a href="#" class="text-link">Read Report</a>
+          </article>
+        </section>
+      </section>
+
+      <aside class="applied-analysis-sidebar" role="complementary" aria-label="Applied Analysis">
+        <div class="analysis-card">
+          <header class="card-header">
+            <h3>Applied Analysis</h3>
+          </header>
+          <div class="card-body">
+            <p>
+              We apply documented failure patterns from our investigations to operational intelligence.
+            </p>
+            <ul class="capabilities-list">
+              <li>Documentation risk signals</li>
+              <li>Workflow diagnostics</li>
+              <li>Vendor performance indicators</li>
+            </ul>
+          </div>
+          <footer class="card-footer">
+            <a href="/analysis/" class="btn-text">View Operational Reports →</a>
+          </footer>
         </div>
-        <footer class="card-footer">
-          <a href="/preservation/" class="btn-text">View Operational Reports →</a>
-        </footer>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/methods/">Methods</a>
+        <a href="/about/">About</a>
+        <a href="mailto:hello@insightgaps.com">Contact</a>
+      </nav>
+      <div class="copyright">
+        &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
       </div>
-    </aside>
-
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-nav">
-      <a href="/methods/">Methods</a>
-      <a href="/about/">About</a>
-      <a href="mailto:hello@insightgaps.com">Contact</a>
     </div>
-    <div style="margin-top:20px;">
-      &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
-    </div>
-  </div>
-</footer>
+  </footer>
 
+  <!-- Navigation Enhancement -->
+  <!-- Navigation Enhancement -->
+  <script src="scripts.js"></script>
 </body>
+
 </html>
