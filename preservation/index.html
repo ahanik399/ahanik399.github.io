@@ -8,87 +8,73 @@
   <meta name="description" content="Investigative analysis of property preservation workflows examining profit leakage, cash flow risk, vendor rework, and documentation failure.">
   <link rel="canonical" href="https://www.insightgaps.com/analysis/property-preservation/">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Property Preservation Operational Analysis | Insight Gaps">
   <meta property="og:description" content="Margins don’t disappear — they erode quietly. Investigative analysis of preservation workflows.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.insightgaps.com/analysis/property-preservation/">
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Report",
     "name": "Property Preservation Operational Analysis",
     "description": "Investigative analysis of property preservation workflows focused on profit leakage, cash flow risk, vendor rework, and documentation failure.",
-    "author": { "@type": "Organization", "name": "Insight Gaps", "url": "https://www.insightgaps.com" },
-    "about": ["Property Preservation", "Profit Leakage", "Vendor Management", "Cash Flow Risk"]
+    "author": {
+      "@type": "Organization",
+      "name": "Insight Gaps",
+      "url": "https://www.insightgaps.com"
+    },
+    "about": [
+      "Property Preservation",
+      "Operational Analysis",
+      "Profit Leakage",
+      "Vendor Management",
+      "Cash Flow Risk"
+    ]
   }
   </script>
 
   <style>
     :root {
-      /* Brand Palette */
-      --ink: #111111;
-      --slate: #555555;
-      --accent-teal: #004d40;
-      --accent-hover: #00695c;
+      --ink: #111;
+      --slate: #555;
+      --accent: #004d40;
       --border: #e0e0e0;
-      --bg-card: #f9fafb;
-      --bg-page: #ffffff;
-      
-      /* Typography */
-      --font-serif: 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+      --bg-card: #f8f9fa;
+      --font-serif: 'Charter', Cambria, serif;
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
-    /* Base Reset */
     * { box-sizing: border-box; }
-    
+
     body {
       margin: 0;
-      padding: 0;
       font-family: var(--font-serif);
       color: var(--ink);
-      background: var(--bg-page);
-      line-height: 1.7;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
+      background: #fff;
+      line-height: 1.6;
     }
 
     h1, h2, h3 {
       font-family: var(--font-sans);
       letter-spacing: -0.02em;
-      margin-top: 0;
-      color: var(--ink);
     }
 
-    p { font-size: 1.125rem; margin-bottom: 1.5rem; color: #222; }
+    p { font-size: 1.125rem; margin-bottom: 1.4rem; }
 
-    /* --- HEADER --- */
     header {
       border-bottom: 1px solid var(--border);
       padding: 20px 0;
-      background: #fff;
-      position: sticky; /* Keeps nav visible */
-      top: 0;
-      z-index: 1000;
     }
 
     .header-inner {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    .logo {
-      font-family: var(--font-sans);
-      font-size: 1.4rem;
-      font-weight: 800;
-      text-decoration: none;
-      color: var(--ink);
-      letter-spacing: -0.03em;
     }
 
     nav a {
@@ -97,28 +83,25 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-left: 25px;
+      margin-left: 20px;
       text-decoration: none;
-      color: var(--slate);
-      transition: color 0.2s;
+      color: var(--ink);
     }
 
-    nav a:hover, nav a.active { color: var(--accent-teal); }
+    nav a.active { color: var(--accent); }
 
-    /* --- LAYOUT --- */
     main {
-      max-width: 960px;
+      max-width: 900px;
       margin: 60px auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     .lead {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       color: var(--slate);
-      border-left: 4px solid var(--accent-teal);
-      padding-left: 24px;
-      margin: 40px 0;
-      font-style: italic;
+      border-left: 4px solid var(--accent);
+      padding-left: 20px;
+      margin: 30px 0;
     }
 
     hr {
@@ -127,11 +110,8 @@
       margin: 60px 0;
     }
 
-    /* --- FORENSIC CARDS (Grid) --- */
     .analysis-grid {
       display: grid;
-      /* Auto-responsive: 1 col on mobile, 2 on tablet, 3 on desktop */
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
       margin-top: 40px;
     }
@@ -141,92 +121,59 @@
       border-left: 6px solid var(--ink);
       background: var(--bg-card);
       padding: 30px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%; /* Ensures equal height */
     }
 
     .analysis-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      border-color: #ccc;
+      transform: translateY(-3px);
+      transition: 0.2s ease;
     }
 
     .tagline {
       font-family: var(--font-sans);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      color: var(--accent-teal);
+      color: var(--accent);
       font-weight: 700;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: block;
-    }
-
-    .analysis-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
-
-    .analysis-card p {
-      font-size: 1rem;
-      color: var(--slate);
-      flex-grow: 1; /* Pushes button to bottom */
     }
 
     .btn-report {
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 0.9rem;
       text-decoration: none;
-      border-bottom: 2px solid var(--accent-teal);
+      border-bottom: 2px solid var(--accent);
       color: var(--ink);
       display: inline-block;
-      margin-top: 20px;
-      align-self: flex-start;
-      transition: color 0.2s;
+      margin-top: 12px;
     }
 
-    .btn-report:hover { color: var(--accent-teal); }
-
-    /* --- CONTENT SECTIONS --- */
     ul { padding-left: 20px; }
-    li { font-size: 1.1rem; margin-bottom: 12px; color: #333; }
-    li strong { color: var(--ink); }
 
-    /* --- DISCLAIMER --- */
+    li { font-size: 1.05rem; margin-bottom: 10px; }
+
     .disclaimer {
       margin-top: 80px;
-      padding: 30px;
+      padding: 20px;
       background: #f4f4f4;
       color: #666;
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
     }
-    .disclaimer h3 { font-size: 0.8rem; text-transform: uppercase; color: #999; margin-bottom: 10px; }
-    .disclaimer p { margin-bottom: 0; font-size: 0.9rem; }
 
-    /* --- CONTACT SECTION --- */
-    .contact-section { margin: 60px 0; }
-    .contact-email { font-family: var(--font-sans); font-weight: 700; color: var(--ink); }
-
-    /* --- FOOTER --- */
     footer {
       text-align: center;
       padding: 40px 0;
       font-family: var(--font-sans);
       font-size: 0.85rem;
       color: #999;
-      border-top: 1px solid var(--border);
     }
 
-    /* --- MOBILE ADJUSTMENTS --- */
-    @media (max-width: 700px) {
-      .header-inner { flex-direction: column; text-align: center; }
+    @media (max-width: 600px) {
+      .header-inner { flex-direction: column; }
       nav { margin-top: 15px; }
-      nav a { margin: 0 10px; display: inline-block; }
-      .lead { font-size: 1.2rem; border-left-width: 3px; }
+      nav a { margin: 0 10px; }
+      h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -235,7 +182,7 @@
 
 <header>
   <div class="header-inner">
-    <a href="/" class="logo">Insight Gaps</a>
+    <a href="/" style="font-size:1.5rem;font-weight:800;text-decoration:none;color:#000;">Insight Gaps</a>
     <nav>
       <a href="/">Home</a>
       <a href="/investigations/">Investigations</a>
@@ -316,14 +263,6 @@
     </p>
   </section>
 
-  <section class="contact-section">
-    <h2>Conversation</h2>
-    <p>
-      If your organization recognizes these patterns, you may reach out to discuss how investigative findings translate into operational insight.
-    </p>
-    <p class="contact-email">hello@insightgaps.com</p>
-  </section>
-
   <section class="disclaimer">
     <h3>Data Scope & Intent</h3>
     <p>
@@ -334,7 +273,7 @@
 </main>
 
 <footer>
-  <p>© 2026 Insight Gaps · Applied Preservation Intelligence</p>
+  © 2026 Insight Gaps
 </footer>
 
 </body>
