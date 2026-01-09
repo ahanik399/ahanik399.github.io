@@ -1,209 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Property Preservation Operational Analysis | Insight Gaps</title>
-  <meta name="description" content="Operational forensics for property preservation businesses. Identify where margins erode, cash flow weakens, and rework quietly compounds." />
-  <link rel="canonical" href="https://www.insightgaps.com/analysis/property-preservation/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Property Preservation Operational Analysis | Insight Gaps" />
-  <meta property="og:description" content="Margins don’t vanish overnight. They erode quietly. Explore investigative analysis of preservation workflows." />
-  <meta property="og:type" content="website" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Report",
-    "name": "Property Preservation Operational Analysis",
-    "description": "Investigative analysis of systemic risk, profit leakage, and operational friction in property preservation workflows.",
-    "author": {
-      "@type": "Organization",
-      "name": "Insight Gaps",
-      "url": "https://www.insightgaps.com"
-    }
-  }
+  <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4PYE0MEK12');
   </script>
 
-  <style>
-    :root {
-      --ink: #111;
-      --slate: #555;
-      --accent: #004d40;
-      --border: #e0e0e0;
-      --bg-card: #f8f9fa;
-      --serif: Cambria, Georgia, serif;
-      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: var(--serif);
-      color: var(--ink);
-      background: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0;
-    }
-
-    .header-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-left: 18px;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    main {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-family: var(--sans);
-      font-size: 3rem;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-
-    .lead {
-      font-size: 1.3rem;
-      color: var(--slate);
-      border-left: 4px solid var(--accent);
-      padding-left: 18px;
-      margin: 30px 0;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.4rem;
-    }
-
-    hr {
-      border: 0;
-      border-top: 1px solid var(--border);
-      margin: 60px 0;
-    }
-
-    h2 {
-      font-family: var(--sans);
-      font-size: 1.8rem;
-      margin-bottom: 24px;
-      border-bottom: 2px solid var(--ink);
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-
-    .analysis-grid {
-      display: grid;
-      gap: 36px;
-      margin-top: 40px;
-    }
-
-    .analysis-card {
-      border: 1px solid var(--border);
-      border-left: 6px solid var(--ink);
-      background: var(--bg-card);
-      padding: 28px;
-      transition: transform 0.2s ease;
-    }
-
-    .analysis-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .tagline {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .analysis-card h3 {
-      font-family: var(--sans);
-      font-size: 1.5rem;
-      margin-top: 0;
-    }
-
-    .analysis-card p {
-      font-size: 1rem;
-      color: var(--slate);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 14px;
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-decoration: none;
-      color: var(--ink);
-      border-bottom: 2px solid var(--accent);
-    }
-
-    ul { padding-left: 20px; }
-
-    li {
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-    }
-
-    .disclaimer {
-      background: #f4f4f4;
-      padding: 22px;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 80px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer {
-      text-align: center;
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      color: #999;
-      padding: 40px 0;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      nav { margin-top: 12px; }
-      .header-inner { flex-direction: column; }
-    }
-  </style>
+  <link rel="stylesheet" href="../../style.css?v=5">
+  <link rel="icon" href="../../favicon.png" type="image/png">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Investigative analysis of property preservation workflows examining profit leakage, cash flow risk, and documentation failure.">
+  <title>Property Preservation Operational Analysis | Insight Gaps</title>
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
   <div class="header-inner">
-    <a href="/" style="font-weight:800;font-size:1.4rem;text-decoration:none;color:#000;">Insight Gaps</a>
-    <nav>
+    <a href="/" class="logo">
+      <img src="../../logo.png" alt="Insight Gaps">
+    </a>
+    <nav class="main-nav">
       <a href="/">Home</a>
       <a href="/investigations/">Investigations</a>
       <a href="/analysis/">Analysis</a>
@@ -211,100 +35,95 @@
   </div>
 </header>
 
-<main>
+<main class="page-container">
 
-  <section>
-    <h1>Property Preservation</h1>
-    <div class="lead">
-      Operational forensics examining how high-volume preservation workflows quietly erode margin, cash flow, and execution quality.
+  <section class="longform-article">
+    <h1 class="headline" style="margin-bottom: 20px;">Property Preservation Operational Analysis</h1>
+    
+    <div class="lead-block">
+      <p>Investigative analysis of property preservation workflows focused on profit leakage, cash flow risk, and documentation failure.</p>
     </div>
 
-    <p>
-      Property preservation businesses rarely collapse from a lack of work.  
-      They struggle because margin erodes invisibly—across hand-offs, documentation gaps, delayed payments, and rework loops that feel “normal” at scale.
-    </p>
+    <hr class="divider center">
 
-    <p>
-      This analysis hub documents those erosion patterns using simulated and anonymized operational data.  
-      The goal is not reporting volume—but exposing the structural signals that explain why busy operations still feel financially tight.
-    </p>
-
-    <p>
-      These patterns apply whether operations are run locally in the United States or remotely from India, Bangladesh, Vietnam, Kazakhstan, or other global delivery centers supporting U.S. portfolios.
-    </p>
+    <div class="article-body">
+      <p>
+        Property preservation businesses rarely struggle because work disappears. They struggle when value quietly erodes between the field, the office, and the balance sheet.
+      </p>
+      <p>
+        This analysis domain examines how preservation activity behaves once operational data is connected end-to-end—revealing where margins are retained, where they stall, and where they are permanently lost.
+      </p>
+    </div>
   </section>
 
-  <hr />
-
   <section>
-    <h2>Investigative Reports</h2>
+    <h3 class="section-label" style="text-align:center; margin-top:60px;">Forensic Reports</h3>
 
-    <div class="analysis-grid">
+    <div class="forensic-grid">
 
-      <article class="analysis-card">
-        <span class="tagline">Cash Survival</span>
+      <article class="forensic-card">
+        <span class="tagline">Cash Flow Risk</span>
         <h3>Financial Health: The Cash Chain of Custody</h3>
-        <p>
-          Revenue only matters if it survives the journey from invoice to collection.  
-          This briefing examines where cash stalls, weakens, or silently drops out of the system—long before anyone calls it a problem.
-        </p>
-        <a class="btn" href="/analysis/property-preservation/financial-health.html">View Report →</a>
+        <p>Tracks how revenue moves through invoicing, receivables, and collection to expose where cash retention breaks down.</p>
+        <a href="/analysis/property-preservation/financial-health.html" class="btn-report">View Analysis →</a>
       </article>
 
-      <article class="analysis-card">
-        <span class="tagline">Operational Autopsy</span>
-        <h3>Leakage Breakdown: The Paper-Cut Effect</h3>
-        <p>
-          Margin is rarely lost in one mistake.  
-          It disappears through dozens of small, repeatable failures—rework, late submissions, vendor variance—that compound quietly over time.
-        </p>
-        <a class="btn" href="/analysis/property-preservation/photo-qc-signals.html">View Report →</a>
+      <article class="forensic-card">
+        <span class="tagline">Profit Leakage</span>
+        <h3>Leakage Breakdown: Structural Autopsy</h3>
+        <p>Examines recurring margin erosion caused by vendor overruns, documentation delays, and rework loops.</p>
+        <a href="/analysis/property-preservation/leakage-breakdown.html" class="btn-report">View Analysis →</a>
       </article>
 
-      <article class="analysis-card">
-        <span class="tagline">Risk Allocation</span>
+      <article class="forensic-card">
+        <span class="tagline">Work Order Risk</span>
         <h3>Work Order Breakdown: Growth vs. Drain</h3>
-        <p>
-          Not all volume creates value.  
-          Some work types scale profit; others only scale exposure. This analysis separates healthy growth from structural drag.
-        </p>
-        <a class="btn" href="/analysis/property-preservation/rework-loops.html">View Report →</a>
+        <p>Identifies which service types scale profitably and which quietly magnify risk through repeated leakage.</p>
+        <a href="/analysis/property-preservation/work-order-breakdown.html" class="btn-report">View Analysis →</a>
       </article>
 
     </div>
   </section>
 
-  <hr />
+  <section class="longform-article">
+    <div class="key-findings-box">
+      <h3>Operational Failure Patterns Observed</h3>
+      <ul>
+        <li><strong>Pre-submission photo quality risk</strong> detectable before QC review begins.</li>
+        <li><strong>Documentation readiness gaps</strong> correlated with downstream deductions.</li>
+        <li><strong>Vendor-specific rework loops</strong> repeating across the same service categories.</li>
+      </ul>
+    </div>
 
-  <section>
-    <h2>Who This Is For</h2>
-    <p>
-      This work is designed for operators, managers, and owners responsible for:
-    </p>
-    <ul>
-      <li>Vendor oversight and quality control</li>
-      <li>Documentation integrity and submission performance</li>
-      <li>Cash flow visibility across distributed teams</li>
-      <li>Margin protection in high-volume environments</li>
-    </ul>
+    <div class="article-body">
+      <h2>Who This Is For</h2>
+      <p>
+        This analysis is intended for property preservation operators, analysts, and managers responsible for vendor performance, documentation integrity, and cost control across distributed or remote workflows.
+      </p>
+    </div>
 
-    <p>
-      It is especially relevant for organizations managing U.S. preservation portfolios with remote operational teams across multiple countries.
-    </p>
-  </section>
+    <div class="article-footer-cta" style="background:#f4f4f4; padding:20px; margin-top:40px;">
+      <h4>Data Scope & Intent</h4>
+      <p style="font-size:14px; color:#666;">
+        All data presented within this domain is anonymized or simulated and used solely for analytical demonstration. These reports reflect realistic preservation workflows without representing actual companies, vendors, or client data.
+      </p>
+    </div>
 
-  <section class="disclaimer">
-    <strong>Data Scope & Intent</strong>
-    <p>
-      All visualizations and metrics presented are based on simulated or anonymized datasets created solely for analytical demonstration.  
-      No real vendors, clients, or portfolios are represented.
-    </p>
   </section>
 
 </main>
 
-<footer>
-  © 2026 Insight Gaps
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-nav">
+      <a href="/methods/">Methods</a>
+      <a href="/about/">About</a>
+      <a href="mailto:hello@insightgaps.com">Contact</a>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
+    </div>
+  </div>
 </footer>
 
 </body>
