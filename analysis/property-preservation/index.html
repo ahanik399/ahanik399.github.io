@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4PYE0MEK12');
-  </script>
-
   <meta charset="UTF-8">
-  <title>Property Preservation | Operational Analysis</title>
-  
-  <link rel="stylesheet" href="../../style.css?v=5">
-  <link rel="icon" href="../../favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Preservation Operational Analysis | Insight Gaps</title>
+  <meta name="description" content="Investigative operational analysis of property preservation workflows. Identify profit leakage, rework loops, and cash flow risk.">
+  <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/">
+
+  <style>
+    /* INTERNAL CSS */
+    :root { --bg: #fff; --text: #111; --muted: #555; --accent: #004d40; --border: #e0e0e0; --font-serif: 'Charter', serif; --font-sans: system-ui, sans-serif; }
+    body { margin:0; padding:0; font-family:var(--font-serif); color:var(--text); line-height:1.6; }
+    * { box-sizing:border-box; }
+
+    .site-header { border-bottom:1px solid var(--border); padding:20px 0; background:#fff; position:sticky; top:0; z-index:100; }
+    .header-inner { max-width:960px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; }
+    .logo img { height:45px; display:block; }
+    .main-nav a { font-family:var(--font-sans); font-size:13px; font-weight:700; text-transform:uppercase; color:var(--text); text-decoration:none; margin-left:20px; }
+    .main-nav a:hover { color:var(--accent); }
+
+    main { max-width:960px; margin:60px auto; padding:0 24px; }
+    h1 { font-family:var(--font-sans); font-size:2.5rem; line-height:1.1; margin-bottom:10px; }
+    h2 { font-family:var(--font-sans); font-size:1.8rem; margin-top:60px; }
+    h3 { font-family:var(--font-sans); font-size:1.4rem; font-weight:700; margin-bottom:10px; }
+    .lead { font-size:1.35rem; color:var(--muted); border-left:4px solid var(--accent); padding-left:20px; margin:40px 0; font-style:italic; }
+    
+    .forensic-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:40px; }
+    .forensic-card { border:1px solid var(--border); border-left:6px solid var(--text); background:#f9fafb; padding:30px; display:flex; flex-direction:column; transition:transform 0.2s; }
+    .forensic-card:hover { transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,0.05); }
+    .tagline { font-family:var(--font-sans); font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block; }
+    .btn-report { margin-top:20px; font-family:var(--font-sans); font-weight:700; text-decoration:none; color:var(--text); border-bottom:2px solid var(--accent); align-self:flex-start; }
+    
+    .footer { text-align:center; padding:50px 0; border-top:1px solid var(--border); margin-top:80px; font-family:var(--font-sans); font-size:13px; color:#999; }
+    @media (max-width:768px) { .header-inner { flex-direction:column; } .main-nav { margin-top:20px; } }
+  </style>
 </head>
 
 <body>
-
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo">
-      <img src="../../logo.png" alt="Insight Gaps">
-    </a>
+    <a href="/" class="logo"><img src="../../logo.png" alt="Insight Gaps"></a>
     <nav class="main-nav">
       <a href="/">Home</a>
       <a href="/investigations/">Investigations</a>
@@ -31,56 +48,37 @@
   </div>
 </header>
 
-<main class="page-container">
+<main>
+  <h1>Property Preservation Operational Analysis</h1>
+  <p class="lead">Operational forensics examining how property preservation workflows quietly lose value across documentation, vendors, pricing, and approvals.</p>
+  
+  <section class="forensic-grid">
+    <article class="forensic-card">
+      <span class="tagline">Cash Flow Risk</span>
+      <h3>Financial Health Dashboard</h3>
+      <p>Tracks how revenue moves through invoicing, receivables, and collection to expose where cash retention breaks down.</p>
+      <a href="financial-health.html" class="btn-report">View Analysis →</a>
+    </article>
+    <article class="forensic-card">
+      <span class="tagline">Profit Leakage</span>
+      <h3>Leakage Breakdown</h3>
+      <p>Examines recurring margin erosion caused by vendor overruns, documentation delays, and rework loops.</p>
+      <a href="leakage-breakdown.html" class="btn-report">View Analysis →</a>
+    </article>
+    <article class="forensic-card">
+      <span class="tagline">Work Order Risk</span>
+      <h3>Work Order Breakdown</h3>
+      <p>Identifies which service types scale profitably and which quietly magnify risk through repeated leakage.</p>
+      <a href="work-order-breakdown.html" class="btn-report">View Analysis →</a>
+    </article>
+  </section>
 
-  <div style="padding: 40px 0; border-bottom: 1px solid #eee; margin-bottom: 40px;">
-    <span style="font-family: sans-serif; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #777;">Operational Analysis Domain</span>
-    <h1 style="font-size: 2.5rem; margin-top: 10px;">Property Preservation</h1>
-    <p style="font-size: 1.1rem; color: #555; max-width: 800px;">
-      Example operational analyses illustrating how preservation workflows
-      can be monitored for systemic risk, cost leakage, and documentation failure.
-    </p>
-  </div>
-
-  <div class="report-list">
-    
-<div style="padding: 25px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <h3 style="margin: 0 0 5px 0; font-size: 1.2rem;">Financial Health Dashboard</h3>
-        <p style="margin: 0; color: #666;">Revenue, profit leakage, and receivables overview.</p>
-      </div>
-      <a href="financial-health.html" style="font-family: sans-serif; font-weight: bold; color: #002b36; text-decoration: none; border: 1px solid #002b36; padding: 8px 16px; border-radius: 4px;">View Report &rarr;</a>
-    </div>
-    <div style="padding: 25px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <h3 style="margin: 0 0 5px 0; font-size: 1.2rem;">Leakage Breakdown</h3>
-        <p style="margin: 0; color: #666;">Detailed analysis of vendor profit leakage by cause.</p>
-      </div>
-      <a href="photo-qc-signals.html" style="font-family: sans-serif; font-weight: bold; color: #002b36; text-decoration: none; border: 1px solid #002b36; padding: 8px 16px; border-radius: 4px;">View Report &rarr;</a>
-    </div>
-
-    <div style="padding: 25px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <h3 style="margin: 0 0 5px 0; font-size: 1.2rem;">Work Order Breakdown</h3>
-        <p style="margin: 0; color: #666;">Leakage risk matrix by order type and status.</p>
-      </div>
-      <a href="rework-loops.html" style="font-family: sans-serif; font-weight: bold; color: #002b36; text-decoration: none; border: 1px solid #002b36; padding: 8px 16px; border-radius: 4px;">View Report &rarr;</a>
-    </div>
-
-  </div>
-
+  <section style="background:#f4f4f4; padding:30px; margin-top:60px; border-top:1px solid #ddd;">
+    <h2 style="font-size:1rem; margin-top:0; text-transform:uppercase; color:#777;">Data Scope</h2>
+    <p style="font-size:0.95rem; margin-bottom:0;">All data presented is anonymized or simulated for analytical demonstration.</p>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <nav>
-      <a href="/methods/">Methods</a>
-      <a href="/about/">About</a>
-      <a href="mailto:hello@insightgaps.com">Contact</a>
-    </nav>
-    <p style="margin-top: 20px;">&copy; 2026 Insight Gaps</p>
-  </div>
-</footer>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<footer class="footer">&copy; 2026 Insight Gaps</footer>
 </body>
 </html>
