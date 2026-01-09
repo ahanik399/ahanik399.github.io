@@ -1,5 +1,5 @@
 /* =========================================
-   1. VARIABLES & RESET
+   1. GLOBAL VARIABLES & RESET
    ========================================= */
 :root {
   --bg-page: #ffffff;
@@ -8,11 +8,12 @@
   --text-secondary: #555555;
   --text-meta: #767676;
   
-  --accent-color: #004d40; /* Deep Teal */
-  --alert-color: #b71c1c;  /* Muted Red */
+  /* BRAND COLORS */
+  --accent-color: #004d40; /* The Insight Gaps Teal */
+  --accent-hover: #00695c;
   --border-color: #e0e0e0;
   
-  /* Fonts */
+  /* TYPOGRAPHY */
   --font-serif: 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -28,31 +29,51 @@ body {
 }
 
 /* =========================================
-   2. HEADER
+   2. HEADER & NAVIGATION LAYOUT
    ========================================= */
 .site-header {
   border-bottom: 1px solid var(--border-color);
-  padding: 20px 0;
   background: #fff;
+  position: relative;
+  z-index: 1000; /* Ensures menu floats above content */
 }
 
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
+  height: 80px; /* Fixed height for stability */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Logo Sizing Fix */
 .logo img {
   height: 45px;
   width: auto;
   display: block;
 }
 
-.main-nav a {
+/* =========================================
+   3. MEGA MENU ARCHITECTURE (The New Design)
+   ========================================= */
+.main-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* The Trigger Item (e.g., "Analysis") */
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  position: relative; /* Anchor for absolute menu */
+  cursor: pointer;
+}
+
+.nav-link {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 700;
@@ -60,14 +81,103 @@ body {
   letter-spacing: 0.05em;
   color: var(--text-primary);
   text-decoration: none;
-  margin-left: 30px;
+  padding: 30px 0; /* Increase hit area */
   transition: color 0.2s;
 }
 
-.main-nav a:hover { color: var(--accent-color); }
+.nav-link:hover { color: var(--accent-color); }
+
+/* --- THE DROPDOWN CONTAINER --- */
+.mega-menu-container {
+  position: absolute;
+  top: 100%; /* Pins it exactly to the bottom of the header */
+  right: -100px; /* Adjusts horizontal alignment relative to parent */
+  width: 900px; /* Fixed width like the reference image */
+  background: #fff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12); /* Deep shadow for depth */
+  display: flex; /* Creates the Side-by-Side layout */
+  
+  /* Animation States */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Reveal Mechanism */
+.nav-item:hover .mega-menu-container {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- LEFT SIDEBAR (The Tabs) --- */
+.mega-sidebar {
+  width: 240px;
+  background: #fdfdfd;
+  border-right: 1px solid var(--border-color);
+  padding: 10px 0;
+  flex-shrink: 0;
+}
+
+.mega-sidebar-link {
+  display: block;
+  padding: 14px 24px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.1s;
+}
+
+.mega-sidebar-link:hover {
+  background: #f4f4f4;
+  color: var(--text-primary);
+}
+
+/* The "Active" Tab Style (Matches the Green/White look) */
+.mega-sidebar-link.active {
+  background: var(--accent-color); /* Deep Teal Background */
+  color: #ffffff; /* White Text */
+  position: relative;
+}
+
+/* --- RIGHT CONTENT AREA (The Grid) --- */
+.mega-content {
+  flex-grow: 1;
+  padding: 35px;
+  background: #fff;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns exactly like reference */
+  gap: 15px 40px; /* Vertical gap 15px, Horizontal gap 40px */
+}
+
+.mega-grid-link {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 1px dotted #ccc; /* The dotted line from reference */
+  display: block;
+  white-space: nowrap; /* Prevents wrapping if possible */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mega-grid-link:hover {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
 
 /* =========================================
-   3. GLOBAL LAYOUT
+   4. PAGE CONTENT LAYOUT (Main Body)
    ========================================= */
 .page-container {
   max-width: 1100px;
@@ -75,14 +185,13 @@ body {
   padding: 0 24px;
 }
 
-/* Two-column layout for Homepage */
 .content-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 60px;
 }
 
-/* Typography Helpers */
+/* Story Typography */
 h1, h2, h3 { font-family: var(--font-sans); letter-spacing: -0.02em; margin-top: 0; }
 p { margin-bottom: 1.5rem; }
 
@@ -95,12 +204,29 @@ p { margin-bottom: 1.5rem; }
 }
 .text-link:hover { border-color: var(--accent-color); }
 
+/* Featured Story Styles */
+.story-label {
+  color: #b71c1c; 
+  font-family: var(--font-sans); 
+  font-size: 11px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  margin-bottom: 10px; 
+  display: block; 
+}
+
+.story-deck { font-size: 22px; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.4; }
+.divider { border: 0; border-top: 1px solid var(--border-color); margin: 50px 0; width: 100px; }
+
+/* Small Story Items */
+.story-item h4 { font-family: var(--font-sans); font-size: 20px; margin: 0 0 8px 0; font-weight: 700; }
+.story-item p { margin: 0 0 10px 0; font-size: 16px; color: var(--text-secondary); }
+
 /* =========================================
-   4. SIDEBAR STYLES (The Grey Box)
+   5. RIGHT SIDEBAR (Applied Analysis)
    ========================================= */
 .applied-analysis-sidebar { position: sticky; top: 20px; }
 
-/* NOTE: This class is ONLY for the Sidebar now */
 .analysis-card {
   background: var(--bg-sidebar);
   border: 1px solid var(--border-color);
@@ -108,8 +234,8 @@ p { margin-bottom: 1.5rem; }
 
 .card-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .card-header h3 { font-size: 12px; text-transform: uppercase; color: var(--text-meta); margin: 0; }
-.card-body { padding: 20px; }
 
+.card-body { padding: 20px; }
 .capabilities-list { list-style: none; font-family: var(--font-sans); font-size: 14px; }
 .capabilities-list li { margin-bottom: 10px; padding-left: 10px; border-left: 2px solid var(--border-color); }
 
@@ -117,103 +243,7 @@ p { margin-bottom: 1.5rem; }
 .btn-text { font-family: var(--font-sans); font-size: 13px; font-weight: 700; color: var(--accent-color); text-decoration: none; }
 
 /* =========================================
-   5. FORENSIC REPORT GRID (The Main Cards)
-   ========================================= */
-.forensic-grid {
-  display: grid;
-  /* Auto-responsive: 1 col on mobile, 3 on desktop */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin: 40px 0 80px 0;
-}
-
-/* NOTE: This class is for the MAIN reports */
-.forensic-card {
-  border: 1px solid var(--border-color);
-  border-left: 6px solid var(--text-primary); /* The Thick Black Border */
-  background: #f9fafb;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.forensic-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  border-color: #ccc;
-}
-
-.forensic-card .tagline {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: var(--accent-color);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.forensic-card h3 {
-  font-family: var(--font-sans);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-  line-height: 1.2;
-}
-
-.forensic-card p {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  color: var(--text-secondary);
-  flex-grow: 1; /* Pushes button to bottom */
-  margin-bottom: 20px;
-}
-
-.btn-report {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent-color);
-  color: var(--text-primary);
-  display: inline-block;
-  align-self: flex-start;
-  transition: color 0.2s;
-}
-
-.btn-report:hover { color: var(--accent-color); }
-
-/* =========================================
-   6. ARTICLE / LONG-FORM READING
-   ========================================= */
-.longform-article { max-width: 800px; margin: 0 auto; }
-
-.lead-block {
-  font-size: 1.35rem;
-  color: var(--text-secondary);
-  border-left: 4px solid var(--accent-color);
-  padding-left: 24px;
-  margin: 40px 0;
-  font-style: italic;
-}
-
-.divider { border: 0; border-top: 1px solid var(--text-primary); margin: 40px auto; width: 60px; }
-
-.key-findings-box {
-  background-color: var(--bg-sidebar);
-  border-left: 4px solid var(--accent-color);
-  padding: 30px;
-  margin: 50px 0;
-}
-.key-findings-box h3 { color: var(--accent-color); font-size: 1rem; text-transform: uppercase; margin-top: 0; }
-.key-findings-box ul { padding-left: 20px; }
-.key-findings-box li { margin-bottom: 10px; }
-
-/* =========================================
-   7. FOOTER & MOBILE
+   6. FOOTER
    ========================================= */
 .site-footer {
   border-top: 1px solid var(--border-color);
@@ -227,8 +257,15 @@ p { margin-bottom: 1.5rem; }
 
 .footer-nav a { margin: 0 15px; color: #555; text-decoration: none; }
 
-@media (max-width: 768px) {
-  .header-inner { flex-direction: column; text-align: center; }
-  .main-nav { margin-top: 20px; }
+/* =========================================
+   7. RESPONSIVE / MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+  /* Collapse Layout */
   .content-layout { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; height: auto; padding: 20px 24px; }
+  .main-nav { margin-top: 20px; flex-wrap: wrap; justify-content: center; }
+  
+  /* Hide Complex Mega Menu on Mobile (Fallback logic required for prod) */
+  .mega-menu-container { display: none; }
 }
