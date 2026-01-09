@@ -23,7 +23,9 @@
       --bg-sidebar: #f8f9fa;
       --text-primary: #111111;
       --text-secondary: #555555;
-      --accent-color: #004d40;
+      --text-meta: #767676;
+      --accent-color: #004d40; /* Deep Teal */
+      --accent-hover: #00695c;
       --border-color: #e0e0e0;
       --font-serif: 'Charter', 'Bitstream Charter', Cambria, serif;
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -33,20 +35,123 @@
     * { box-sizing: border-box; }
 
     /* HEADER FIX */
-    .site-header { border-bottom: 1px solid var(--border-color); padding: 20px 0; }
-    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .site-header { border-bottom: 1px solid var(--border-color); padding: 0; position: relative; z-index: 1000; background: #fff; }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
     
-    /* THIS FIXES THE GIANT LOGO */
     .logo img { height: 45px; width: auto; display: block; }
 
-    .main-nav a { font-family: var(--font-sans); font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); text-decoration: none; margin-left: 25px; }
-    .main-nav a:hover { color: var(--accent-color); }
+    /* --- MEGA MENU NAVIGATION STYLES (NEW) --- */
+    .main-nav { display: flex; align-items: center; height: 100%; }
+    
+    .nav-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-left: 25px;
+    }
 
-    /* LAYOUT */
+    .nav-link {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 10px 0;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--accent-color); }
+
+    /* The Dropdown Container */
+    .mega-menu-container {
+      position: absolute;
+      top: 100%; /* Push exactly below header */
+      right: -100px; /* Adjust centering based on layout */
+      width: 900px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      display: flex;
+    }
+
+    /* Show Menu on Hover */
+    .nav-item:hover .mega-menu-container {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Left Sidebar of Menu */
+    .mega-sidebar {
+      width: 250px;
+      border-right: 1px solid var(--border-color);
+      background: #fff;
+      padding: 10px 0;
+    }
+
+    .mega-sidebar-link {
+      display: block;
+      padding: 12px 20px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .mega-sidebar-link:hover {
+      background: #f4f4f4;
+      color: var(--text-primary);
+    }
+
+    /* The Active Sidebar Item (Mimics the Green tab in your image) */
+    .mega-sidebar-link.active {
+      background: var(--accent-color);
+      color: #fff;
+      position: relative;
+    }
+    
+    /* Right Content Area */
+    .mega-content {
+      flex: 1;
+      padding: 30px;
+      background: #fff;
+    }
+
+    /* The Grid Layout */
+    .mega-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px 30px;
+    }
+
+    .mega-grid-link {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding-bottom: 8px;
+      border-bottom: 1px dotted #ccc; /* The dotted line style */
+      display: block;
+    }
+
+    .mega-grid-link:hover {
+      color: var(--accent-color);
+      border-bottom-color: var(--accent-color);
+    }
+
+
+    /* --- ORIGINAL LAYOUT STYLES --- */
     .page-container { max-width: 1100px; margin: 60px auto; padding: 0 24px; }
     .content-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
 
-    /* CONTENT STYLES */
     .story-label { color: #b71c1c; font-family: var(--font-sans); font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; }
     h2 { font-size: 42px; line-height: 1.1; margin: 0 0 15px 0; font-family: var(--font-serif); letter-spacing: -0.02em; }
     .story-deck { font-size: 22px; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.4; }
@@ -74,8 +179,11 @@
 
     @media (max-width: 768px) {
       .content-layout { grid-template-columns: 1fr; }
-      .header-inner { flex-direction: column; }
-      .main-nav { margin-top: 15px; }
+      .header-inner { flex-direction: column; height: auto; padding: 20px; }
+      .main-nav { margin-top: 15px; flex-direction: column; }
+      .nav-item { margin: 5px 0; }
+      /* Hide mega menu on mobile for simplicity in this demo */
+      .mega-menu-container { display: none; }
     }
   </style>
 </head>
@@ -87,10 +195,53 @@
     <a href="/" class="logo">
       <img src="logo.png" alt="Insight Gaps">
     </a>
+    
     <nav class="main-nav">
-      <a href="/">Home</a>
-      <a href="/investigations/">Investigations</a>
-      <a href="/analysis/">Analysis</a>
+      <div class="nav-item">
+        <a href="/" class="nav-link">Home</a>
+      </div>
+      <div class="nav-item">
+        <a href="/investigations/" class="nav-link">Investigations</a>
+      </div>
+      
+      <div class="nav-item">
+        <a href="/analysis/" class="nav-link">Analysis ▾</a>
+        
+        <div class="mega-menu-container">
+          <div class="mega-sidebar">
+            <a href="#" class="mega-sidebar-link active">Operational Risks</a>
+            <a href="#" class="mega-sidebar-link">Financial Erosion</a>
+            <a href="#" class="mega-sidebar-link">Compliance Gaps</a>
+            <a href="#" class="mega-sidebar-link">Workflow Friction</a>
+            <a href="#" class="mega-sidebar-link">Vendor Retention</a>
+            <a href="#" class="mega-sidebar-link">Tech Audits</a>
+          </div>
+
+          <div class="mega-content">
+            <div class="mega-grid">
+              <a href="#" class="mega-grid-link">CRM Sync Failures</a>
+              <a href="#" class="mega-grid-link">GeoTagging Risks</a>
+              <a href="#" class="mega-grid-link">Metadata Loss</a>
+              
+              <a href="#" class="mega-grid-link">Invoice Syntax Errors</a>
+              <a href="#" class="mega-grid-link">Documentation Lag</a>
+              <a href="#" class="mega-grid-link">Bid Accuracy</a>
+              
+              <a href="#" class="mega-grid-link">PCR Score Drift</a>
+              <a href="#" class="mega-grid-link">HUD P&P Alignment</a>
+              <a href="#" class="mega-grid-link">Denial Appeals</a>
+              
+              <a href="#" class="mega-grid-link">Photo Redundancy</a>
+              <a href="#" class="mega-grid-link">Trip Charge Leakage</a>
+              <a href="#" class="mega-grid-link">Scope Creep</a>
+              
+              <a href="#" class="mega-grid-link">API Latency</a>
+              <a href="#" class="mega-grid-link">Bulk Upload Issues</a>
+              <a href="#" class="mega-grid-link">Mobile Sync Gaps</a>
+            </div>
+          </div>
+        </div>
+        </div>
     </nav>
   </div>
 </header>
