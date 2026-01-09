@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insight Gaps | Investigative Data Journalism</title>
+  <meta name="description" content="Insight Gaps | Forensic Data Journalism and Preservation Analysis">
   <link rel="canonical" href="https://insightgaps.com/">
+  <link rel="icon" href="favicon.png" type="image/png">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,14 +16,68 @@
     gtag('config', 'G-4PYE0MEK12');
   </script>
 
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="icon" href="favicon.png" type="image/png">
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Insight Gaps | Forensic Data Journalism and Preservation Analysis">
-  
-  <title>Insight Gaps | Investigative Data Journalism</title>
+  <style>
+    /* --- CORE STYLES --- */
+    :root {
+      --bg-page: #ffffff;
+      --bg-sidebar: #f8f9fa;
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --accent-color: #004d40;
+      --border-color: #e0e0e0;
+      --font-serif: 'Charter', 'Bitstream Charter', Cambria, serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body { margin: 0; padding: 0; font-family: var(--font-serif); color: var(--text-primary); background: var(--bg-page); line-height: 1.6; }
+    * { box-sizing: border-box; }
+
+    /* HEADER FIX */
+    .site-header { border-bottom: 1px solid var(--border-color); padding: 20px 0; }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    
+    /* THIS FIXES THE GIANT LOGO */
+    .logo img { height: 45px; width: auto; display: block; }
+
+    .main-nav a { font-family: var(--font-sans); font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--text-primary); text-decoration: none; margin-left: 25px; }
+    .main-nav a:hover { color: var(--accent-color); }
+
+    /* LAYOUT */
+    .page-container { max-width: 1100px; margin: 60px auto; padding: 0 24px; }
+    .content-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
+
+    /* CONTENT STYLES */
+    .story-label { color: #b71c1c; font-family: var(--font-sans); font-size: 11px; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; display: block; }
+    h2 { font-size: 42px; line-height: 1.1; margin: 0 0 15px 0; font-family: var(--font-serif); letter-spacing: -0.02em; }
+    .story-deck { font-size: 22px; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.4; }
+    .text-link { font-family: var(--font-sans); font-weight: 700; color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--border-color); }
+    
+    .divider { border: 0; border-top: 1px solid var(--border-color); margin: 50px 0; width: 100px; }
+    
+    .story-item { margin-bottom: 35px; }
+    .story-item h4 { font-family: var(--font-sans); font-size: 20px; margin: 0 0 8px 0; font-weight: 700; }
+    .story-item p { margin: 0 0 10px 0; font-size: 16px; color: var(--text-secondary); }
+
+    /* SIDEBAR STYLES */
+    .analysis-card { background: var(--bg-sidebar); border: 1px solid var(--border-color); }
+    .card-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .card-header h3 { margin: 0; font-family: var(--font-sans); font-size: 12px; text-transform: uppercase; color: #777; }
+    .card-body { padding: 20px; }
+    .capabilities-list { padding: 0; list-style: none; font-family: var(--font-sans); font-size: 14px; }
+    .capabilities-list li { margin-bottom: 10px; padding-left: 10px; border-left: 2px solid var(--border-color); }
+    .card-footer { padding: 15px 20px; background: #f1f3f4; border-top: 1px solid var(--border-color); }
+    .btn-text { font-family: var(--font-sans); font-size: 13px; font-weight: 700; text-decoration: none; color: var(--accent-color); }
+
+    /* FOOTER */
+    .site-footer { border-top: 1px solid var(--border-color); padding: 40px 0; margin-top: 80px; text-align: center; font-family: var(--font-sans); font-size: 13px; color: #999; }
+    .footer-nav a { margin: 0 15px; color: #555; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .content-layout { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; }
+      .main-nav { margin-top: 15px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -36,57 +96,41 @@
 </header>
 
 <main class="page-container">
-
   <div class="content-layout">
-
+    
     <section class="journalism-stream">
-
       <article class="featured-story">
-        <div class="meta-line">
-          <span class="story-label">Featured Investigation</span>
-        </div>
+        <span class="story-label">Featured Investigation</span>
         <h2>The Maintenance Deficit</h2>
         <p class="story-deck">
           A forensic investigation into how documentation failures quietly compound losses across property preservation workflows.
         </p>
-        <div class="action-row">
-          <a href="/investigations/maintenance-deficit.html" class="text-link">Read Investigation</a>
-        </div>
+        <a href="/investigations/maintenance-deficit.html" class="text-link">Read Investigation →</a>
       </article>
 
       <hr class="divider">
 
       <section class="recent-stories">
-        <h3 class="section-label">Recent Findings</h3>
+        <h3 style="font-family:var(--font-sans); font-size:12px; text-transform:uppercase; color:#777; margin-bottom:30px;">Recent Findings</h3>
 
         <article class="story-item">
           <h4>How Photo Failures Escalate Before QC</h4>
           <p>Why quality control often reacts too late to prevent rework and loss.</p>
-          <a href="#" class="text-link small">Read Report</a>
+          <a href="#" class="text-link" style="font-size:13px;">Read Report</a>
         </article>
 
         <article class="story-item">
-          <h4>Why Rework Loops Are Structural, Not Vendor Errors</h4>
+          <h4>Why Rework Loops Are Structural</h4>
           <p>Examining systemic incentives that produce repeated documentation failures.</p>
-          <a href="#" class="text-link small">Read Report</a>
+          <a href="#" class="text-link" style="font-size:13px;">Read Report</a>
         </article>
 
         <article class="story-item">
           <h4>The Hidden Cost of Duplicate Photos</h4>
           <p>How redundancy in submissions inflates review time and deductions.</p>
-          <a href="#" class="text-link small">Read Report</a>
+          <a href="#" class="text-link" style="font-size:13px;">Read Report</a>
         </article>
       </section>
-
-      <div class="newsletter-inline">
-        <h3>The Watchdog Newsletter</h3>
-        <p>Get alerts on new profit leakage patterns and forensic reports.</p>
-        <form class="signup-form">
-          <input type="email" placeholder="Email address" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
     </section>
 
     <aside class="applied-analysis-sidebar">
@@ -95,9 +139,8 @@
           <h3>Applied Analysis</h3>
         </header>
         <div class="card-body">
-          <p>
-            We apply documented failure patterns from our investigations
-            to operational intelligence for preservation organizations.
+          <p style="font-size:14px; margin-bottom:20px;">
+            We apply documented failure patterns from our investigations to operational intelligence.
           </p>
           <ul class="capabilities-list">
             <li>Documentation risk signals</li>
@@ -106,13 +149,12 @@
           </ul>
         </div>
         <footer class="card-footer">
-          <a href="/analysis/" class="btn-text">View Operational Reports &rarr;</a>
+          <a href="/preservation/" class="btn-text">View Operational Reports →</a>
         </footer>
       </div>
     </aside>
 
   </div>
-
 </main>
 
 <footer class="site-footer">
@@ -122,7 +164,7 @@
       <a href="/about/">About</a>
       <a href="mailto:hello@insightgaps.com">Contact</a>
     </div>
-    <div class="copyright">
+    <div style="margin-top:20px;">
       &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
     </div>
   </div>
