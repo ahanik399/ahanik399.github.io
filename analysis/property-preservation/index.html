@@ -3,34 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Property Preservation Operational Analysis | Insight Gaps</title>
-  <meta name="description" content="Investigative operational analysis of property preservation workflows. Identify profit leakage, rework loops, and cash flow risk.">
+  <meta name="description" content="Investigative operational analysis of property preservation workflows. Identify profit leakage, rework loops, and cash flow risk before margins erode.">
   <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/">
 
   <style>
-    /* INTERNAL CSS */
+    /* INTERNAL CSS (Preserved Forensic Design) */
     :root { --bg: #fff; --text: #111; --muted: #555; --accent: #004d40; --border: #e0e0e0; --font-serif: 'Charter', serif; --font-sans: system-ui, sans-serif; }
     body { margin:0; padding:0; font-family:var(--font-serif); color:var(--text); line-height:1.6; }
     * { box-sizing:border-box; }
 
+    /* HEADER */
     .site-header { border-bottom:1px solid var(--border); padding:20px 0; background:#fff; position:sticky; top:0; z-index:100; }
     .header-inner { max-width:960px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; }
     .logo img { height:45px; display:block; }
-    .main-nav a { font-family:var(--font-sans); font-size:13px; font-weight:700; text-transform:uppercase; color:var(--text); text-decoration:none; margin-left:20px; }
+    .main-nav a { font-family:var(--font-sans); font-size:13px; font-weight:700; text-transform:uppercase; color:var(--text); text-decoration:none; margin-left:20px; transition:color 0.2s; }
     .main-nav a:hover { color:var(--accent); }
 
+    /* LAYOUT & TYPOGRAPHY */
     main { max-width:960px; margin:60px auto; padding:0 24px; }
-    h1 { font-family:var(--font-sans); font-size:2.5rem; line-height:1.1; margin-bottom:10px; }
-    h2 { font-family:var(--font-sans); font-size:1.8rem; margin-top:60px; }
-    h3 { font-family:var(--font-sans); font-size:1.4rem; font-weight:700; margin-bottom:10px; }
-    .lead { font-size:1.35rem; color:var(--muted); border-left:4px solid var(--accent); padding-left:20px; margin:40px 0; font-style:italic; }
     
+    h1 { font-family:var(--font-sans); font-size:2.5rem; line-height:1.1; margin-bottom:10px; letter-spacing:-0.02em; }
+    h2 { font-family:var(--font-sans); font-size:1.8rem; margin-top:60px; margin-bottom:20px; color:var(--text); }
+    h3 { font-family:var(--font-sans); font-size:1.4rem; font-weight:700; margin-bottom:10px; line-height:1.3; }
+    
+    p { margin-bottom: 1.5rem; font-size: 1.125rem; color: #222; }
+
+    /* HERO STYLES */
+    .lead { font-size:1.35rem; color:var(--muted); border-left:4px solid var(--accent); padding-left:20px; margin:40px 0; font-style:italic; }
+
+    /* FORENSIC GRID */
     .forensic-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:40px; }
     .forensic-card { border:1px solid var(--border); border-left:6px solid var(--text); background:#f9fafb; padding:30px; display:flex; flex-direction:column; transition:transform 0.2s; }
     .forensic-card:hover { transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,0.05); }
-    .tagline { font-family:var(--font-sans); font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block; }
-    .btn-report { margin-top:20px; font-family:var(--font-sans); font-weight:700; text-decoration:none; color:var(--text); border-bottom:2px solid var(--accent); align-self:flex-start; }
     
+    .tagline { font-family:var(--font-sans); font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--accent); margin-bottom:12px; display:block; letter-spacing:0.05em; }
+    .forensic-card p { font-size:1rem; color:var(--muted); flex-grow:1; margin-bottom:20px; }
+    
+    .btn-report { font-family:var(--font-sans); font-weight:700; text-decoration:none; color:var(--text); border-bottom:2px solid var(--accent); align-self:flex-start; font-size:0.9rem; }
+    .btn-report:hover { color:var(--accent); }
+    
+    /* FOOTER */
     .footer { text-align:center; padding:50px 0; border-top:1px solid var(--border); margin-top:80px; font-family:var(--font-sans); font-size:13px; color:#999; }
     @media (max-width:768px) { .header-inner { flex-direction:column; } .main-nav { margin-top:20px; } }
   </style>
@@ -50,32 +64,85 @@
 
 <main>
   <h1>Property Preservation Operational Analysis</h1>
-  <p class="lead">Operational forensics examining how property preservation workflows quietly lose value across documentation, vendors, pricing, and approvals.</p>
+  
+  <p class="lead">
+    Operational forensics examining how property preservation workflows quietly lose value across documentation, vendors, pricing, and approvals.
+  </p>
+  
+  <p>
+    Property preservation businesses rarely struggle because work disappears. They struggle because complexity grows faster than visibility.
+  </p>
+  
+  <p>
+    Across high-volume operations—especially those supported by remote teams—small breakdowns in documentation, approvals, vendor execution, and pricing compound over time. These failures rarely appear in standard revenue or volume reports.
+  </p>
+  
+  <p>
+    This analysis domain surfaces those hidden patterns by following how operational effort translates into retained value—not just reported activity.
+  </p>
+
+  <h2>What This Analysis Covers</h2>
+  <p>
+    This page is an index of investigative reports demonstrating how operational data in property preservation can be used to detect systemic risk, profit leakage, and workflow friction.
+  </p>
+  <p>
+    Rather than focusing on isolated incidents, the analyses examine recurring patterns that emerge only at scale—where margin erosion becomes structural.
+  </p>
   
   <section class="forensic-grid">
+    
     <article class="forensic-card">
-      <span class="tagline">Cash Flow Risk</span>
-      <h3>Financial Health Dashboard</h3>
-      <p>Tracks how revenue moves through invoicing, receivables, and collection to expose where cash retention breaks down.</p>
+      <span class="tagline">Financial Health</span>
+      <h3>Financial Health Dashboard: The Cash Chain of Custody</h3>
+      <p>
+        This report examines how value moves from completed work to collected cash. It highlights where revenue stalls, erodes, or fails to fully materialize due to approval friction, documentation gaps, or payment delays.
+      </p>
       <a href="financial-health.html" class="btn-report">View Analysis →</a>
     </article>
+    
     <article class="forensic-card">
-      <span class="tagline">Profit Leakage</span>
-      <h3>Leakage Breakdown</h3>
-      <p>Examines recurring margin erosion caused by vendor overruns, documentation delays, and rework loops.</p>
+      <span class="tagline">Leakage Breakdown</span>
+      <h3>Leakage Breakdown: The Paper-Cut Autopsy</h3>
+      <p>
+        Profit in property preservation is rarely lost through a single failure. It erodes through repeatable issues such as rework, resubmissions, and minor documentation errors. This analysis categorizes loss patterns to distinguish systemic breakdowns.
+      </p>
       <a href="leakage-breakdown.html" class="btn-report">View Analysis →</a>
     </article>
+    
     <article class="forensic-card">
-      <span class="tagline">Work Order Risk</span>
-      <h3>Work Order Breakdown</h3>
-      <p>Identifies which service types scale profitably and which quietly magnify risk through repeated leakage.</p>
+      <span class="tagline">Work Order Breakdown</span>
+      <h3>Work Order Breakdown: The Risk Matrix</h3>
+      <p>
+        Not all work volume strengthens a business. Some services quietly generate disproportionate risk through pricing instability or execution friction. This report evaluates work types as recurring behaviors to separate productive volume from structurally damaging volume.
+      </p>
       <a href="work-order-breakdown.html" class="btn-report">View Analysis →</a>
     </article>
+    
+  </section>
+
+  <h2>Who This Is For</h2>
+  <p>
+    This analysis is designed for property preservation operators, managers, and analysts responsible for cost control, documentation quality, and vendor performance.
+  </p>
+  <p>
+    It is relevant to both US-based companies and globally distributed teams supporting US preservation workflows from regions such as South Asia, Southeast Asia, and Eastern Europe.
+  </p>
+  <p>
+    The focus is operational clarity—not generic KPI reporting.
+  </p>
+
+  <section style="margin-top: 60px; padding: 20px 0; border-top: 1px solid #eee;">
+    <p style="font-weight: 700; font-family: var(--font-sans); color: var(--accent);">
+      When margin erosion feels invisible, the issue is rarely effort. It is visibility.
+    </p>
+    <p>Operational insight begins where surface-level reporting ends.</p>
   </section>
 
   <section style="background:#f4f4f4; padding:30px; margin-top:60px; border-top:1px solid #ddd;">
-    <h2 style="font-size:1rem; margin-top:0; text-transform:uppercase; color:#777;">Data Scope</h2>
-    <p style="font-size:0.95rem; margin-bottom:0;">All data presented is anonymized or simulated for analytical demonstration.</p>
+    <h2 style="font-size:1rem; margin-top:0; text-transform:uppercase; color:#777;">Data Scope & Methodology</h2>
+    <p style="font-size:0.95rem; margin-bottom:0; color:#666;">
+      All dashboards and visualizations use anonymized or simulated datasets created for analytical demonstration. They do not represent real companies, vendors, or proprietary client data.
+    </p>
   </section>
 </main>
 
