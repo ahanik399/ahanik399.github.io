@@ -1,24 +1,141 @@
 /* =========================================
-   FORENSIC ANALYSIS GRID (Add to bottom of style.css)
+   1. VARIABLES & RESET
    ========================================= */
+:root {
+  --bg-page: #ffffff;
+  --bg-sidebar: #f8f9fa;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-meta: #767676;
+  
+  --accent-color: #004d40; /* Deep Teal */
+  --alert-color: #b71c1c;  /* Muted Red */
+  --border-color: #e0e0e0;
+  
+  /* Fonts */
+  --font-serif: 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   2. HEADER
+   ========================================= */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 0;
+  background: #fff;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Sizing Fix */
+.logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+}
+
+.main-nav a {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-left: 30px;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover { color: var(--accent-color); }
+
+/* =========================================
+   3. GLOBAL LAYOUT
+   ========================================= */
+.page-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+/* Two-column layout for Homepage */
+.content-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+/* Typography Helpers */
+h1, h2, h3 { font-family: var(--font-sans); letter-spacing: -0.02em; margin-top: 0; }
+p { margin-bottom: 1.5rem; }
+
+.text-link {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+}
+.text-link:hover { border-color: var(--accent-color); }
+
+/* =========================================
+   4. SIDEBAR STYLES (The Grey Box)
+   ========================================= */
+.applied-analysis-sidebar { position: sticky; top: 20px; }
+
+/* NOTE: This class is ONLY for the Sidebar now */
+.analysis-card {
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-color);
+}
+
+.card-header { padding: 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.card-header h3 { font-size: 12px; text-transform: uppercase; color: var(--text-meta); margin: 0; }
+.card-body { padding: 20px; }
+
+.capabilities-list { list-style: none; font-family: var(--font-sans); font-size: 14px; }
+.capabilities-list li { margin-bottom: 10px; padding-left: 10px; border-left: 2px solid var(--border-color); }
+
+.card-footer { padding: 15px 20px; background: #f1f3f4; border-top: 1px solid var(--border-color); }
+.btn-text { font-family: var(--font-sans); font-size: 13px; font-weight: 700; color: var(--accent-color); text-decoration: none; }
+
+/* =========================================
+   5. FORENSIC REPORT GRID (The Main Cards)
+   ========================================= */
 .forensic-grid {
   display: grid;
-  /* Auto-responsive: 1 col on mobile, 2 on tablet, 3 on desktop */
+  /* Auto-responsive: 1 col on mobile, 3 on desktop */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin: 40px 0 80px 0;
 }
 
+/* NOTE: This class is for the MAIN reports */
 .forensic-card {
   border: 1px solid var(--border-color);
-  border-left: 6px solid var(--text-primary); /* Thick black border */
+  border-left: 6px solid var(--text-primary); /* The Thick Black Border */
   background: #f9fafb;
   padding: 30px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .forensic-card:hover {
@@ -67,6 +184,51 @@
   transition: color 0.2s;
 }
 
-.btn-report:hover {
-  color: var(--accent-color);
+.btn-report:hover { color: var(--accent-color); }
+
+/* =========================================
+   6. ARTICLE / LONG-FORM READING
+   ========================================= */
+.longform-article { max-width: 800px; margin: 0 auto; }
+
+.lead-block {
+  font-size: 1.35rem;
+  color: var(--text-secondary);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 24px;
+  margin: 40px 0;
+  font-style: italic;
+}
+
+.divider { border: 0; border-top: 1px solid var(--text-primary); margin: 40px auto; width: 60px; }
+
+.key-findings-box {
+  background-color: var(--bg-sidebar);
+  border-left: 4px solid var(--accent-color);
+  padding: 30px;
+  margin: 50px 0;
+}
+.key-findings-box h3 { color: var(--accent-color); font-size: 1rem; text-transform: uppercase; margin-top: 0; }
+.key-findings-box ul { padding-left: 20px; }
+.key-findings-box li { margin-bottom: 10px; }
+
+/* =========================================
+   7. FOOTER & MOBILE
+   ========================================= */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 40px 0;
+  margin-top: 80px;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-nav a { margin: 0 15px; color: #555; text-decoration: none; }
+
+@media (max-width: 768px) {
+  .header-inner { flex-direction: column; text-align: center; }
+  .main-nav { margin-top: 20px; }
+  .content-layout { grid-template-columns: 1fr; }
 }
