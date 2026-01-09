@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Order Breakdown | Insight Gaps</title>
+  <meta name="description" content="Work Order Breakdown: Identifying which service types scale profitably and which quietly magnify risk through repeated leakage.">
+  <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/work-order-breakdown.html">
+  <link rel="icon" href="../../favicon.png" type="image/png">
+  
+  <link rel="stylesheet" href="../../style.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4PYE0MEK12');
+  </script>
+  
+  <style>
+    .page-header {
+      max-width: var(--container-width-narrow);
+      margin-bottom: var(--space-2xl);
+    }
+    
+    .back-link {
+      text-decoration: none;
+      color: var(--color-text-meta);
+      font-size: var(--font-size-sm);
+      font-family: var(--font-sans);
+      display: inline-block;
+      margin-bottom: var(--space-lg);
+      transition: color var(--transition-base);
+    }
+    
+    .back-link:hover,
+    .back-link:focus {
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Insight Gaps Home">
+        <img src="../../logo.png" alt="Insight Gaps" width="auto" height="45">
+      </a>
+      
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="/investigations/" class="nav-link">Investigations</a>
+        </div>
+        <div class="nav-item">
+          <a href="/analysis/" class="nav-link">Analysis ▾</a>
+          
+          <div class="mega-menu-container">
+            <div class="mega-sidebar">
+              <a href="#" class="mega-sidebar-link active">Operational Risks</a>
+              <a href="#" class="mega-sidebar-link">Financial Erosion</a>
+              <a href="#" class="mega-sidebar-link">Compliance Gaps</a>
+              <a href="#" class="mega-sidebar-link">Workflow Friction</a>
+              <a href="#" class="mega-sidebar-link">Vendor Retention</a>
+              <a href="#" class="mega-sidebar-link">Tech Audits</a>
+            </div>
+
+            <div class="mega-content">
+              <div class="mega-grid">
+                <a href="#" class="mega-grid-link">CRM Sync Failures</a>
+                <a href="#" class="mega-grid-link">GeoTagging Risks</a>
+                <a href="#" class="mega-grid-link">Metadata Loss</a>
+                
+                <a href="#" class="mega-grid-link">Invoice Syntax Errors</a>
+                <a href="#" class="mega-grid-link">Documentation Lag</a>
+                <a href="#" class="mega-grid-link">Bid Accuracy</a>
+                
+                <a href="#" class="mega-grid-link">PCR Score Drift</a>
+                <a href="#" class="mega-grid-link">HUD P&P Alignment</a>
+                <a href="#" class="mega-grid-link">Denial Appeals</a>
+                
+                <a href="#" class="mega-grid-link">Photo Redundancy</a>
+                <a href="#" class="mega-grid-link">Trip Charge Leakage</a>
+                <a href="#" class="mega-grid-link">Scope Creep</a>
+                
+                <a href="#" class="mega-grid-link">API Latency</a>
+                <a href="#" class="mega-grid-link">Bulk Upload Issues</a>
+                <a href="#" class="mega-grid-link">Mobile Sync Gaps</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-container" role="main">
+    <div class="page-header">
+      <a href="/analysis/property-preservation/" class="back-link">← Back to Property Preservation</a>
+      
+      <nav class="report-subnav" aria-label="Report navigation">
+        <a href="financial-health.html" class="subnav-link">Financial Health</a>
+        <a href="leakage-breakdown.html" class="subnav-link">Leakage Breakdown</a>
+        <a href="work-order-breakdown.html" class="subnav-link active">Work Order Breakdown</a>
+      </nav>
+
+      <header class="article-header">
+        <h1>Work Order Breakdown</h1>
+        
+        <div class="forensic-intro">
+          <p style="margin-top:0;">In property preservation, volume is often treated as success.</p>
+          <p><strong>More orders. More activity. More movement. But volume alone does not indicate health.</strong></p>
+          <p>Some work types strengthen an operation as they scale. Others quietly weaken it—introducing friction, rework, and margin erosion that only becomes visible after damage is done.</p>
+          <p style="margin-bottom:0;">This analysis exists to separate productive volume from destructive volume.</p>
+        </div>
+      </header>
+    </div>
+
+    <div class="instruction-box">
+      <h3>How to Read This Page</h3>
+      <p>
+        This report does not evaluate individual work orders. <strong>It evaluates patterns of behavior.</strong> Each work type is examined as a recurring operational process—how often it occurs, how efficiently it moves through approvals, and how consistently it retains value. When those signals are combined, they reveal whether a service is contributing to stability or quietly increasing risk. The purpose is not judgment. It is decision clarity.
+      </p>
+    </div>
+
+    <div class="dashboard-frame">
+      <div style="height: 1100px; overflow: hidden; position: relative;">
+        <iframe 
+          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_wzh2g7q9yd" 
+          frameborder="0" 
+          style="position: absolute; top: 0; left: -35px; width: calc(100% + 70px); height: 1140px; border:0;" 
+          allowfullscreen
+          sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+          title="Work Order Breakdown Dashboard">
+        </iframe>
+      </div>
+    </div>
+
+    <section class="analysis-section">
+      <div class="analysis-block">
+        <h2>Work Types as Risk Profiles</h2>
+        <p>Individual jobs rarely tell the full story.</p>
+        <p>Risk emerges only when similar work types repeat under the same conditions. When a service consistently generates rework, deductions, or pricing pressure, it becomes a predictable source of friction—regardless of how well any single order is executed.</p>
+        <p>This matrix treats each work type as a system, not an exception.</p>
+      </div>
+
+      <div class="analysis-block">
+        <h2>High Volume Can Hide Structural Issues</h2>
+        <p>Some services appear successful because they happen frequently.</p>
+        <p>High activity can mask inefficiencies that would be obvious at lower volume. As order counts increase, even small execution gaps multiply—turning manageable issues into persistent drains on time, cash flow, and operational focus.</p>
+        <p>Volume without efficiency does not scale profit. It scales exposure.</p>
+      </div>
+
+      <div class="analysis-block">
+        <h2>Classification Is About Alignment</h2>
+        <p>When certain services are flagged as high-risk, the issue is rarely lack of effort.</p>
+        <p>More often, the problem lies in misalignment—between pricing, scope, documentation requirements, and execution reality. When those elements are out of sync, rework becomes unavoidable regardless of team performance.</p>
+        <p>This analysis helps identify where adjustment is required before scale amplifies loss.</p>
+      </div>
+
+      <div class="analysis-block" style="border-top: 1px solid var(--color-border-light); padding-top: var(--space-2xl);">
+        <p style="font-weight: 700; color: var(--color-accent);">The most important outcome of this report is visibility.</p>
+        <p>Once work types are clearly classified by how they behave at scale, operators can make informed decisions—whether that means adjusting pricing, refining scope, changing vendors, or redesigning documentation flow.</p>
+        <p><em>Insight precedes correction.</em></p>
+      </div>
+    </section>
+
+    <div class="clarification-box">
+      <p style="margin:0;">
+        <strong>Note:</strong> This report is not a recommendation engine and does not prescribe operational action. It provides a structured lens for understanding how different services behave under real operating conditions—especially in high-volume, distributed property preservation environments. The goal is informed decision-making, not automated conclusions.
+      </p>
+    </div>
+
+    <div class="data-disclaimer">
+      <p>
+        All data presented in this analysis is anonymized or simulated and used solely for analytical demonstration and testing purposes. No real clients, vendors, properties, or organizations are represented. The intent is to illustrate operational risk patterns—not to reflect live or proprietary activity.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/methods/">Methods</a>
+        <a href="/about/">About</a>
+        <a href="mailto:hello@insightgaps.com">Contact</a>
+      </nav>
+      <div class="copyright">
+        &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/navigation.js"></script>
+</body>
+</html>
