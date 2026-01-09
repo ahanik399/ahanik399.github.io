@@ -8,13 +8,99 @@
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
+
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial Health Dashboard | Insight Gaps</title>
+  
   <link rel="stylesheet" href="../../style.css?v=8">
   <link rel="icon" href="../../favicon.png" type="image/png">
+
+  <style>
+    /* TYPOGRAPHY OVERRIDES */
+    :root {
+      --accent: #004d40; /* Deep Teal */
+      --text: #111;
+      --muted: #555;
+      --bg-box: #f4f6f8;
+      --font-serif: 'Charter', 'Bitstream Charter', serif;
+      --font-sans: system-ui, -apple-system, sans-serif;
+    }
+
+    body { font-family: var(--font-serif); color: var(--text); line-height: 1.6; }
+    h1, h2, h3 { font-family: var(--font-sans); color: var(--text); margin-top: 0; }
+    
+    /* LAYOUT CONTAINERS */
+    .page-header { max-width: 900px; margin-bottom: 30px; }
+    
+    /* SUB-NAVIGATION */
+    .report-subnav { margin-top: 20px; font-family: var(--font-sans); font-size: 0.9rem; }
+    .subnav-link { text-decoration: none; color: #777; margin-right: 15px; transition: color 0.2s; }
+    .subnav-link:hover { color: var(--accent); }
+    .subnav-link.active { font-weight: 700; color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+    /* FORENSIC INTRO BLOCK */
+    .forensic-intro { 
+      font-size: 1.15rem; 
+      color: #333; 
+      margin: 30px 0; 
+      border-left: 4px solid var(--accent); 
+      padding-left: 20px; 
+      font-style: italic;
+    }
+
+    /* "HOW TO READ" BOX */
+    .instruction-box {
+      background: var(--bg-box);
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 4px;
+    }
+    .instruction-box h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px; }
+    .instruction-box p { font-size: 0.95rem; margin-bottom: 0; color: #444; font-family: var(--font-sans); }
+
+    /* DASHBOARD CONTAINER */
+    .dashboard-frame {
+      position: relative; 
+      width: 100%; 
+      overflow: hidden; 
+      border: 1px solid #ddd; 
+      background: #fff; 
+      border-radius: 4px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 60px;
+    }
+
+    /* ANALYSIS SECTIONS (The Text Below Dashboard) */
+    .analysis-section { max-width: 800px; margin: 0 auto; }
+    .analysis-block { margin-bottom: 50px; }
+    .analysis-block h2 { font-size: 1.6rem; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; display: inline-block; }
+    .analysis-block p { font-size: 1.1rem; color: #222; margin-bottom: 15px; }
+
+    /* DISCLAIMERS */
+    .clarification-box { 
+      margin-top: 80px; 
+      padding: 25px; 
+      background: #fff; 
+      border: 1px solid #eee; 
+      font-style: italic; 
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .data-disclaimer { 
+      margin-top: 20px; 
+      padding-top: 20px; 
+      border-top: 1px solid #eee; 
+      font-size: 0.85rem; 
+      color: #999; 
+      font-family: var(--font-sans);
+    }
+  </style>
 </head>
 
 <body>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo"><img src="../../logo.png" alt="Insight Gaps"></a>
@@ -27,20 +113,34 @@
 </header>
 
 <main class="page-container">
-  <div style="margin-bottom: 40px;">
-    <a href="/analysis/property-preservation/" style="text-decoration: none; color: #777; font-size: 0.9rem;">&larr; Back to Property Preservation</a>
+  
+  <div class="page-header">
+    <a href="/analysis/property-preservation/" style="text-decoration: none; color: #777; font-size: 0.9rem; font-family: system-ui;">&larr; Back to Property Preservation</a>
     
     <nav class="report-subnav">
       <a href="financial-health.html" class="subnav-link active">Financial Health</a>
-      <a href="photo-qc-signals.html" class="subnav-link">Leakage Breakdown</a>
-      <a href="rework-loops.html" class="subnav-link">Work Order Breakdown</a>
+      <a href="leakage-breakdown.html" class="subnav-link">Leakage Breakdown</a>
+      <a href="work-order-breakdown.html" class="subnav-link">Work Order Breakdown</a>
     </nav>
 
-    <h1 style="margin-top: 10px; font-size: 2.2rem;">Financial Health Dashboard</h1>
-    <p style="font-size: 1.1rem; color: #555;">Revenue, profit leakage, and receivables overview.</p>
+    <h1 style="margin-top: 25px; font-size: 2.5rem; letter-spacing: -0.02em;">Financial Health Dashboard</h1>
+    
+    <div class="forensic-intro">
+      <p style="margin-top:0;">In property preservation, businesses rarely struggle because work stops coming in.</p>
+      <p><strong>They struggle because value quietly fails to complete its journey.</strong></p>
+      <p>Invoices are generated. Vendors are paid. Activity looks healthy on the surface. Yet somewhere between work completed and cash collected, friction appears.</p>
+      <p style="margin-bottom:0;">This dashboard exists to follow money through its full operational lifecycle, focusing not on how much work is done, but on how much value is actually retained.</p>
+    </div>
   </div>
 
-  <div style="position: relative; width: 100%; overflow: hidden; border: 1px solid #ddd; background: #fff; border-radius: 4px;">
+  <div class="instruction-box">
+    <h3>How to Read This Page</h3>
+    <p>
+      This view is designed to support clarity, not judgment. Rather than presenting isolated financial totals, the dashboard highlights patterns that emerge when operational effort, vendor execution, and client processes interact over time. <strong>The goal is visibility—making quiet inefficiencies observable before they become structural.</strong>
+    </p>
+  </div>
+
+  <div class="dashboard-frame">
     <div style="height: 650px; overflow: hidden; position: relative;">
         <iframe 
             src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/yISjF" 
@@ -51,8 +151,48 @@
         </iframe>
     </div>
   </div>
+
+  <section class="analysis-section">
+    
+    <div class="analysis-block">
+      <h2>The Retention Gap</h2>
+      <p>High revenue often creates a sense of security.</p>
+      <p>But revenue alone does not reveal how much value survives the operational process. By examining how funds move from invoicing to collection, this analysis exposes the <strong>retention gap</strong>—the difference between reported performance and financial reality. When that gap widens, the business may remain busy while its financial footing quietly weakens.</p>
+    </div>
+
+    <div class="analysis-block">
+      <h2>Receivables as Risk</h2>
+      <p>Delayed payments are often treated as temporary timing issues.</p>
+      <p>In practice, prolonged receivables frequently signal deeper operational friction. Documentation quality, approval cycles, and submission accuracy all influence whether value is eventually recovered. As delays stretch across billing cycles, the likelihood of full recovery declines—turning delay into exposure.</p>
+      <p>This perspective reframes receivables as <strong>operational risk</strong>, not just accounting backlog.</p>
+    </div>
+
+    <div class="analysis-block">
+      <h2>Income Efficiency Signal</h2>
+      <p>Operational efficiency is not only about cost control—it is about value retention.</p>
+      <p>When increasing effort produces diminishing retained value, the issue is rarely workload. It is misalignment between execution, pricing, and process design. Income efficiency serves as an early warning signal, highlighting when operations consume more energy than they preserve.</p>
+      <p>This dashboard helps make that imbalance visible while corrective action is still possible.</p>
+    </div>
+
+  </section>
+
+  <div class="clarification-box">
+    <p style="margin:0;">
+      <strong>Note:</strong> This report is not intended to replace accounting systems, forecasting tools, or financial advisory services. It is an operational analysis designed to help owners, managers, and distributed teams identify where friction emerges across real workflows—before margin erosion becomes normalized.
+    </p>
+  </div>
+
+  <div class="data-disclaimer">
+    <p>
+      All data presented in this dashboard is anonymized or simulated and used strictly for analytical demonstration and testing purposes. No real clients, vendors, properties, or organizations are represented. The focus is on illustrating operational patterns, not reporting live financial activity.
+    </p>
+  </div>
+
 </main>
 
-<footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 Insight Gaps</p></div></footer>
+<footer class="site-footer">
+  <div class="footer-inner"><p>&copy; 2026 Insight Gaps</p></div>
+</footer>
+
 </body>
 </html>
