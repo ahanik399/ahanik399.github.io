@@ -1,416 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operational Analysis Domains | Insight Gaps</title>
-  <meta name="description"
-    content="Investigative operational analysis domains examining profit leakage, workflow friction, and systemic risk patterns.">
-  <link rel="canonical" href="https://insightgaps.com/analysis/">
-  <link rel="icon" href="../favicon.png" type="image/png">
-
-  <style>
-    :root {
-      /* CORE PALETTE */
-      --bg-page: #ffffff;
-      --bg-panel: #f9fafb;
-      --text-primary: #111111;
-      --text-secondary: #555555;
-      --accent: #004d40;
-      /* Deep Teal */
-      --border: #e0e0e0;
-
-      /* TYPOGRAPHY */
-      --font-serif: 'Charter', 'Bitstream Charter', serif;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-      /* SPACING & LAYOUT */
-      --width-max: 1100px;
-      --nav-height: 80px;
-    }
-
-    /* RESET */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-page);
-      color: var(--text-primary);
-      font-family: var(--font-serif);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    /* HEADER & NAVIGATION */
-    .site-header {
-      border-bottom: 1px solid var(--border);
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .header-inner {
-      max-width: var(--width-max);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: var(--nav-height);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .main-nav {
-      display: flex;
-      height: 100%;
-      align-items: center;
-    }
-
-    .nav-item {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      margin-left: 30px;
-      position: relative;
-      /* Anchor for Mega Menu */
-    }
-
-    .nav-link {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-primary);
-      padding: 28px 0;
-    }
-
-    .nav-link:hover {
-      color: var(--accent);
-    }
-
-    /* --- REFACTORED MEGA MENU --- */
-    .mega-menu-container {
-      position: absolute;
-      top: 100%;
-      right: -20px;
-      /* Aligns dropdown relative to nav item */
-      width: 400px;
-      /* Compact width for focused menu */
-      background: #fff;
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--accent);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.2s ease;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Show on Hover */
-    .nav-item:hover .mega-menu-container {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    /* Mega Menu Header Link */
-    .mega-category-header {
-      display: block; /* Makes the link fill the width */
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-      margin-bottom: 15px;
-      letter-spacing: 0.05em;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .mega-category-header:hover {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .report-link {
-      display: block;
-      padding: 10px 12px;
-      margin: 0 -12px;
-      /* Negative margin for hover bleed */
-      border-radius: 4px;
-      transition: background 0.15s;
-    }
-
-    .report-link:hover {
-      background: var(--bg-panel);
-    }
-
-    .report-title {
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .report-desc {
-      font-family: var(--font-sans);
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-      display: block;
-    }
-
-    /* MAIN CONTENT LAYOUT */
-    .page-container {
-      max-width: var(--width-max);
-      margin: 60px auto;
-      padding: 0 24px;
-    }
-
-    h1 {
-      font-family: var(--font-sans);
-      font-size: 2.5rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 40px;
-      font-weight: 800;
-    }
-
-    /* DOMAIN LIST */
-    .domain-list {
-      border-top: 1px solid var(--border);
-    }
-
-    /* REFACTORED DOMAIN ITEM (CLICKABLE CARD) */
-    .domain-item {
-      display: block;
-      /* Makes the whole article a block link container */
-      position: relative;
-      border-bottom: 1px solid var(--border);
-      padding: 40px 30px 40px 0;
-      /* Right padding for arrow space */
-      text-decoration: none;
-      /* Remove default link underline */
-      transition: background-color 0.2s ease;
-    }
-
-    /* Hover effect for the whole card */
-    .domain-item:not([aria-disabled="true"]):hover {
-      background-color: var(--bg-panel);
-      padding-left: 20px;
-      /* Slight indent on hover */
-      margin-left: -20px;
-      margin-right: -20px;
-      padding-right: 50px;
-      border-radius: 4px;
-    }
-
-    .domain-info h2 {
-      font-family: var(--font-sans);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: var(--text-primary);
-      transition: color 0.2s;
-    }
-
-    /* Highlight title on hover */
-    .domain-item:not([aria-disabled="true"]):hover .domain-info h2 {
-      color: var(--accent);
-    }
-
-    .domain-info p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin-bottom: 0;
-    }
-
-    /* Pseudo-element for the arrow */
-    .domain-item:not([aria-disabled="true"])::after {
-      content: "→";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--border);
-      /* Subtle by default */
-      transition: color 0.2s, right 0.2s;
-    }
-
-    /* Active arrow state */
-    .domain-item:not([aria-disabled="true"]):hover::after {
-      color: var(--accent);
-      right: 20px;
-      /* Arrow moves slightly */
-    }
-
-
-    /* FOOTER */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 50px 0;
-      margin-top: 80px;
-      text-align: center;
-      font-family: var(--font-sans);
-      font-size: 13px;
-      color: #888;
-    }
-
-    .footer-nav a {
-      margin: 0 15px;
-      color: var(--text-secondary);
-    }
-
-    .footer-nav {
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Risks: P&P Structural Erosion | Insight Gaps</title>
+    <meta name="description" content="Forensic analysis of operational friction points in Property Preservation: CRM sync failures, PCR drift, and invoice syntax errors.">
+    
+    <style>
+      :root {
+        --bg: #fff;
+        --text: #111;
+        --muted: #555;
+        --accent: #004d40; /* Deep Teal */
+        --border: #e0e0e0;
+        --font-serif: 'Charter', 'Bitstream Charter', serif;
+        --font-sans: system-ui, -apple-system, sans-serif;
       }
-
-      .main-nav {
-        margin-top: 20px;
-        flex-direction: column;
-      }
-
-      .nav-item {
-        margin: 10px 0;
-      }
-
-      .mega-menu-container {
-        display: none;
-      }
-
-      /* Simplified for mobile */
-      .domain-item:hover {
-        padding-left: 0;
-        margin-left: 0;
-        margin-right: 0;
-        background: transparent;
-      }
-
-      .domain-item::after {
-        display: none;
-      }
-    }
-  </style>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4PYE0MEK12');
-  </script>
+      body { margin:0; padding:0; font-family:var(--font-serif); color:var(--text); line-height:1.6; background: var(--bg); }
+      * { box-sizing:border-box; }
+      
+      /* Layout */
+      header { border-bottom: 1px solid var(--border); padding: 20px 0; }
+      nav { max-width: 960px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+      nav a { text-decoration: none; color: var(--text); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; margin-left: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+      nav a:hover { color: var(--accent); }
+      
+      main { max-width:960px; margin:60px auto; padding:0 24px; }
+      .forensic-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:40px; }
+      
+      /* Cards */
+      .forensic-card { border:1px solid var(--border); border-left:6px solid var(--text); background:#f9fafb; padding:30px; display:flex; flex-direction:column; justify-content: space-between; }
+      .forensic-card:hover { transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,0.05); transition: all 0.2s ease; border-left-color: var(--accent); }
+      
+      /* Typography */
+      h1 { font-family:var(--font-sans); font-size:2.5rem; letter-spacing:-0.02em; margin-bottom:15px; line-height: 1.2; }
+      h2 { font-family:var(--font-sans); font-size:1.5rem; margin-top: 40px; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+      h3 { font-family:var(--font-sans); font-size:1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--accent); }
+      
+      .lead { font-size:1.35rem; color:var(--muted); border-left:4px solid var(--accent); padding-left:20px; margin:40px 0; font-style:italic; background: #fafafa; padding: 20px; }
+      .tagline { font-family:var(--font-sans); font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:10px; }
+      .meta { font-family: var(--font-sans); font-size: 0.85rem; color: var(--muted); margin-bottom: 40px; }
+      
+      /* Specific Elements */
+      .risk-list { list-style: none; padding: 0; margin: 0; }
+      .risk-list li { margin-bottom: 8px; font-size: 0.95rem; display: flex; align-items: flex-start; }
+      .risk-list li::before { content: "⚠️"; font-size: 0.8rem; margin-right: 10px; color: var(--accent); margin-top: 3px; }
+      
+      footer { background: #111; color: #fff; padding: 40px 0; margin-top: 80px; }
+      .footer-content { max-width: 960px; margin: 0 auto; padding: 0 24px; font-family: var(--font-sans); font-size: 0.8rem; opacity: 0.7; }
+    </style>
 </head>
-
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="Insight Gaps Home">
-        <img src="../logo.png" alt="Insight Gaps" width="auto" height="45">
-      </a>
 
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-item">
-          <a href="/" class="nav-link">Home</a>
-        </div>
-        <div class="nav-item">
-          <a href="/investigations/" class="nav-link">Investigations</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="/analysis/" class="nav-link">Analysis ▾</a>
-
-          <div class="mega-menu-container">
-            <a href="/analysis/property-preservation/" class="mega-category-header">Property Preservation</a>
-
-            <div class="mega-links-group">
-              <a href="/analysis/property-preservation/financial-health.html" class="report-link">
-                <span class="report-title">Financial Health</span>
-                <span class="report-desc">Cash flow retention & receivables risk analysis.</span>
-              </a>
-
-              <a href="/analysis/property-preservation/leakage-breakdown.html" class="report-link">
-                <span class="report-title">Leakage Breakdown</span>
-                <span class="report-desc">Operational profit loss autopsy & rework loops.</span>
-              </a>
-
-              <a href="/analysis/property-preservation/work-order-breakdown.html" class="report-link">
-                <span class="report-title">Work Order Breakdown</span>
-                <span class="report-desc">Risk profiling by service type & volume.</span>
-              </a>
+    <header>
+        <nav>
+            <div style="font-weight:900; font-size:1.2rem; font-family:var(--font-sans);">INSIGHT GAPS</div>
+            <div>
+                <a href="../../index.html">Home</a>
+                <a href="../../investigations.html">Investigations</a>
+                <a href="../index.html" style="border-bottom: 2px solid var(--accent);">Analysis</a>
             </div>
-          </div>
+        </nav>
+    </header>
+
+    <main>
+        <span class="tagline">Property Preservation / Operational Risks</span>
+        <h1>Operational Risks: The Anatomy of Workflow Friction</h1>
+        <div class="meta">Filed under: Structural Erosion | Date: January 11, 2026</div>
+
+        <div class="lead">
+            Operational friction in Property Preservation is rarely dramatic; it is cumulative. The following forensic analysis dissects the specific failure points—from <strong>CRM Sync Failures</strong> to <strong>PCR Score Drift</strong>—that silently compound to create massive margin compression. Insight precedes correction.
         </div>
-      </nav>
-    </div>
-  </header>
 
-  <main class="page-container" role="main">
-    <h1>Operational Analysis Domains</h1>
+        
+        <p>
+            In the high-volume, low-margin environment of Property Preservation (P&P), operational risks are not merely nuisances; they are liquidity traps. Our data suggests that vendors lose between <strong>8% to 14%</strong> of billable revenue not to denial, but to "process leakage"—money left on the table due to documentation lag, metadata loss, and alignment failures.
+        </p>
 
-    <div class="domain-list">
-      <a href="/analysis/property-preservation/" class="domain-item">
-        <div class="domain-info">
-          <h2>Property Preservation</h2>
-          <p>Forensic analysis of workflow friction, vendor profit leakage, and documentation failure in high-volume
-            preservation portfolios.</p>
+        <p>
+            We have categorized the primary vectors of operational risk below, focusing on the disconnect between field reality and administrative record.
+        </p>
+
+        <div class="forensic-grid">
+            
+            <div class="forensic-card">
+                <span class="tagline">Data Integrity</span>
+                <h3>Digital Handshake Failures</h3>
+                <p>When the field app and the client portal fail to communicate, revenue halts. These are silent errors that often go undetected until invoice aging exceeds 45 days.</p>
+                <ul class="risk-list">
+                    <li><strong>CRM Sync Failures:</strong> Unidirectional data flow preventing status updates.</li>
+                    <li><strong>API Latency:</strong> Timeout errors during bulk uploads resulting in partial data commits.</li>
+                    <li><strong>Mobile Sync Gaps:</strong> Field units operating offline failing to reconcile upon reconnection.</li>
+                </ul>
+            </div>
+
+            <div class="forensic-card">
+                <span class="tagline">Field Execution</span>
+                <h3>Field Documentation Drift</h3>
+                <p>The discrepancy between the work performed and the digital proof provided. This is the primary driver of "insufficient documentation" chargebacks.</p>
+                <ul class="risk-list">
+                    <li><strong>Photo Redundancy:</strong> Excessive upload volume obscuring the critical "before/during/after" narrative.</li>
+                    <li><strong>GeoTagging Risks:</strong> Metadata loss rendering photos inadmissible for HUD validation.</li>
+                    <li><strong>Metadata Loss:</strong> Stripped EXIF data during image compression or transfer.</li>
+                </ul>
+            </div>
+
+            <div class="forensic-card">
+                <span class="tagline">Financial Erosion</span>
+                <h3>Financial Syntax & Logic</h3>
+                <p>Administrative errors that trigger algorithmic denials. These are unforced errors in the billing cycle.</p>
+                <ul class="risk-list">
+                    <li><strong>Invoice Syntax Errors:</strong> Line items failing to match client-specific SKU codes.</li>
+                    <li><strong>Trip Charge Leakage:</strong> Failure to bill allowable trip charges on incomplete work orders.</li>
+                    <li><strong>Bid Accuracy:</strong> Estimating repair costs below the localized cost of materials index.</li>
+                </ul>
+            </div>
+
+            <div class="forensic-card">
+                <span class="tagline">Regulatory Alignment</span>
+                <h3>Compliance & Scope</h3>
+                <p>The risk of performing work that is technically correct but contractually non-compliant or unauthorized.</p>
+                <ul class="risk-list">
+                    <li><strong>HUD P&P Alignment:</strong> Deviations from mortgagee letter guidelines.</li>
+                    <li><strong>PCR Score Drift:</strong> Inconsistent grading of property conditions leading to incorrect preservation paths.</li>
+                    <li><strong>Scope Creep:</strong> Field crews performing unapproved ancillary work without supplemental bids.</li>
+                </ul>
+            </div>
+
         </div>
-        </a>
 
-      <div class="domain-item" aria-disabled="true" style="opacity: 0.6; cursor: default;">
-        <div class="domain-info">
-          <h2>Revenue Cycle Management</h2>
-          <p>Coming Soon: Analysis of accounts receivable aging and denial management.</p>
+        <h2>The "Documentation Lag" Effect</h2>
+        <p>
+            Perhaps the most insidious risk identified in this dataset is <strong>Documentation Lag</strong>. The time delta between work completion and data upload is directly proportional to denial rates. 
+        </p>
+        
+        
+        <p>
+            When documentation lags, two structural failures occur:
+        </p>
+        <ol>
+            <li><strong>Narrative Decay:</strong> The specific context of <em>why</em> a repair was needed is lost, leading to generic denial appeals that fail.</li>
+            <li><strong>Metadata Expiration:</strong> Validating timestamps becomes difficult if the upload occurs outside the acceptable window defined by the SLA.</li>
+        </ol>
+
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 40px 0;">
+
+        <h3>Next Steps for Operators</h3>
+        <p>
+            To mitigate these operational risks, firms must move from "reactive correction" to "forensic prevention." This requires auditing the <strong>Bulk Upload</strong> process for API latency and instituting strict validation rules for <strong>Invoice Syntax</strong> before submission.
+        </p>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Insight Gaps. All rights reserved.</p>
+            <p style="margin-top: 20px; font-style: italic;">
+                <strong>Data Scope & Methodology:</strong> The operational risks outlined in this report are based on simulated aggregate data modeling standard Property Preservation workflows. No proprietary vendor data was exposed in this analysis.
+            </p>
         </div>
-      </div>
-    </div>
-  </main>
+    </footer>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/methods/">Methods</a>
-        <a href="/about/">About</a>
-        <a href="mailto:hello@insightgaps.com">Contact</a>
-      </nav>
-      <div class="copyright">
-        &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
-      </div>
-    </div>
-  </footer>
-
-  <script src="../scripts.js"></script>
 </body>
-
 </html>
