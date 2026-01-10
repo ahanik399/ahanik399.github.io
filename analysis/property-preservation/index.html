@@ -1,160 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Property Preservation Operational Analysis | Insight Gaps</title>
-  <meta name="description" content="Investigative operational analysis of property preservation workflows. Identify profit leakage, rework loops, and cash flow risk before margins erode.">
-  <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/">
-  <link rel="icon" href="../../favicon.png" type="image/png">
-  
-  <link rel="stylesheet" href="../../style.css">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4PYE0MEK12');
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Erosion | Insight Gaps</title>
+    
+    <style>
+      /* --- FORENSIC DESIGN SYSTEM (MANDATORY) --- */
+      :root {
+        --bg: #fff;
+        --text: #111;
+        --muted: #555;
+        --accent: #004d40; /* Deep Teal */
+        --border: #e0e0e0;
+        --font-serif: 'Charter', 'Bitstream Charter', serif;
+        --font-sans: system-ui, -apple-system, sans-serif;
+        --nav-height: 70px;
+      }
+      body { margin:0; padding:0; font-family:var(--font-serif); color:var(--text); line-height:1.6; background: var(--bg); }
+      * { box-sizing:border-box; }
+      
+      /* Navigation */
+      header {
+          height: var(--nav-height);
+          border-bottom: 1px solid var(--border);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 40px;
+          position: sticky;
+          top: 0;
+          background: #fff;
+          z-index: 1000;
+      }
+      .logo { font-family: var(--font-sans); font-weight: 800; font-size: 1.2rem; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+      nav a { text-decoration: none; color: var(--muted); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem; margin-left: 30px; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+      nav a:hover, nav a.active { color: var(--accent); }
+
+      /* Layout */
+      main { max-width:960px; margin:60px auto; padding:0 24px; }
+      .forensic-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; margin-top:40px; }
+      
+      /* Cards */
+      .forensic-card { border:1px solid var(--border); border-left:6px solid var(--text); background:#f9fafb; padding:30px; display:flex; flex-direction:column; }
+      .forensic-card:hover { transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,0.05); transition: all 0.2s ease; }
+      
+      /* Typography */
+      h1 { font-family:var(--font-sans); font-size:2.5rem; letter-spacing:-0.02em; margin-bottom:15px; margin-top: 0; }
+      h2 { font-family:var(--font-sans); font-size:1.5rem; margin-top: 50px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+      h3 { font-family:var(--font-sans); font-size:1.1rem; color: var(--accent); margin-bottom: 10px; }
+      .lead { font-size:1.35rem; color:var(--muted); border-left:4px solid var(--accent); padding-left:20px; margin:40px 0; font-style:italic; }
+      .tagline { font-family:var(--font-sans); font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:10px; letter-spacing: 1px; }
+      .btn-report { font-family:var(--font-sans); font-weight:700; text-decoration:none; color:var(--text); border-bottom:2px solid var(--accent); font-size:0.9rem; margin-top: auto; align-self: flex-start; padding-bottom: 2px; }
+      
+      /* Data Tables */
+      .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; font-family: var(--font-sans); font-size: 0.9rem; }
+      .data-table th { text-align: left; background: #f4f4f4; padding: 12px; border-bottom: 2px solid var(--accent); }
+      .data-table td { padding: 12px; border-bottom: 1px solid #eee; }
+      .data-table tr:last-child td { border-bottom: none; }
+      .negative { color: #d32f2f; font-weight: 600; }
+
+      /* Footer */
+      footer { border-top: 1px solid var(--border); padding: 40px; margin-top: 80px; text-align: center; font-family: var(--font-sans); font-size: 0.8rem; color: var(--muted); }
+      .disclaimer { max-width: 600px; margin: 20px auto; font-style: italic; opacity: 0.8; }
+    </style>
 </head>
-
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="Insight Gaps Home">
-        <img src="../../logo.png" alt="Insight Gaps" width="auto" height="45">
-      </a>
-      
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-item">
-          <a href="/" class="nav-link">Home</a>
+
+    <header>
+        <a href="../../index.html" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#004d40" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            Insight Gaps
+        </a>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../../investigations.html">Investigations</a>
+            <a href="../index.html" class="active">Analysis</a>
+        </nav>
+    </header>
+
+    <main>
+        <span class="tagline">Margin Compression Analysis // ID: FIN-2026-04</span>
+        <h1>Financial Erosion: The Cumulative Cost of Micro-Friction</h1>
+        
+        <div class="lead">
+            Profit leakage in property preservation rarely occurs in large, visible failures. Instead, it is the result of structural erosion—hundreds of $15 and $25 losses hidden within administrative workflows, unbilled "courtesy" tasks, and compliance loops.
         </div>
-        <div class="nav-item">
-          <a href="/investigations/" class="nav-link">Investigations</a>
-        </div>
-        <div class="nav-item">
-          <a href="/analysis/" class="nav-link">Analysis ▾</a>
-          
-          <div class="mega-menu-container">
-            <div class="mega-sidebar">
-              <a href="#" class="mega-sidebar-link active">Property Preservation</a>
-              <a href="#" class="mega-sidebar-link">Financial Erosion</a>
-              <a href="#" class="mega-sidebar-link">Compliance Gaps</a>
-              <a href="#" class="mega-sidebar-link">Workflow Friction</a>
-              <a href="#" class="mega-sidebar-link">Vendor Retention</a>
-              <a href="#" class="mega-sidebar-link">Tech Audits</a>
+
+        <p>In high-volume field services, the cost of generating revenue often exceeds the cost of the labor itself. Our forensic audit of 45,000 work orders reveals that <strong>12.4% of potential gross margin</strong> is lost not to bid denials, but to "Silent Erosion"—work performed but never invoiced due to administrative complexity.</p>
+
+        
+        <h2>The Anatomy of Leakage</h2>
+        <p>We categorized financial erosion into three primary vectors. These are distinct from direct operational costs (labor/materials); these are costs incurred solely to satisfy the verification mechanism of the client.</p>
+
+        <div class="forensic-grid">
+            <div class="forensic-card">
+                <h3>1. The "Bid Scraping" Effect</h3>
+                <p>When valid bid requests for minor repairs (e.g., $40 for a handrail bracket) are rejected twice, 63% of vendors will simply perform the work for free rather than submit a third bid. The administrative cost of the third upload exceeds the profit margin of the task.</p>
             </div>
 
-            <div class="mega-content">
+            <div class="forensic-card">
+                <h3>2. Trip Charge Decoupling</h3>
+                <p>Systemic analysis shows that 1 in 5 valid trip charges are auto-denied due to geotag discrepancies of less than 50 feet. The dispute resolution process costs an average of $18 in staff time to recover a $30 fee.</p>
             </div>
-          </div>
+
+            <div class="forensic-card">
+                <h3>3. Photo Evidence Redundancy</h3>
+                <p>Compliance requirements have shifted from "proof of completion" to "proof of method." The storage, transfer, and labeling of redundant photos (pre-work, during-work, post-work, wide-angle) now consumes 8% of field labor time.</p>
+            </div>
         </div>
-      </nav>
-    </div>
-  </header>
 
-  <main class="page-container" role="main">
-    <article class="longform-article">
-      <header class="article-header">
-        <h1>Property Preservation Operational Analysis</h1>
+        <h2>Forensic Ledger: The Cost of Approval</h2>
+        <p>The table below models the "Cost to Collect"—the administrative overhead required to get a single invoice approved and paid. When the invoice value is low (under $100), the margin is frequently negative.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Invoice Bracket</th>
+                    <th>Avg. Admin Time (Min)</th>
+                    <th>Cost of Admin ($25/hr)</th>
+                    <th>Net Margin Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$0 - $75 (Grass/Maid)</td>
+                    <td>22 mins</td>
+                    <td>$9.16</td>
+                    <td class="negative">-18.3%</td>
+                </tr>
+                <tr>
+                    <td>$76 - $250 (Debris)</td>
+                    <td>35 mins</td>
+                    <td>$14.58</td>
+                    <td class="negative">-5.8%</td>
+                </tr>
+                <tr>
+                    <td>$250 - $1,000 (Repairs)</td>
+                    <td>45 mins</td>
+                    <td>$18.75</td>
+                    <td>+12.2%</td>
+                </tr>
+                <tr>
+                    <td>$1,000+ (Rehab)</td>
+                    <td>90 mins</td>
+                    <td>$37.50</td>
+                    <td>+24.0%</td>
+                </tr>
+            </tbody>
+        </table>
+
         
-        <p class="lead">
-          Operational forensics examining how property preservation workflows quietly lose value across documentation, vendors, pricing, and approvals.
-        </p>
-      </header>
-      
-      
-      <div class="article-body">
-        <p>
-          Property preservation businesses rarely struggle because work disappears.
-          They struggle because complexity grows faster than visibility.
-        </p>
-        
-        <p>
-          Across high-volume operations—especially those supported by remote teams—small breakdowns in documentation, approvals, vendor execution, and pricing compound over time. These failures rarely appear in standard revenue or volume reports.
-        </p>
-        
-        <p>
-          This analysis domain surfaces those hidden patterns by following how operational effort translates into retained value—not just reported activity.
-        </p>
+        <h2>Systemic Risk Conclusion</h2>
+        <p>The data indicates a critical inversion: As HUD and investor guidelines become more granular, the administrative burden disproportionately impacts the highest-volume, lowest-margin tasks (recurring maintenance). This creates a <strong>Retention Gap</strong>, where high-performing vendors exit the network not because of low pricing, but because of high friction.</p>
 
-        <h2>What This Analysis Covers</h2>
-        <p>
-          This page is an index of investigative reports demonstrating how operational data in property preservation can be used to detect systemic risk, profit leakage, and workflow friction.
-        </p>
-        <p>
-          Rather than focusing on isolated incidents, the analyses examine recurring patterns that emerge only at scale—where margin erosion becomes structural.
-        </p>
-      </div>
-    </article>
+        <p>Correction requires decoupling evidence requirements from invoice value. Until low-value tasks are automated to "trust-but-verify" standards, financial erosion will continue to compress margins below sustainable thresholds.</p>
 
-    <section>
-      <h2 class="section-label text-center" style="margin-top: var(--space-3xl);">Forensic Reports</h2>
+    </main>
 
-      <div class="forensic-grid">
-        <article class="forensic-card">
-          <span class="tagline">Profit Leakage</span>
-          <h3>Financial Erosion</h3>
-          <p>Analyzing the silent revenue loss caused by invoice syntax errors, bid inaccuracies, and denial loops.</p>
-          <a href="financial-erosion.html" class="btn-report">View Analysis →</a>
-        </article>
+    <footer>
+        <div>&copy; 2026 Insight Gaps. All Rights Reserved.</div>
+        <br>
+        <div class="disclaimer">
+            <strong>Data Scope & Methodology:</strong> This report is based on anonymized, simulated operational data sets designed to reflect industry-standard variances in Property Preservation workflows. Financial figures are modeled estimates for forensic demonstration purposes only.
+        </div>
+    </footer>
 
-        <article class="forensic-card">
-          <span class="tagline">Regulatory Risk</span>
-          <h3>Compliance Gaps</h3>
-          <p>Detecting systemic drift in PCR scoring and HUD alignment that triggers audits and chargebacks.</p>
-          <a href="compliance-gaps.html" class="btn-report">View Analysis →</a>
-        </article>
-
-        <article class="forensic-card">
-          <span class="tagline">Process Efficiency</span>
-          <h3>Workflow Friction</h3>
-          <p>Measuring the cost of redundancy: photo upload bloat, API latency, and sync failures that stall cash flow.</p>
-          <a href="workflow-friction.html" class="btn-report">View Analysis →</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="longform-article" style="margin-top: var(--space-4xl);">
-      <aside class="key-findings-box">
-        <h3>Operational Failure Patterns Observed</h3>
-        <ul>
-          <li><strong>Pre-submission photo quality risk</strong> detectable before QC review begins.</li>
-          <li><strong>Documentation readiness gaps</strong> correlated with downstream deductions.</li>
-          <li><strong>Vendor-specific rework loops</strong> repeating across the same service categories.</li>
-        </ul>
-      </aside>
-
-      <div class="article-body">
-        <h2>Who This Is For</h2>
-        <p>
-          This analysis is intended for property preservation operators, analysts, and managers responsible for vendor performance, documentation integrity, and cost control across distributed or remote workflows.
-        </p>
-      </div>
-
-      <div class="article-footer-cta">
-        <h4>Data Scope & Intent</h4>
-        <p>
-          All data presented within this domain is anonymized or simulated and used solely for analytical demonstration. These reports reflect realistic preservation workflows without representing actual companies, vendors, or client data.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/methods/">Methods</a>
-        <a href="/about/">About</a>
-        <a href="mailto:hello@insightgaps.com">Contact</a>
-      </nav>
-      <div class="copyright">
-        &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
-      </div>
-    </div>
-  </footer>
-
-  <script src="../../js/navigation.js"></script>
 </body>
 </html>
