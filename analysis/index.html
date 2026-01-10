@@ -5,14 +5,223 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operational Analysis Domains | Insight Gaps</title>
-  <meta name="description"
-    content="Investigative operational analysis domains examining profit leakage, workflow friction, and systemic risk patterns.">
+  <meta name="description" content="Investigative operational analysis domains examining profit leakage, workflow friction, and systemic risk patterns.">
   <link rel="canonical" href="https://insightgaps.com/analysis/">
   <link rel="icon" href="../favicon.png" type="image/png">
 
-  <link rel="stylesheet" href="../style.css">
+  <style>
+    :root {
+      /* CORE PALETTE */
+      --bg-page: #ffffff;
+      --bg-panel: #f9fafb;
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --accent: #004d40; /* Deep Teal */
+      --border: #e0e0e0;
 
-  <!-- Google Analytics -->
+      /* TYPOGRAPHY */
+      --font-serif: 'Charter', 'Bitstream Charter', serif;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      
+      /* SPACING & LAYOUT */
+      --width-max: 1100px;
+      --nav-height: 80px;
+    }
+
+    /* RESET */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: var(--font-serif);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; transition: color 0.2s; }
+    img { display: block; max-width: 100%; }
+
+    /* HEADER & NAVIGATION */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: var(--width-max);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: var(--nav-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-nav { display: flex; height: 100%; align-items: center; }
+    
+    .nav-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-left: 30px;
+      position: relative; /* Anchor for Mega Menu */
+    }
+
+    .nav-link {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      padding: 28px 0;
+    }
+    .nav-link:hover { color: var(--accent); }
+
+    /* --- REFACTORED MEGA MENU --- */
+    .mega-menu-container {
+      position: absolute;
+      top: 100%;
+      right: -20px; /* Aligns dropdown relative to nav item */
+      width: 400px; /* Compact width for focused menu */
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Show on Hover */
+    .nav-item:hover .mega-menu-container {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .mega-category-header {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      letter-spacing: 0.05em;
+    }
+
+    .report-link {
+      display: block;
+      padding: 10px 12px;
+      margin: 0 -12px; /* Negative margin for hover bleed */
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .report-link:hover { background: var(--bg-panel); }
+
+    .report-title {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    .report-desc {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* MAIN CONTENT LAYOUT */
+    .page-container {
+      max-width: var(--width-max);
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    h1 {
+      font-family: var(--font-sans);
+      font-size: 2.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 40px;
+      font-weight: 800;
+    }
+
+    /* DOMAIN LIST */
+    .domain-list { border-top: 1px solid var(--border); }
+    
+    .domain-item {
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .domain-info h2 {
+      font-family: var(--font-sans);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .domain-info p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 600px;
+    }
+
+    .btn-arrow {
+      justify-self: end;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+      font-size: 0.95rem;
+    }
+    .btn-arrow:hover { border-bottom-color: var(--accent); }
+    
+    .btn-arrow.disabled { color: #999; cursor: default; }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 50px 0;
+      margin-top: 80px;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #888;
+    }
+    .footer-nav a { margin: 0 15px; color: var(--text-secondary); }
+    .footer-nav { margin-bottom: 20px; }
+
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; height: auto; padding: 20px; }
+      .main-nav { margin-top: 20px; flex-direction: column; }
+      .nav-item { margin: 10px 0; }
+      .mega-menu-container { display: none; } /* Simplified for mobile */
+      .domain-item { grid-template-columns: 1fr; }
+      .btn-arrow { justify-self: start; margin-top: 10px; }
+    }
+  </style>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -36,41 +245,28 @@
         <div class="nav-item">
           <a href="/investigations/" class="nav-link">Investigations</a>
         </div>
+        
         <div class="nav-item">
           <a href="/analysis/" class="nav-link">Analysis ▾</a>
 
           <div class="mega-menu-container">
-            <div class="mega-sidebar">
-              <a href="#" class="mega-sidebar-link active">Operational Risks</a>
-              <a href="#" class="mega-sidebar-link">Financial Erosion</a>
-              <a href="#" class="mega-sidebar-link">Compliance Gaps</a>
-              <a href="#" class="mega-sidebar-link">Workflow Friction</a>
-              <a href="#" class="mega-sidebar-link">Vendor Retention</a>
-              <a href="#" class="mega-sidebar-link">Tech Audits</a>
-            </div>
+            <div class="mega-category-header">Property Preservation</div>
+            
+            <div class="mega-links-group">
+              <a href="/analysis/property-preservation/financial-health.html" class="report-link">
+                <span class="report-title">Financial Health</span>
+                <span class="report-desc">Cash flow retention & receivables risk analysis.</span>
+              </a>
 
-            <div class="mega-content">
-              <div class="mega-grid">
-                <a href="#" class="mega-grid-link">CRM Sync Failures</a>
-                <a href="#" class="mega-grid-link">GeoTagging Risks</a>
-                <a href="#" class="mega-grid-link">Metadata Loss</a>
+              <a href="/analysis/property-preservation/leakage-breakdown.html" class="report-link">
+                <span class="report-title">Leakage Breakdown</span>
+                <span class="report-desc">Operational profit loss autopsy & rework loops.</span>
+              </a>
 
-                <a href="#" class="mega-grid-link">Invoice Syntax Errors</a>
-                <a href="#" class="mega-grid-link">Documentation Lag</a>
-                <a href="#" class="mega-grid-link">Bid Accuracy</a>
-
-                <a href="#" class="mega-grid-link">PCR Score Drift</a>
-                <a href="#" class="mega-grid-link">HUD P&P Alignment</a>
-                <a href="#" class="mega-grid-link">Denial Appeals</a>
-
-                <a href="#" class="mega-grid-link">Photo Redundancy</a>
-                <a href="#" class="mega-grid-link">Trip Charge Leakage</a>
-                <a href="#" class="mega-grid-link">Scope Creep</a>
-
-                <a href="#" class="mega-grid-link">API Latency</a>
-                <a href="#" class="mega-grid-link">Bulk Upload Issues</a>
-                <a href="#" class="mega-grid-link">Mobile Sync Gaps</a>
-              </div>
+              <a href="/analysis/property-preservation/work-order-breakdown.html" class="report-link">
+                <span class="report-title">Work Order Breakdown</span>
+                <span class="report-desc">Risk profiling by service type & volume.</span>
+              </a>
             </div>
           </div>
         </div>
@@ -91,12 +287,12 @@
         <a href="/analysis/property-preservation/" class="btn-arrow">View Domain →</a>
       </article>
 
-      <article class="domain-item" aria-disabled="true">
+      <article class="domain-item" aria-disabled="true" style="opacity: 0.6;">
         <div class="domain-info">
           <h2>Revenue Cycle Management</h2>
           <p>Coming Soon: Analysis of accounts receivable aging and denial management.</p>
         </div>
-        <span class="btn-arrow">Coming Soon</span>
+        <span class="btn-arrow disabled">Coming Soon</span>
       </article>
     </div>
   </main>
