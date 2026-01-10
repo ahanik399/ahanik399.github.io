@@ -1,85 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operational Analysis Domains | Insight Gaps</title>
-  <meta name="description"
-    content="Investigative operational analysis domains examining profit leakage, workflow friction, and systemic risk patterns.">
-  <link rel="canonical" href="https://insightgaps.com/analysis/">
-  <link rel="icon" href="../favicon.png" type="image/png">
-
-  <link rel="stylesheet" href="../style.css">
+  <title>Property Preservation Operational Analysis | Insight Gaps</title>
+  <meta name="description" content="Investigative operational analysis of property preservation workflows. Identify profit leakage, rework loops, and cash flow risk before margins erode.">
+  <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/">
+  <link rel="icon" href="../../favicon.png" type="image/png">
   
-  <style>
-    /* Page specific overrides for the Analysis Hub Cards */
-    .domain-list {
-      border-top: 1px solid var(--color-border);
-    }
-
-    .domain-item {
-      display: block;
-      position: relative;
-      border-bottom: 1px solid var(--color-border);
-      padding: 40px 30px 40px 0;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-      cursor: pointer; /* Ensures it looks clickable */
-    }
-
-    .domain-item:not([aria-disabled="true"]):hover {
-      background-color: var(--color-bg-secondary);
-      padding-left: 20px;
-      margin-left: -20px;
-      margin-right: -20px;
-      padding-right: 50px;
-      border-radius: 4px;
-    }
-
-    .domain-info h2 {
-      font-family: var(--font-sans);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      transition: color 0.2s;
-    }
-
-    .domain-item:not([aria-disabled="true"]):hover .domain-info h2 {
-      color: var(--color-accent);
-    }
-
-    .domain-info p {
-      color: var(--color-text-secondary);
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin-bottom: 0;
-    }
-
-    .domain-item:not([aria-disabled="true"])::after {
-      content: "→";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--color-border);
-      transition: color 0.2s, right 0.2s;
-    }
-
-    .domain-item:not([aria-disabled="true"]):hover::after {
-      color: var(--color-accent);
-      right: 20px;
-    }
-  </style>
-
+  <link rel="stylesheet" href="../../style.css">
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
@@ -88,39 +22,29 @@
 <body>
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a href="../index.html" class="logo" aria-label="Insight Gaps Home">
-        <img src="../logo.png" alt="Insight Gaps" width="auto" height="45">
+      <a href="/" class="logo" aria-label="Insight Gaps Home">
+        <img src="../../logo.png" alt="Insight Gaps" width="auto" height="45">
       </a>
-
+      
       <nav class="main-nav" role="navigation" aria-label="Main navigation">
         <div class="nav-item">
-          <a href="../index.html" class="nav-link">Home</a>
+          <a href="/" class="nav-link">Home</a>
         </div>
         <div class="nav-item">
-          <a href="../investigations/index.html" class="nav-link">Investigations</a>
+          <a href="/investigations/" class="nav-link">Investigations</a>
         </div>
-
         <div class="nav-item">
-          <a href="index.html" class="nav-link">Analysis ▾</a>
-
+          <a href="/analysis/" class="nav-link">Analysis ▾</a>
+          
           <div class="mega-menu-container">
-            <a href="property-preservation/index.html" class="mega-category-header">Property Preservation</a>
+            <div class="mega-sidebar">
+              <a href="#" class="mega-sidebar-link active">Property Preservation</a>
+            </div>
 
-            <div class="mega-links-group">
-              <a href="property-preservation/financial-health.html" class="report-link">
-                <span class="report-title">Financial Health</span>
-                <span class="report-desc">Cash flow retention & receivables risk analysis.</span>
-              </a>
-
-              <a href="property-preservation/leakage-breakdown.html" class="report-link">
-                <span class="report-title">Leakage Breakdown</span>
-                <span class="report-desc">Operational profit loss autopsy & rework loops.</span>
-              </a>
-
-              <a href="property-preservation/work-order-breakdown.html" class="report-link">
-                <span class="report-title">Work Order Breakdown</span>
-                <span class="report-desc">Risk profiling by service type & volume.</span>
-              </a>
+            <div class="mega-content" style="display: flex; flex-direction: column; min-width: 200px; padding-left: 20px;">
+                <a href="financial-health.html" class="mega-sidebar-link" style="white-space: nowrap;">Cash Flow Risk</a>
+                <a href="leakage-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Profit Leakage</a>
+                <a href="work-order-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Work Order Risk</a>
             </div>
           </div>
         </div>
@@ -129,29 +53,105 @@
   </header>
 
   <main class="page-container" role="main">
-    <h1>Operational Analysis Domains</h1>
+    <article class="longform-article">
+      <header class="article-header">
+        <h1>Property Preservation Operational Analysis</h1>
+        
+        <p class="lead">
+          Operational forensics examining how property preservation workflows quietly lose value across documentation, vendors, pricing, and approvals.
+        </p>
+      </header>
 
-    <div class="domain-list">
-      <a href="property-preservation/index.html" class="domain-item">
-        <div class="domain-info">
-          <h2>Property Preservation</h2>
-          <p>Forensic analysis of workflow friction, vendor profit leakage, and documentation failure in high-volume
-            preservation portfolios.</p>
-        </div>
-        </a>
+      <div class="article-body">
+        <p>
+          Property preservation businesses rarely struggle because work disappears.
+          They struggle because complexity grows faster than visibility.
+        </p>
+        
+        <p>
+          Across high-volume operations—especially those supported by remote teams—small breakdowns in documentation, approvals, vendor execution, and pricing compound over time. These failures rarely appear in standard revenue or volume reports.
+        </p>
+        
+        <p>
+          This analysis domain surfaces those hidden patterns by following how operational effort translates into retained value—not just reported activity.
+        </p>
 
-      <div class="domain-item" aria-disabled="true" style="opacity: 0.6; cursor: default;">
-        <div class="domain-info">
-          <h2>Revenue Cycle Management</h2>
-          <p>Coming Soon: Analysis of accounts receivable aging and denial management.</p>
-        </div>
+        <h2>What This Analysis Covers</h2>
+        <p>
+          This page is an index of investigative reports demonstrating how operational data in property preservation can be used to detect systemic risk, profit leakage, and workflow friction.
+        </p>
+        <p>
+          Rather than focusing on isolated incidents, the analyses examine recurring patterns that emerge only at scale—where margin erosion becomes structural.
+        </p>
       </div>
-    </div>
+    </article>
+
+    <section>
+      <h2 class="section-label text-center" style="margin-top: var(--space-3xl);">Forensic Reports</h2>
+
+      <div class="forensic-grid">
+        <article class="forensic-card">
+          <span class="tagline">Cash Flow Risk</span>
+          <h3>Financial Health: The Cash Chain of Custody</h3>
+          <p>Tracks how revenue moves through invoicing, receivables, and collection to expose where cash retention breaks down.</p>
+          <a href="financial-health.html" class="btn-report">View Analysis →</a>
+        </article>
+
+        <article class="forensic-card">
+          <span class="tagline">Profit Leakage</span>
+          <h3>Leakage Breakdown: Structural Autopsy</h3>
+          <p>Examines recurring margin erosion caused by vendor overruns, documentation delays, and rework loops.</p>
+          <a href="leakage-breakdown.html" class="btn-report">View Analysis →</a>
+        </article>
+
+        <article class="forensic-card">
+          <span class="tagline">Work Order Risk</span>
+          <h3>Work Order Breakdown: Growth vs. Drain</h3>
+          <p>Identifies which service types scale profitably and which quietly magnify risk through repeated leakage.</p>
+          <a href="work-order-breakdown.html" class="btn-report">View Analysis →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="longform-article" style="margin-top: var(--space-4xl);">
+      <aside class="key-findings-box">
+        <h3>Operational Failure Patterns Observed</h3>
+        <ul>
+          <li><strong>Pre-submission photo quality risk</strong> detectable before QC review begins.</li>
+          <li><strong>Documentation readiness gaps</strong> correlated with downstream deductions.</li>
+          <li><strong>Vendor-specific rework loops</strong> repeating across the same service categories.</li>
+        </ul>
+      </aside>
+
+      <div class="article-body">
+        <h2>Who This Is For</h2>
+        <p>
+          This analysis is intended for property preservation operators, analysts, and managers responsible for vendor performance, documentation integrity, and cost control across distributed or remote workflows.
+        </p>
+      </div>
+
+      <div class="article-footer-cta">
+        <h4>Data Scope & Intent</h4>
+        <p>
+          All data presented within this domain is anonymized or simulated and used solely for analytical demonstration. These reports reflect realistic preservation workflows without representing actual companies, vendors, or client data.
+        </p>
+      </div>
+    </section>
   </main>
 
-  <div data-include="footer" data-path="../includes/footer.html"></div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/methods/">Methods</a>
+        <a href="/about/">About</a>
+        <a href="mailto:hello@insightgaps.com">Contact</a>
+      </nav>
+      <div class="copyright">
+        &copy; 2026 Insight Gaps | Forensic Data Journalism Bureau
+      </div>
+    </div>
+  </footer>
 
-  <script src="../js/components.js"></script>
-  <script src="../scripts.js"></script>
+  <script src="../../js/navigation.js"></script>
 </body>
 </html>
