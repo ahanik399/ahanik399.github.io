@@ -1,43 +1,31 @@
-/* --- RESPONSIVE DASHBOARD ENGINE --- */
+/* --- CINEMA MODE DASHBOARD --- */
 
-.dashboard-frame {
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 48px; /* Space between dashboard and text */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.embed-container {
+/* The Stage: Spans full width of browser and 85% of screen height */
+.dashboard-cinema-stage {
+  width: 100vw;               /* Full Viewport Width */
+  height: 85vh;               /* 85% of Viewport Height */
   position: relative;
-  width: 100%;
-  height: 0;
-  /* Aspect Ratio Calculation:
-     This sets a standard 16:9 ratio (9 / 16 = 0.5625).
-     This ensures the dashboard looks like a presentation slide on desktop.
-  */
-  padding-bottom: 56.25%; 
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;         /* Center it perfectly even inside other containers */
+  margin-right: -50vw;
+  background: #f4f6f8;        /* Subtle gray background to frame the data */
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05); /* Inner shadow for depth */
 }
 
-.embed-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* The Screen: Fills the stage */
+.cinema-iframe {
   width: 100%;
   height: 100%;
   border: 0;
+  display: block;
 }
 
-/* --- MOBILE OPTIMIZATION --- */
+/* --- MOBILE ADJUSTMENT --- */
 @media (max-width: 768px) {
-  .embed-container {
-    /* On mobile, 16:9 is too short and squashes the charts.
-       We increase the height to 120% of the width (Portrait Mode)
-       so the user can scroll vertically inside the iframe if needed,
-       or see the stacked charts clearly.
-    */
-    padding-bottom: 120%; 
+  .dashboard-cinema-stage {
+    height: 70vh; /* Slightly shorter on phones to allow scrolling */
   }
 }
