@@ -1,18 +1,247 @@
-/* --- CINEMA MODE DASHBOARD --- */
+/* =========================================
+   INSIGHT GAPS - MASTER DESIGN SYSTEM
+   Forensic Data Journalism Architecture
+   ========================================= */
 
-/* The Stage: Spans full width of browser and 85% of screen height */
+:root {
+  /* --- COLOR PALETTE --- */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;   /* Light Gray for Cards/Sidebars */
+  --bg-tertiary: #f4f6f8;    /* Cinema Mode Background */
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-meta: #767676;
+  
+  /* BRANDING */
+  --accent: #004d40;         /* Deep Teal - Primary Brand Color */
+  --accent-hover: #00695c;
+  --border: #e0e0e0;
+  --border-light: #f0f0f0;
+  --error: #b71c1c;          /* Used for "Featured" tags */
+
+  /* --- TYPOGRAPHY --- */
+  --font-serif: 'Charter', 'Bitstream Charter', serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
+
+  /* --- LAYOUT VARIABLES --- */
+  --container-width: 1100px;
+  --container-width-narrow: 800px;
+  --header-height: 80px;
+  --border-radius: 4px;
+}
+
+/* =========================================
+   1. RESET & GLOBAL BASE
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: var(--font-serif); 
+  color: var(--text-primary); 
+  background: var(--bg-primary); 
+  line-height: 1.6; 
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { 
+  color: var(--accent); 
+  text-decoration: none; 
+  transition: 0.2s ease; 
+}
+a:hover { color: var(--accent-hover); }
+
+/* =========================================
+   2. TYPOGRAPHY SYSTEM
+   ========================================= */
+h1, h2, h3, h4 { 
+  font-family: var(--font-sans); 
+  font-weight: 700; 
+  color: var(--text-primary); 
+  line-height: 1.1; 
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 24px; letter-spacing: -0.02em; }
+h2 { font-size: 2rem; margin: 48px 0 24px; }
+h3 { font-size: 1.5rem; margin: 32px 0 16px; }
+p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.05rem; }
+
+/* Lead Paragraph / Deck */
+.lead {
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  border-left: 4px solid var(--accent);
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+
+/* Forensic Intro Block (Used in Analysis Reports) */
+.forensic-intro {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin: 40px 0;
+  border-left: 4px solid var(--accent);
+  padding-left: 24px;
+  font-style: italic;
+  background: var(--bg-secondary);
+  padding: 24px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Instruction / Context Box */
+.instruction-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: var(--border-radius);
+  margin-bottom: 40px;
+}
+
+.data-disclaimer {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-meta);
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 60px;
+}
+
+/* =========================================
+   3. LAYOUT & CONTAINERS
+   ========================================= */
+.page-container { 
+  max-width: var(--container-width); 
+  margin: 60px auto; 
+  padding: 0 24px; 
+}
+
+.longform-article {
+  max-width: var(--container-width-narrow); 
+  margin: 0 auto; 
+}
+
+/* =========================================
+   4. NAVIGATION & HEADER
+   ========================================= */
+.site-header { 
+  border-bottom: 1px solid var(--border); 
+  background: var(--bg-primary); 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+}
+
+.header-inner { 
+  max-width: var(--container-width); 
+  margin: 0 auto; 
+  height: var(--header-height); 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 24px; 
+}
+
+.main-nav { 
+  display: flex; 
+  gap: 32px; 
+  height: 100%; 
+  align-items: center; 
+}
+
+.nav-link { 
+  font-family: var(--font-sans); 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  font-size: 0.85rem; 
+  color: var(--text-primary); 
+  padding: 28px 0; 
+  position: relative; 
+}
+
+.nav-link:hover, .nav-link.active { color: var(--accent); }
+.nav-link.active::after { 
+  content: ''; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 3px; 
+  background: var(--accent); 
+}
+
+/* MEGA MENU SYSTEM */
+.mega-menu-container {
+  position: absolute; 
+  top: 100%; 
+  right: 0; 
+  width: 900px;
+  background: var(--bg-primary); 
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+  display: flex;
+  opacity: 0; 
+  visibility: hidden; 
+  transform: translateY(10px); 
+  transition: 0.2s ease;
+}
+
+.nav-item:hover .mega-menu-container { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0); 
+}
+
+.mega-sidebar { 
+  width: 240px; 
+  background: var(--bg-secondary); 
+  border-right: 1px solid var(--border); 
+  padding: 10px 0;
+}
+
+.mega-sidebar-link { 
+  display: block; 
+  padding: 12px 24px; 
+  font-family: var(--font-sans); 
+  font-weight: 600; 
+  color: var(--text-secondary); 
+  border-bottom: 1px solid var(--border-light); 
+  font-size: 0.95rem;
+}
+
+.mega-sidebar-link:hover, .mega-sidebar-link.active { 
+  background: var(--accent); 
+  color: white; 
+}
+
+.mega-content { flex: 1; padding: 32px; }
+.mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.mega-grid-link { 
+  font-family: var(--font-sans); 
+  font-size: 0.85rem; 
+  color: var(--text-secondary); 
+  border-bottom: 1px dotted #ccc; 
+  padding-bottom: 8px; 
+}
+.mega-grid-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* =========================================
+   5. CINEMA MODE DASHBOARD (For Financial Health)
+   ========================================= */
+/* The Stage: Spans full width of browser */
 .dashboard-cinema-stage {
-  width: 100vw;               /* Full Viewport Width */
+  width: 100vw;               
   height: 85vh;               /* 85% of Viewport Height */
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;         /* Center it perfectly even inside other containers */
+  margin-left: -50vw;         /* Force center alignment */
   margin-right: -50vw;
-  background: #f4f6f8;        /* Subtle gray background to frame the data */
+  background: var(--bg-tertiary);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.05); /* Inner shadow for depth */
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
 }
 
 /* The Screen: Fills the stage */
@@ -23,9 +252,156 @@
   display: block;
 }
 
-/* --- MOBILE ADJUSTMENT --- */
+/* Mobile Adjustment for Cinema Mode */
 @media (max-width: 768px) {
   .dashboard-cinema-stage {
-    height: 70vh; /* Slightly shorter on phones to allow scrolling */
+    height: 70vh; /* Shorter on phones */
   }
 }
+
+/* =========================================
+   6. FORENSIC CARDS (For Analysis Index)
+   ========================================= */
+.forensic-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 32px; 
+  margin-top: 40px; 
+}
+
+.forensic-card {
+  background: white; 
+  border: 1px solid var(--border); 
+  border-left: 6px solid var(--text-primary);
+  border-radius: 6px; 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.forensic-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+}
+
+/* Card Color Coding */
+.card-financial { border-left-color: #0ea5e9; } /* Blue */
+.card-leakage { border-left-color: #8b5cf6; }   /* Purple */
+.card-workorder { border-left-color: #f97316; } /* Orange */
+
+.card-preview-stage { 
+  height: 160px; 
+  background: var(--bg-tertiary); 
+  position: relative; 
+  overflow: hidden; 
+  cursor: pointer; 
+}
+
+.card-preview-img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: 0.5s; 
+}
+
+.forensic-card:hover .card-preview-img { 
+  transform: scale(1.05); 
+  opacity: 0.9; 
+}
+
+.card-content { 
+  padding: 24px; 
+  display: flex; 
+  flex-direction: column; 
+  flex-grow: 1; 
+}
+
+.tagline { 
+  font-family: var(--font-sans); 
+  font-size: 0.7rem; 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  color: var(--accent); 
+  margin-bottom: 8px; 
+  display: block; 
+}
+
+.btn-report { 
+  font-family: var(--font-sans); 
+  font-weight: 700; 
+  border-bottom: 2px solid var(--accent); 
+  display: inline-block; 
+  margin-top: auto; 
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   7. POPUP SYSTEM
+   ========================================= */
+.popup-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9); z-index: 9999;
+  display: flex; justify-content: center; align-items: center;
+  opacity: 0; visibility: hidden; transition: 0.3s;
+  backdrop-filter: blur(5px);
+}
+.popup-overlay.active { opacity: 1; visibility: visible; }
+
+.popup-content { position: relative; max-width: 90%; max-height: 90%; }
+.popup-image { max-width: 100%; max-height: 90vh; border-radius: 4px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+
+.popup-close { 
+  position: absolute; top: -40px; right: 0; 
+  color: white; font-size: 2rem; 
+  background: none; border: none; cursor: pointer; 
+}
+.popup-caption { color: white; text-align: center; margin-top: 10px; font-family: var(--font-sans); }
+
+/* =========================================
+   8. REPORT NAVIGATION UTILITIES
+   ========================================= */
+.back-link { 
+  font-family: var(--font-sans); 
+  font-size: 0.9rem; 
+  margin-bottom: 24px; 
+  display: inline-block; 
+}
+
+.report-subnav { 
+  display: flex; 
+  gap: 20px; 
+  margin-bottom: 40px; 
+  border-bottom: 1px solid var(--border); 
+  padding-bottom: 10px; 
+  flex-wrap: wrap;
+}
+
+.subnav-link { 
+  font-family: var(--font-sans); 
+  font-size: 0.9rem; 
+  color: var(--text-meta); 
+}
+
+.subnav-link.active { 
+  color: var(--accent); 
+  font-weight: 700; 
+  border-bottom: 2px solid var(--accent); 
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+.site-footer { 
+  border-top: 1px solid var(--border); 
+  padding: 48px 0; 
+  margin-top: 80px; 
+  text-align: center; 
+  font-family: var(--font-sans); 
+  font-size: 0.85rem; 
+  color: var(--text-meta); 
+}
+
+.footer-nav a { margin: 0 12px; color: var(--text-secondary); }
+.footer-nav a:hover { color: var(--accent); }
