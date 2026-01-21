@@ -6,9 +6,9 @@
   <title>Work Order Breakdown | Insight Gaps</title>
   <meta name="description" content="Work Order Breakdown: Identifying which service types scale profitably and which quietly magnify risk through repeated leakage.">
   <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/work-order-breakdown.html">
-  <link rel="icon" href="../../favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.png" type="image/png">
   
-  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="/style.css">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
@@ -17,65 +17,14 @@
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
-  
-  <style>
-    .page-header {
-      max-width: var(--container-width-narrow);
-      margin-bottom: var(--space-2xl);
-    }
-    
-    .back-link {
-      text-decoration: none;
-      color: var(--color-text-meta);
-      font-size: var(--font-size-sm);
-      font-family: var(--font-sans);
-      display: inline-block;
-      margin-bottom: var(--space-lg);
-      transition: color var(--transition-base);
-    }
-    
-    .back-link:hover,
-    .back-link:focus {
-      color: var(--color-accent);
-    }
-  </style>
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="Insight Gaps Home">
-        <img src="../../logo.png" alt="Insight Gaps" width="auto" height="45">
-      </a>
-      
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-item">
-          <a href="/" class="nav-link">Home</a>
-        </div>
-        <div class="nav-item">
-          <a href="/investigations/" class="nav-link">Investigations</a>
-        </div>
-        <div class="nav-item">
-          <a href="/analysis/" class="nav-link">Analysis ▾</a>
-          
-          <div class="mega-menu-container">
-            <div class="mega-sidebar">
-              <a href="#" class="mega-sidebar-link active">Property Preservation</a>
-            </div>
-
-            <div class="mega-content" style="display: flex; flex-direction: column; min-width: 200px; padding-left: 20px;">
-                <a href="financial-health.html" class="mega-sidebar-link" style="white-space: nowrap;">Cash Flow Risk</a>
-                <a href="leakage-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Profit Leakage</a>
-                <a href="work-order-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Work Order Risk</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <div data-include="header" data-path="/includes/header.html"></div>
 
   <main class="page-container" role="main">
-    <div class="page-header">
+    
+    <div class="page-header" style="margin-bottom: 30px;">
       <a href="/analysis/property-preservation/" class="back-link">← Back to Property Preservation</a>
 
       <nav class="report-subnav" aria-label="Report navigation">
@@ -84,36 +33,35 @@
         <a href="work-order-breakdown.html" class="subnav-link active">Work Order Breakdown</a>
       </nav>
 
-      <header class="article-header">
+      <header class="article-header" style="margin-bottom: 0;">
         <h1>Work Order Breakdown</h1>
-        
-        <div class="forensic-intro">
-          <p style="margin-top:0;">In property preservation, volume is often treated as success.</p>
-          <p><strong>More orders. More activity. More movement. But volume alone does not indicate health.</strong></p>
-          <p>Some work types strengthen an operation as they scale. Others quietly weaken it—introducing friction, rework, and margin erosion that only becomes visible after damage is done.</p>
-          <p style="margin-bottom:0;">This analysis exists to separate productive volume from destructive volume.</p>
-        </div>
       </header>
     </div>
 
-    <div class="instruction-box">
-      <h3>How to Read This Page</h3>
-      <p>
-        This report does not evaluate individual work orders. <strong>It evaluates patterns of behavior.</strong> Each work type is examined as a recurring operational process—how often it occurs, how efficiently it moves through approvals, and how consistently it retains value. When those signals are combined, they reveal whether a service is contributing to stability or quietly increasing risk. The purpose is not judgment. It is decision clarity.
-      </p>
-    </div>
-
     <div class="dashboard-frame">
-      <div style="height: 1100px; overflow: hidden; position: relative;">
+      <div class="embed-container">
         <iframe 
           src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_wzh2g7q9yd" 
-          frameborder="0" 
-          style="position: absolute; top: 0; left: -35px; width: calc(100% + 70px); height: 1140px; border:0;" 
+          class="embed-iframe"
           allowfullscreen
           sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
           title="Work Order Breakdown Dashboard">
         </iframe>
       </div>
+    </div>
+
+    <div class="forensic-intro">
+      <p style="margin-top:0;">In property preservation, volume is often treated as success.</p>
+      <p><strong>More orders. More activity. More movement. But volume alone does not indicate health.</strong></p>
+      <p>Some work types strengthen an operation as they scale. Others quietly weaken it—introducing friction, rework, and margin erosion that only becomes visible after damage is done.</p>
+      <p style="margin-bottom:0;">This analysis exists to separate productive volume from destructive volume.</p>
+    </div>
+
+    <div class="instruction-box">
+      <h3>How to Read This Page</h3>
+      <p>
+        This report does not evaluate individual work orders. <strong>It evaluates patterns of behavior.</strong> Each work type is examined as a recurring operational process—how often it occurs, how efficiently it moves through approvals, and how consistently it retains value. When those signals are combined, they reveal whether a service is contributing to stability or quietly increasing risk.
+      </p>
     </div>
 
     <section class="analysis-section">
@@ -138,8 +86,8 @@
         <p>This analysis helps identify where adjustment is required before scale amplifies loss.</p>
       </div>
 
-      <div class="analysis-block" style="border-top: 1px solid var(--color-border-light); padding-top: var(--space-2xl);">
-        <p style="font-weight: 700; color: var(--color-accent);">The most important outcome of this report is visibility.</p>
+      <div class="analysis-block" style="border-top: 1px solid var(--border); padding-top: 48px;">
+        <p style="font-weight: 700; color: var(--accent);">The most important outcome of this report is visibility.</p>
         <p>Once work types are clearly classified by how they behave at scale, operators can make informed decisions—whether that means adjusting pricing, refining scope, changing vendors, or redesigning documentation flow.</p>
         <p><em>Insight precedes correction.</em></p>
       </div>
@@ -160,7 +108,7 @@
 
   <div data-include="footer" data-path="/includes/footer.html"></div>
 
-  <script src="../../js/components.js"></script>
-  <script src="../../js/navigation.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/ui.js"></script>
 </body>
 </html>
