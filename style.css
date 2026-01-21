@@ -227,7 +227,7 @@ p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.05rem; }
 .mega-grid-link:hover { color: var(--accent); border-color: var(--accent); }
 
 /* =========================================
-   5. DASHBOARD FRAME (Responsive Container)
+   5. DASHBOARD FRAME (Responsive Logic)
    ========================================= */
 .dashboard-frame {
   width: 100%;
@@ -243,8 +243,9 @@ p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.05rem; }
   position: relative;
   width: 100%;
   height: 0;
-  /* DESKTOP RATIO: 16:9 (Cinematic Slide)
-     Keeps it "half-height" visually relative to width */
+  /* DESKTOP RATIO: 16:9 (Cinematic)
+     This keeps the dashboard wide and roughly "half-height" 
+     relative to the container width. */
   padding-bottom: 56.25%; 
 }
 
@@ -261,7 +262,8 @@ p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.05rem; }
 @media (max-width: 768px) {
   .embed-container {
     /* MOBILE RATIO: Taller (Portrait)
-       Prevents squashed charts on phones */
+       We increase vertical space so stacked charts 
+       are readable on small screens. */
     padding-bottom: 120%; 
   }
 }
