@@ -1,124 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insight Gaps | Investigative Data Journalism</title>
-  <meta name="description" content="Insight Gaps | Forensic Data Journalism and Preservation Analysis">
-  <link rel="canonical" href="https://insightgaps.com/">
-  <link rel="icon" href="favicon.png" type="image/png">
-
-  <link rel="stylesheet" href="style.css">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4PYE0MEK12');
-  </script>
+  <title>Insight Gaps | Forensic Data Journalism</title>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="Insight Gaps Home">
-        <img src="logo.png" alt="Insight Gaps" width="auto" height="45">
-      </a>
+  <div data-include="header" data-path="/includes/header.html"></div>
 
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-item">
-          <a href="/" class="nav-link">Home</a>
-        </div>
-        <div class="nav-item">
-          <a href="/investigations/" class="nav-link">Investigations</a>
-        </div>
-        <div class="nav-item">
-          <a href="/analysis/" class="nav-link">Analysis ▾</a>
+  <main class="page-container">
+    <article class="featured-story">
+      <span class="tagline" style="color:#b71c1c;">Featured Investigation</span>
+      <h1>The Maintenance Deficit</h1>
+      <p class="lead">
+        A forensic investigation into how documentation failures quietly compound losses across property preservation workflows.
+      </p>
+      <a href="/investigations/" class="btn-report">Read Investigation →</a>
+    </article>
 
-          <div class="mega-menu-container">
-            <div class="mega-sidebar">
-              <a href="#" class="mega-sidebar-link active">Property Preservation</a>
-            </div>
+    <hr style="margin: 60px 0; border: 0; border-top: 1px solid var(--border);">
 
-            <div class="mega-content" style="display: flex; flex-direction: column; min-width: 200px; padding-left: 20px;">
-              <a href="/analysis/property-preservation/financial-health.html" class="mega-sidebar-link" style="white-space: nowrap;">Cash Flow Risk</a>
-              <a href="/analysis/property-preservation/leakage-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Profit Leakage</a>
-              <a href="/analysis/property-preservation/work-order-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Work Order Risk</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="page-container" role="main">
-    <div class="content-layout">
-
-      <section class="journalism-stream">
-        <article class="featured-story">
-          <span class="story-label">Featured Investigation</span>
-          <h1>The Maintenance Deficit</h1>
-          <p class="story-deck">
-            A forensic investigation into how documentation failures quietly compound losses across property
-            preservation workflows.
-          </p>
-          <a href="/investigations/" class="text-link">Read Investigation →</a>
-        </article>
-
-        <hr class="divider">
-
-        <section class="recent-stories">
-          <h2 class="section-label">Recent Findings</h2>
-
-          <article class="story-item">
-            <h3>How Photo Failures Escalate Before QC</h3>
-            <p>Why quality control often reacts too late to prevent rework and loss.</p>
-            <a href="#" class="text-link">Read Report</a>
-          </article>
-
-          <article class="story-item">
-            <h3>Why Rework Loops Are Structural</h3>
-            <p>Examining systemic incentives that produce repeated documentation failures.</p>
-            <a href="#" class="text-link">Read Report</a>
-          </article>
-
-          <article class="story-item">
-            <h3>The Hidden Cost of Duplicate Photos</h3>
-            <p>How redundancy in submissions inflates review time and deductions.</p>
-            <a href="#" class="text-link">Read Report</a>
-          </article>
-        </section>
-      </section>
-
-      <aside class="applied-analysis-sidebar" role="complementary" aria-label="Applied Analysis">
-        <div class="analysis-card">
-          <header class="card-header">
-            <h3>Applied Analysis</h3>
-          </header>
-          <div class="card-body">
-            <p>
-              We apply documented failure patterns from our investigations to operational intelligence.
-            </p>
-            <ul class="capabilities-list">
-              <li>Documentation risk signals</li>
-              <li>Workflow diagnostics</li>
-              <li>Vendor performance indicators</li>
-            </ul>
-          </div>
-          <footer class="card-footer">
-            <a href="/analysis/" class="btn-text">View Operational Reports →</a>
-          </footer>
-        </div>
-      </aside>
-
-    </div>
+    <section>
+      <h2>Recent Findings</h2>
+      <div style="margin-bottom: 30px;">
+        <h3>How Photo Failures Escalate</h3>
+        <p>Why quality control often reacts too late to prevent rework.</p>
+      </div>
+      <div style="margin-bottom: 30px;">
+        <h3>Why Rework Loops Are Structural</h3>
+        <p>Examining systemic incentives that produce repeated failures.</p>
+      </div>
+    </section>
   </main>
 
   <div data-include="footer" data-path="/includes/footer.html"></div>
 
-  <script src="js/components.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/ui.js"></script>
 </body>
-
 </html>
