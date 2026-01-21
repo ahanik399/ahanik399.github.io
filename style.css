@@ -7,7 +7,7 @@
   /* --- COLOR PALETTE --- */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;   /* Light Gray for Cards/Sidebars */
-  --bg-tertiary: #f4f6f8;    /* Cinema Mode Background */
+  --bg-tertiary: #f4f6f8;    /* Dashboard Background */
   --text-primary: #111111;
   --text-secondary: #555555;
   --text-meta: #767676;
@@ -227,42 +227,42 @@ p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.05rem; }
 .mega-grid-link:hover { color: var(--accent); border-color: var(--accent); }
 
 /* =========================================
-   5. CINEMA MODE DASHBOARD (UPDATED)
+   5. DASHBOARD FRAME (Responsive Container)
    ========================================= */
-.dashboard-cinema-stage {
-  width: 100vw;               /* Full Browser Width */
-  
-  /* UPDATED: Reduced from 85vh to 50vh. 
-     This makes it "half" the visual weight on desktop,
-     allowing text to be seen below. */
-  height: 50vh;               
-  
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;         /* Force center alignment */
-  margin-right: -50vw;
-  background: var(--bg-tertiary);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+.dashboard-frame {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.cinema-iframe {
+.embed-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  /* DESKTOP RATIO: 16:9 (Cinematic Slide)
+     Keeps it "half-height" visually relative to width */
+  padding-bottom: 56.25%; 
+}
+
+.embed-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
-  display: block;
 }
 
-/* MOBILE OPTIMIZATION */
+/* MOBILE OVERRIDE */
 @media (max-width: 768px) {
-  .dashboard-cinema-stage {
-    /* On mobile, we actually need MORE vertical space 
-       because dashboard charts stack on top of each other.
-       50vh would be too small to scroll. */
-    height: 65vh; 
-    min-height: 450px; /* Safety floor */
+  .embed-container {
+    /* MOBILE RATIO: Taller (Portrait)
+       Prevents squashed charts on phones */
+    padding-bottom: 120%; 
   }
 }
 
