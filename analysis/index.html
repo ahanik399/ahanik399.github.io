@@ -1,148 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Public derived analysis and commissioned operational diagnostics from Insight Gaps.">
   <title>Operational Analysis Domains | Insight Gaps</title>
-  <meta name="description"
-    content="Investigative operational analysis domains examining profit leakage, workflow friction, and systemic risk patterns.">
-  <link rel="canonical" href="https://insightgaps.com/analysis/">
-  <link rel="icon" href="../favicon.png" type="image/png">
-
-  <link rel="stylesheet" href="../style.css">
-  
-  <style>
-    /* Page specific overrides for the Analysis Hub Cards */
-    .domain-list {
-      border-top: 1px solid var(--color-border);
-    }
-
-    .domain-item {
-      display: block;
-      position: relative;
-      border-bottom: 1px solid var(--color-border);
-      padding: 40px 30px 40px 0;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-      cursor: pointer; /* Ensures it looks clickable */
-    }
-
-    .domain-item:not([aria-disabled="true"]):hover {
-      background-color: var(--color-bg-secondary);
-      padding-left: 20px;
-      margin-left: -20px;
-      margin-right: -20px;
-      padding-right: 50px;
-      border-radius: 4px;
-    }
-
-    .domain-info h2 {
-      font-family: var(--font-sans);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      transition: color 0.2s;
-    }
-
-    .domain-item:not([aria-disabled="true"]):hover .domain-info h2 {
-      color: var(--color-accent);
-    }
-
-    .domain-info p {
-      color: var(--color-text-secondary);
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin-bottom: 0;
-    }
-
-    .domain-item:not([aria-disabled="true"])::after {
-      content: "→";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--color-border);
-      transition: color 0.2s, right 0.2s;
-    }
-
-    .domain-item:not([aria-disabled="true"]):hover::after {
-      color: var(--color-accent);
-      right: 20px;
-    }
-  </style>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-4PYE0MEK12');
-  </script>
+  <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="../index.html" class="logo" aria-label="Insight Gaps Home">
-        <img src="../logo.png" alt="Insight Gaps" width="auto" height="45">
-      </a>
+  <div data-include="header" data-path="/includes/header.html"></div>
 
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-item">
-          <a href="../index.html" class="nav-link">Home</a>
-        </div>
-        <div class="nav-item">
-          <a href="../investigations/index.html" class="nav-link">Investigations</a>
-        </div>
-
-        <div class="nav-item">
-          <a href="index.html" class="nav-link">Analysis ▾</a>
-
-          <div class="mega-menu-container">
-            <div class="mega-sidebar">
-              <a href="property-preservation/index.html" class="mega-sidebar-link active">Property Preservation</a>
-            </div>
-
-            <div class="mega-content" style="display: flex; flex-direction: column; min-width: 200px; padding-left: 20px;">
-                <a href="property-preservation/financial-health.html" class="mega-sidebar-link" style="white-space: nowrap;">Cash Flow Risk</a>
-                <a href="property-preservation/leakage-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Profit Leakage</a>
-                <a href="property-preservation/work-order-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Work Order Risk</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="page-container" role="main">
+  <main class="page-container">
     <h1>Operational Analysis Domains</h1>
+    <p class="lead">Derived from public investigations and available as commissioned diagnostics for organizations.</p>
 
-    <div class="domain-list">
-      <a href="property-preservation/index.html" class="domain-item">
-        <div class="domain-info">
-          <h2>Property Preservation</h2>
-          <p>Forensic analysis of workflow friction, vendor profit leakage, and documentation failure in high-volume
-            preservation portfolios.</p>
-        </div>
-        </a>
+    <div class="domains-grid">
+      
+      <section class="domain">
+        <h2>Property Preservation</h2>
+        <p class="type">Public + Commissioned</p>
+        <p>Documentation failure analysis, rework loop diagnostics, vendor leakage mapping. Full public reports available. Private deep-dive engagements accepted.</p>
+      </section>
 
-      <div class="domain-item" aria-disabled="true" style="opacity: 0.6; cursor: default;">
-        <div class="domain-info">
-          <h2>Revenue Cycle Management</h2>
-          <p>Coming Soon: Analysis of accounts receivable aging and denial management.</p>
-        </div>
-      </div>
+      <section class="domain">
+        <h2>Revenue Cycle Management</h2>
+        <p class="type">Commissioned Only</p>
+        <p>Accounts receivable aging forensics, denial management diagnostics, hidden leakage identification. Custom reports delivered under strict NDA.</p>
+      </section>
+
+      <!-- Add more domains here as you grow -->
+    </div>
+
+    <div class="inquiries-box">
+      <p><strong>For organizations:</strong> We accept a limited number of commissioned operational diagnostics each quarter. All work is conducted under the same forensic standards as our public investigations.</p>
+      <p>Email <a href="mailto:insightgaps@gmail.com">insightgaps@gmail.com</a> with a brief description of your data challenge. No sales calls. Serious inquiries only.</p>
     </div>
   </main>
 
-  <div data-include="footer" data-path="../includes/footer.html"></div>
-
-  <script src="../js/components.js"></script>
-  <script src="../scripts.js"></script>
+  <div data-include="footer" data-path="/includes/footer.html"></div>
 </body>
 </html>
