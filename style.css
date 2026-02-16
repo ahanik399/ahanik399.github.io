@@ -414,3 +414,35 @@ p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.05rem; }
 
 .footer-nav a { margin: 0 12px; color: var(--text-secondary); }
 .footer-nav a:hover { color: var(--accent); }
+/* ===== INSTITUTIONAL FOOTER ===== */
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bureau-statement {
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.55;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.legal {
+  margin-top: 28px;
+  font-size: 0.82rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .footer-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-nav a {
+    margin: 4px 0;
+  }
+}
