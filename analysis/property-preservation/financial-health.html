@@ -4,176 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial Health Dashboard | Insight Gaps</title>
-  <meta name="description"
-    content="Financial Health Dashboard: Tracking how revenue moves through invoicing, receivables, and collection to expose where cash retention breaks down.">
+  <meta name="description" content="Financial Health Dashboard: Tracking how revenue moves through invoicing, receivables, and collection to expose where cash retention breaks down.">
   <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/financial-health.html">
-  <link rel="icon" href="../../favicon.png" type="image/png">
-  <link rel="stylesheet" href="../../style.css">
-  
-  <style>
-    /* FORENSIC FIX: Viewport-Based Height */
-    .dashboard-frame {
-      width: 100%;
-      margin-bottom: 40px;
-      border: 1px solid var(--border, #e0e0e0);
-      border-radius: 4px;
-      overflow: hidden;
-      background: #fff;
-    }
-    
-    .embed-container {
-      position: relative;
-      width: 100%;
-      /* CHANGED: Uses 80% of screen height instead of aspect ratio.
-         This ensures the dashboard is always large and readable. */
-      height: 80vh; 
-      min-height: 600px; /* Safety lock: never smaller than this */
-    }
-    
-    .embed-iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-    
-    /* Mobile Adjustment */
-    @media (max-width: 768px) {
-      .embed-container {
-        height: 85vh; /* Even taller on mobile to fit stacked charts */
-      }
-    }
-  </style>
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/style.css">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
 </head>
 
 <body>
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="Insight Gaps Home">
-        <img src="../../logo.png" alt="Insight Gaps" width="auto" height="45">
-      </a>
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-item">
-          <a href="/" class="nav-link">Home</a>
-        </div>
-        <div class="nav-item">
-          <a href="/investigations/" class="nav-link">Investigations</a>
-        </div>
-        <div class="nav-item">
-          <a href="/analysis/" class="nav-link">Analysis ▾</a>
-          <div class="mega-menu-container">
-            <div class="mega-sidebar">
-              <a href="#" class="mega-sidebar-link active">Property Preservation</a>
-            </div>
-            <div class="mega-content" style="display: flex; flex-direction: column; min-width: 200px; padding-left: 20px;">
-                <a href="financial-health.html" class="mega-sidebar-link" style="white-space: nowrap;">Cash Flow Risk</a>
-                <a href="leakage-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Profit Leakage</a>
-                <a href="work-order-breakdown.html" class="mega-sidebar-link" style="white-space: nowrap;">Work Order Risk</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+
+  <!-- ── HEADER ── -->
+  <div data-include="header" data-path="/includes/header.html"></div>
 
   <main class="page-container" role="main">
-    
-    <div class="page-header" style="margin-bottom: 30px;">
-      <a href="/analysis/property-preservation/" class="back-link">← Back to Property Preservation</a>
+
+    <!-- Page navigation -->
+    <div class="page-header">
+      <a href="/analysis/property-preservation/" class="back-link">← Property Preservation</a>
+
       <nav class="report-subnav" aria-label="Report navigation">
         <a href="financial-health.html" class="subnav-link active">Financial Health</a>
         <a href="leakage-breakdown.html" class="subnav-link">Leakage Breakdown</a>
         <a href="work-order-breakdown.html" class="subnav-link">Work Order Breakdown</a>
       </nav>
-      <header class="article-header" style="margin-bottom: 0;">
+
+      <!-- Report header -->
+      <header class="article-header">
+        <span class="card-domain domain-financial">Cash Flow Risk</span>
         <h1>Financial Health Dashboard</h1>
+        <p class="dek">
+          Following how revenue moves through its full operational lifecycle — not just how much
+          work is done, but how much value is actually retained.
+        </p>
+        <div class="article-meta-row">
+          <span class="date">Published January 2026</span>
+          <span class="divider-dot">&bull;</span>
+          <span>Property Preservation Domain</span>
+          <span class="divider-dot">&bull;</span>
+          <span class="last-updated" style="margin:0;">Live Dashboard</span>
+        </div>
       </header>
     </div>
 
+    <!-- Dashboard embed -->
     <div class="dashboard-frame">
+      <div class="dashboard-label">
+        <span>Financial Health Dashboard — Property Preservation</span>
+      </div>
       <div class="embed-container">
-        <iframe src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/yISjF"
-          class="embed-iframe" allowfullscreen
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/yISjF"
+          class="embed-iframe"
+          allowfullscreen
           sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          title="Financial Health Dashboard">
+          title="Financial Health Dashboard — Insight Gaps">
         </iframe>
       </div>
     </div>
 
-    <div class="forensic-intro">
-      <p style="margin-top:0;">In property preservation, businesses rarely struggle because work stops coming in.
-      </p>
-      <p><strong>They struggle because value quietly fails to complete its journey.</strong></p>
-      <p>Invoices are generated. Vendors are paid. Activity looks healthy on the surface. Yet somewhere between work
-        completed and cash collected, friction appears.</p>
-      <p style="margin-bottom:0;">This dashboard exists to follow money through its full operational lifecycle,
-        focusing not on how much work is done, but on how much value is actually retained.</p>
-    </div>
+    <!-- Analysis narrative -->
+    <div class="longform-article">
 
-    <div class="instruction-box">
-      <h3>How to Read This Page</h3>
-      <p>
-        This view is designed to support clarity, not judgment. Rather than presenting isolated financial totals, the
-        dashboard highlights patterns that emerge when operational effort, vendor execution, and client processes
-        interact over time. <strong>The goal is visibility—making quiet inefficiencies observable before they become
-          structural.</strong>
-      </p>
-    </div>
-
-    <section class="analysis-section">
-      <div class="analysis-block">
-        <h2>The Retention Gap</h2>
-        <p>High revenue often creates a sense of security.</p>
-        <p>But revenue alone does not reveal how much value survives the operational process. By examining how funds
-          move from invoicing to collection, this analysis exposes the <strong>retention gap</strong>—the difference
-          between reported performance and financial reality. When that gap widens, the business may remain busy while
-          its financial footing quietly weakens.</p>
+      <div class="forensic-intro">
+        <p>In property preservation, businesses rarely struggle because work stops coming in.</p>
+        <p><strong>They struggle because value quietly fails to complete its journey.</strong></p>
+        <p>
+          Invoices are generated. Vendors are paid. Activity looks healthy on the surface. Yet somewhere
+          between work completed and cash collected, friction appears.
+        </p>
+        <p style="margin-bottom:0;">
+          This dashboard follows money through its full operational lifecycle — focusing not on how much
+          work is done, but on how much value is actually retained.
+        </p>
       </div>
-      <div class="analysis-block">
-        <h2>Receivables as Risk</h2>
-        <p>Delayed payments are often treated as temporary timing issues.</p>
-        <p>In practice, prolonged receivables frequently signal deeper operational friction. Documentation quality,
-          approval cycles, and submission accuracy all influence whether value is eventually recovered. As delays
-          stretch across billing cycles, the likelihood of full recovery declines—turning delay into exposure.</p>
-        <p>This perspective reframes receivables as <strong>operational risk</strong>, not just accounting backlog.</p>
-      </div>
-      <div class="analysis-block">
-        <h2>Income Efficiency Signal</h2>
-        <p>Operational efficiency is not only about cost control—it is about value retention.</p>
-        <p>When increasing effort produces diminishing retained value, the issue is rarely workload. It is misalignment
-          between execution, pricing, and process design. Income efficiency serves as an early warning signal,
-          highlighting when operations consume more energy than they preserve.</p>
-        <p>This dashboard helps make that imbalance visible while corrective action is still possible.</p>
-      </div>
-    </section>
 
-    <div class="clarification-box">
-      <p style="margin:0;">
-        <strong>Note:</strong> This report is not intended to replace accounting systems, forecasting tools, or
-        financial advisory services. It is an operational analysis designed to help owners, managers, and distributed
-        teams identify where friction emerges across real workflows—before margin erosion becomes normalized.
-      </p>
-    </div>
+      <div class="instruction-box">
+        <h3>How to Read This Report</h3>
+        <p>
+          This view is designed to support clarity, not judgment. Rather than presenting isolated
+          financial totals, the dashboard highlights patterns that emerge when operational effort,
+          vendor execution, and client processes interact over time.
+          <strong>The goal is visibility — making quiet inefficiencies observable before they become structural.</strong>
+        </p>
+      </div>
 
-    <div class="data-disclaimer">
-      <p>
-        All data presented in this dashboard is anonymized or simulated and used strictly for analytical demonstration
-        and testing purposes. No real clients, vendors, properties, or organizations are represented. The focus is on
-        illustrating operational patterns, not reporting live financial activity.
-      </p>
+      <section class="analysis-section">
+
+        <div class="analysis-block">
+          <h2>The Retention Gap</h2>
+          <p>High revenue often creates a sense of security.</p>
+          <p>
+            But revenue alone does not reveal how much value survives the operational process. By examining
+            how funds move from invoicing to collection, this analysis exposes the <strong>retention gap</strong> —
+            the difference between reported performance and financial reality. When that gap widens, the
+            business may remain busy while its financial footing quietly weakens.
+          </p>
+        </div>
+
+        <div class="analysis-block">
+          <h2>Receivables as Risk</h2>
+          <p>Delayed payments are often treated as temporary timing issues.</p>
+          <p>
+            In practice, prolonged receivables frequently signal deeper operational friction. Documentation
+            quality, approval cycles, and submission accuracy all influence whether value is eventually
+            recovered. As delays stretch across billing cycles, the likelihood of full recovery declines —
+            turning delay into exposure.
+          </p>
+          <p>
+            This perspective reframes receivables as <strong>operational risk</strong>, not just accounting backlog.
+          </p>
+        </div>
+
+        <div class="analysis-block">
+          <h2>Income Efficiency Signal</h2>
+          <p>Operational efficiency is not only about cost control — it is about value retention.</p>
+          <p>
+            When increasing effort produces diminishing retained value, the issue is rarely workload.
+            It is misalignment between execution, pricing, and process design. Income efficiency serves as
+            an early warning signal, highlighting when operations consume more energy than they preserve.
+          </p>
+          <p>This dashboard helps make that imbalance visible while corrective action is still possible.</p>
+        </div>
+
+      </section>
+
+      <div class="clarification-box">
+        <p>
+          <strong>Note:</strong> This report is not intended to replace accounting systems, forecasting tools,
+          or financial advisory services. It is an operational analysis designed to help owners, managers, and
+          distributed teams identify where friction emerges across real workflows — before margin erosion
+          becomes normalized.
+        </p>
+      </div>
+
+      <div class="data-disclaimer">
+        <p>
+          All data presented in this dashboard is anonymized or simulated and used strictly for analytical
+          demonstration and testing purposes. No real clients, vendors, properties, or organizations are
+          represented. The focus is on illustrating operational patterns, not reporting live financial activity.
+        </p>
+      </div>
+
     </div>
+    <!-- /longform-article -->
+
   </main>
 
+  <!-- ── FOOTER ── -->
   <div data-include="footer" data-path="/includes/footer.html"></div>
-  <script src="../../js/components.js"></script>
-  <script src="../../scripts.js"></script>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/ui.js"></script>
 </body>
 </html>
