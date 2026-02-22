@@ -4,63 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leakage Breakdown | Insight Gaps</title>
-  <meta name="description" content="Leakage Breakdown: Examining recurring margin erosion caused by vendor overruns, documentation delays, and rework loops.">
+  <meta name="description" content="Leakage Breakdown: Examining recurring margin erosion caused by vendor overruns, documentation delays, and rework loops in property preservation.">
   <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/leakage-breakdown.html">
   <link rel="icon" href="/favicon.png" type="image/png">
-  
   <link rel="stylesheet" href="/style.css">
-  
-  <style>
-    /* FORENSIC FIX: Viewport-Based Height */
-    .dashboard-frame {
-      width: 100%;
-      margin-bottom: 40px;
-      border: 1px solid var(--border, #e0e0e0);
-      border-radius: 4px;
-      overflow: hidden;
-      background: #fff;
-    }
-    
-    .embed-container {
-      position: relative;
-      width: 100%;
-      /* CHANGED: Uses 80% of screen height instead of aspect ratio.
-         This ensures the dashboard is always large and readable. */
-      height: 80vh; 
-      min-height: 600px; /* Safety lock: never smaller than this */
-    }
-    
-    .embed-iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-    
-    /* Mobile Adjustment */
-    @media (max-width: 768px) {
-      .embed-container {
-        height: 85vh; /* Even taller on mobile to fit stacked charts */
-      }
-    }
-  </style>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
 </head>
 
 <body>
+
+  <!-- ── HEADER ── -->
   <div data-include="header" data-path="/includes/header.html"></div>
 
   <main class="page-container" role="main">
-    
-    <div class="page-header" style="margin-bottom: 30px;">
-      <a href="/analysis/property-preservation/" class="back-link">← Back to Property Preservation</a>
+
+    <!-- Page navigation -->
+    <div class="page-header">
+      <a href="/analysis/property-preservation/" class="back-link">← Property Preservation</a>
 
       <nav class="report-subnav" aria-label="Report navigation">
         <a href="financial-health.html" class="subnav-link">Financial Health</a>
@@ -68,73 +36,130 @@
         <a href="work-order-breakdown.html" class="subnav-link">Work Order Breakdown</a>
       </nav>
 
-      <header class="article-header" style="margin-bottom: 0;">
+      <!-- Report header -->
+      <header class="article-header">
+        <span class="card-domain domain-leakage">Profit Leakage</span>
         <h1>Leakage Breakdown</h1>
+        <p class="dek">
+          How small operational failures compound into structural margin loss —
+          and why standard volume reports rarely capture it.
+        </p>
+        <div class="article-meta-row">
+          <span class="date">Published January 2026</span>
+          <span class="divider-dot">&bull;</span>
+          <span>Property Preservation Domain</span>
+          <span class="divider-dot">&bull;</span>
+          <span class="last-updated" style="margin:0;">Live Dashboard</span>
+        </div>
       </header>
     </div>
 
+    <!-- Dashboard embed -->
     <div class="dashboard-frame">
+      <div class="dashboard-label">
+        <span>Leakage Breakdown Dashboard — Property Preservation</span>
+      </div>
       <div class="embed-container">
-        <iframe 
-          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_o2v0qlf9yd" 
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_o2v0qlf9yd"
           class="embed-iframe"
           allowfullscreen
           sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          title="Leakage Breakdown Dashboard">
+          title="Leakage Breakdown Dashboard — Insight Gaps">
         </iframe>
       </div>
     </div>
 
-    <div class="forensic-intro">
-      <p style="margin-top:0;">In property preservation, profit rarely disappears all at once.</p>
-      <p><strong>It erodes quietly—through repetition.</strong></p>
-      <p>Small rework events. Minor documentation issues. Routine resubmissions that feel operational, not financial. Individually, these events appear manageable. Together, they form a persistent drain that standard volume or revenue reports rarely capture.</p>
-      <p style="margin-bottom:0;">This analysis focuses on how those small failures compound into structural margin loss.</p>
-    </div>
+    <!-- Analysis narrative -->
+    <div class="longform-article">
 
-    <div class="instruction-box">
-      <h3>How to Read This Page</h3>
-      <p>
-        This report is designed to surface patterns, not assign blame. Rather than treating rework and deductions as isolated incidents, the analysis groups them by cause, frequency, and location. <strong>The objective is to understand why leakage recurs—not who to fault.</strong>
-      </p>
-    </div>
-
-    <section class="analysis-section">
-      <div class="analysis-block">
-        <h2>Failure Has a Shape</h2>
-        <p>Operational loss is rarely random.</p>
-        <p>When rework events follow consistent themes—such as documentation gaps, timing issues, or scope misalignment—they reveal friction points embedded in the workflow itself. These patterns indicate breakdowns in coordination between the field, quality control, and approval stages.</p>
-        <p>Once identified, these signals allow organizations to intervene upstream, before rework becomes normalized.</p>
+      <div class="forensic-intro">
+        <p>In property preservation, profit rarely disappears all at once.</p>
+        <p><strong>It erodes quietly — through repetition.</strong></p>
+        <p>
+          Small rework events. Minor documentation issues. Routine resubmissions that feel operational, not financial.
+          Individually, these events appear manageable. Together, they form a persistent drain that standard volume
+          or revenue reports rarely capture.
+        </p>
+        <p style="margin-bottom:0;">
+          This analysis focuses on how those small failures compound into structural margin loss.
+        </p>
       </div>
 
-      <div class="analysis-block">
-        <h2>Geography as Friction</h2>
-        <p>Operational friction is not evenly distributed.</p>
-        <p>Certain regions consistently generate higher rework due to regulatory complexity, vendor availability, inspection density, or approval variance. Mapping activity geographically helps distinguish execution issues from environmental constraints.</p>
-        <p>This perspective shifts the question from <em>"Who is underperforming?"</em> to <em>"Where does the system require reinforcement?"</em></p>
+      <div class="instruction-box">
+        <h3>How to Read This Report</h3>
+        <p>
+          This report is designed to surface patterns, not assign blame. Rather than treating rework and deductions
+          as isolated incidents, the analysis groups them by cause, frequency, and location.
+          <strong>The objective is to understand why leakage recurs — not who to fault.</strong>
+        </p>
       </div>
 
-      <div class="analysis-block">
-        <h2>Rework Is Not Overhead</h2>
-        <p>Leakage is often dismissed as unavoidable overhead.</p>
-        <p>In practice, repeated rework usually reflects broken hand-offs—between documentation standards, vendor expectations, and approval workflows. When those hand-offs remain misaligned, rework scales with volume, quietly compressing margins.</p>
-        <p>Visibility is the first step toward stopping that cycle.</p>
+      <section class="analysis-section">
+
+        <div class="analysis-block">
+          <h2>Failure Has a Shape</h2>
+          <p>Operational loss is rarely random.</p>
+          <p>
+            When rework events follow consistent themes — documentation gaps, timing issues, scope misalignment —
+            they reveal friction points embedded in the workflow itself. These patterns indicate breakdowns in
+            coordination between the field, quality control, and approval stages.
+          </p>
+          <p>
+            Once identified, these signals allow organizations to intervene upstream, before rework becomes normalized.
+          </p>
+        </div>
+
+        <div class="analysis-block">
+          <h2>Geography as Friction</h2>
+          <p>Operational friction is not evenly distributed.</p>
+          <p>
+            Certain regions consistently generate higher rework due to regulatory complexity, vendor availability,
+            inspection density, or approval variance. Mapping activity geographically helps distinguish execution
+            issues from environmental constraints.
+          </p>
+          <p>
+            This perspective shifts the question from <em>"Who is underperforming?"</em> to
+            <em>"Where does the system require reinforcement?"</em>
+          </p>
+        </div>
+
+        <div class="analysis-block">
+          <h2>Rework Is Not Overhead</h2>
+          <p>Leakage is often dismissed as unavoidable overhead.</p>
+          <p>
+            In practice, repeated rework usually reflects broken hand-offs — between documentation standards,
+            vendor expectations, and approval workflows. When those hand-offs remain misaligned, rework scales
+            with volume, quietly compressing margins.
+          </p>
+          <p>Visibility is the first step toward stopping that cycle.</p>
+        </div>
+
+      </section>
+
+      <div class="clarification-box">
+        <p>
+          <strong>Note:</strong> This analysis does not evaluate individual vendor quality or operational effort
+          in isolation. It examines how systems behave under real operating conditions — especially in distributed
+          teams supporting high-volume preservation workflows across regions and time zones. The focus is structural
+          insight, not performance scoring.
+        </p>
       </div>
-    </section>
 
-    <div class="clarification-box">
-      <p style="margin:0;">
-        <strong>Note:</strong> This analysis does not evaluate individual vendor quality or operational effort in isolation. It examines how systems behave under real operating conditions—especially in distributed teams supporting high-volume preservation workflows across regions and time zones. The focus is structural insight, not performance scoring.
-      </p>
-    </div>
+      <div class="data-disclaimer">
+        <p>
+          All data used in this report is anonymized or simulated and provided strictly for analytical demonstration
+          and testing purposes. No real vendors, locations, or organizations are represented. The intent is to
+          illustrate operational leakage patterns, not to report live or proprietary information.
+        </p>
+      </div>
 
-    <div class="data-disclaimer">
-      <p>
-        All data used in this report is anonymized or simulated and provided strictly for analytical demonstration and testing purposes. No real vendors, locations, or organizations are represented. The intent is to illustrate operational leakage patterns, not to report live or proprietary information.
-      </p>
     </div>
+    <!-- /longform-article -->
+
   </main>
 
+  <!-- ── FOOTER ── -->
   <div data-include="footer" data-path="/includes/footer.html"></div>
 
   <script src="/js/components.js"></script>
