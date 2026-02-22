@@ -4,63 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work Order Breakdown | Insight Gaps</title>
-  <meta name="description" content="Work Order Breakdown: Identifying which service types scale profitably and which quietly magnify risk through repeated leakage.">
+  <meta name="description" content="Work Order Breakdown: Identifying which service types scale profitably and which quietly magnify operational risk through repeated leakage.">
   <link rel="canonical" href="https://insightgaps.com/analysis/property-preservation/work-order-breakdown.html">
   <link rel="icon" href="/favicon.png" type="image/png">
-  
   <link rel="stylesheet" href="/style.css">
-  
-  <style>
-    /* FORENSIC FIX: Viewport-Based Height */
-    .dashboard-frame {
-      width: 100%;
-      margin-bottom: 40px;
-      border: 1px solid var(--border, #e0e0e0);
-      border-radius: 4px;
-      overflow: hidden;
-      background: #fff;
-    }
-    
-    .embed-container {
-      position: relative;
-      width: 100%;
-      /* CHANGED: Uses 80% of screen height instead of aspect ratio.
-         This ensures the dashboard is always large and readable. */
-      height: 80vh; 
-      min-height: 600px; /* Safety lock: never smaller than this */
-    }
-    
-    .embed-iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-    
-    /* Mobile Adjustment */
-    @media (max-width: 768px) {
-      .embed-container {
-        height: 85vh; /* Even taller on mobile to fit stacked charts */
-      }
-    }
-  </style>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PYE0MEK12"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-4PYE0MEK12');
   </script>
 </head>
 
 <body>
+
+  <!-- ── HEADER ── -->
   <div data-include="header" data-path="/includes/header.html"></div>
 
   <main class="page-container" role="main">
-    
-    <div class="page-header" style="margin-bottom: 30px;">
-      <a href="/analysis/property-preservation/" class="back-link">← Back to Property Preservation</a>
+
+    <!-- Page navigation -->
+    <div class="page-header">
+      <a href="/analysis/property-preservation/" class="back-link">← Property Preservation</a>
 
       <nav class="report-subnav" aria-label="Report navigation">
         <a href="financial-health.html" class="subnav-link">Financial Health</a>
@@ -68,79 +36,139 @@
         <a href="work-order-breakdown.html" class="subnav-link active">Work Order Breakdown</a>
       </nav>
 
-      <header class="article-header" style="margin-bottom: 0;">
+      <!-- Report header -->
+      <header class="article-header">
+        <span class="card-domain domain-workorder">Work Order Risk</span>
         <h1>Work Order Breakdown</h1>
+        <p class="dek">
+          Separating productive volume from destructive volume — identifying which service types
+          scale profitably and which quietly amplify operational risk.
+        </p>
+        <div class="article-meta-row">
+          <span class="date">Published January 2026</span>
+          <span class="divider-dot">&bull;</span>
+          <span>Property Preservation Domain</span>
+          <span class="divider-dot">&bull;</span>
+          <span class="last-updated" style="margin:0;">Live Dashboard</span>
+        </div>
       </header>
     </div>
 
+    <!-- Dashboard embed -->
     <div class="dashboard-frame">
+      <div class="dashboard-label">
+        <span>Work Order Breakdown Dashboard — Property Preservation</span>
+      </div>
       <div class="embed-container">
-        <iframe 
-          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_wzh2g7q9yd" 
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/057ac69b-747a-4264-8b69-111c38f211bf/page/p_wzh2g7q9yd"
           class="embed-iframe"
           allowfullscreen
           sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          title="Work Order Breakdown Dashboard">
+          title="Work Order Breakdown Dashboard — Insight Gaps">
         </iframe>
       </div>
     </div>
 
-    <div class="forensic-intro">
-      <p style="margin-top:0;">In property preservation, volume is often treated as success.</p>
-      <p><strong>More orders. More activity. More movement. But volume alone does not indicate health.</strong></p>
-      <p>Some work types strengthen an operation as they scale. Others quietly weaken it—introducing friction, rework, and margin erosion that only becomes visible after damage is done.</p>
-      <p style="margin-bottom:0;">This analysis exists to separate productive volume from destructive volume.</p>
-    </div>
+    <!-- Analysis narrative -->
+    <div class="longform-article">
 
-    <div class="instruction-box">
-      <h3>How to Read This Page</h3>
-      <p>
-        This report does not evaluate individual work orders. <strong>It evaluates patterns of behavior.</strong> Each work type is examined as a recurring operational process—how often it occurs, how efficiently it moves through approvals, and how consistently it retains value. When those signals are combined, they reveal whether a service is contributing to stability or quietly increasing risk.
-      </p>
-    </div>
-
-    <section class="analysis-section">
-      <div class="analysis-block">
-        <h2>Work Types as Risk Profiles</h2>
-        <p>Individual jobs rarely tell the full story.</p>
-        <p>Risk emerges only when similar work types repeat under the same conditions. When a service consistently generates rework, deductions, or pricing pressure, it becomes a predictable source of friction—regardless of how well any single order is executed.</p>
-        <p>This matrix treats each work type as a system, not an exception.</p>
+      <div class="forensic-intro">
+        <p>In property preservation, volume is often treated as success.</p>
+        <p><strong>More orders. More activity. More movement. But volume alone does not indicate health.</strong></p>
+        <p>
+          Some work types strengthen an operation as they scale. Others quietly weaken it —
+          introducing friction, rework, and margin erosion that only becomes visible after damage is done.
+        </p>
+        <p style="margin-bottom:0;">
+          This analysis exists to separate productive volume from destructive volume.
+        </p>
       </div>
 
-      <div class="analysis-block">
-        <h2>High Volume Can Hide Structural Issues</h2>
-        <p>Some services appear successful because they happen frequently.</p>
-        <p>High activity can mask inefficiencies that would be obvious at lower volume. As order counts increase, even small execution gaps multiply—turning manageable issues into persistent drains on time, cash flow, and operational focus.</p>
-        <p>Volume without efficiency does not scale profit. It scales exposure.</p>
+      <div class="instruction-box">
+        <h3>How to Read This Report</h3>
+        <p>
+          This report does not evaluate individual work orders.
+          <strong>It evaluates patterns of behavior.</strong> Each work type is examined as a recurring
+          operational process — how often it occurs, how efficiently it moves through approvals, and how
+          consistently it retains value. When those signals are combined, they reveal whether a service
+          is contributing to stability or quietly increasing risk.
+        </p>
       </div>
 
-      <div class="analysis-block">
-        <h2>Classification Is About Alignment</h2>
-        <p>When certain services are flagged as high-risk, the issue is rarely lack of effort.</p>
-        <p>More often, the problem lies in misalignment—between pricing, scope, documentation requirements, and execution reality. When those elements are out of sync, rework becomes unavoidable regardless of team performance.</p>
-        <p>This analysis helps identify where adjustment is required before scale amplifies loss.</p>
+      <section class="analysis-section">
+
+        <div class="analysis-block">
+          <h2>Work Types as Risk Profiles</h2>
+          <p>Individual jobs rarely tell the full story.</p>
+          <p>
+            Risk emerges only when similar work types repeat under the same conditions. When a service consistently
+            generates rework, deductions, or pricing pressure, it becomes a predictable source of friction —
+            regardless of how well any single order is executed.
+          </p>
+          <p>This matrix treats each work type as a system, not an exception.</p>
+        </div>
+
+        <div class="analysis-block">
+          <h2>High Volume Can Hide Structural Issues</h2>
+          <p>Some services appear successful because they happen frequently.</p>
+          <p>
+            High activity can mask inefficiencies that would be obvious at lower volume. As order counts increase,
+            even small execution gaps multiply — turning manageable issues into persistent drains on time, cash
+            flow, and operational focus.
+          </p>
+          <p>Volume without efficiency does not scale profit. It scales exposure.</p>
+        </div>
+
+        <div class="analysis-block">
+          <h2>Classification Is About Alignment</h2>
+          <p>When certain services are flagged as high-risk, the issue is rarely lack of effort.</p>
+          <p>
+            More often, the problem lies in misalignment — between pricing, scope, documentation requirements,
+            and execution reality. When those elements are out of sync, rework becomes unavoidable regardless
+            of team performance.
+          </p>
+          <p>This analysis helps identify where adjustment is required before scale amplifies loss.</p>
+        </div>
+
+        <div class="analysis-block">
+          <p style="font-weight: 700; color: var(--accent);">
+            The most important outcome of this report is visibility.
+          </p>
+          <p>
+            Once work types are clearly classified by how they behave at scale, operators can make informed
+            decisions — whether that means adjusting pricing, refining scope, changing vendors, or redesigning
+            documentation flow.
+          </p>
+          <p><em>Insight precedes correction.</em></p>
+        </div>
+
+      </section>
+
+      <div class="clarification-box">
+        <p>
+          <strong>Note:</strong> This report is not a recommendation engine and does not prescribe operational
+          action. It provides a structured lens for understanding how different services behave under real
+          operating conditions — especially in high-volume, distributed property preservation environments.
+          The goal is informed decision-making, not automated conclusions.
+        </p>
       </div>
 
-      <div class="analysis-block" style="border-top: 1px solid var(--border); padding-top: 48px;">
-        <p style="font-weight: 700; color: var(--accent);">The most important outcome of this report is visibility.</p>
-        <p>Once work types are clearly classified by how they behave at scale, operators can make informed decisions—whether that means adjusting pricing, refining scope, changing vendors, or redesigning documentation flow.</p>
-        <p><em>Insight precedes correction.</em></p>
+      <div class="data-disclaimer">
+        <p>
+          All data presented in this analysis is anonymized or simulated and used solely for analytical
+          demonstration and testing purposes. No real clients, vendors, properties, or organizations are
+          represented. The intent is to illustrate operational risk patterns — not to reflect live or
+          proprietary activity.
+        </p>
       </div>
-    </section>
 
-    <div class="clarification-box">
-      <p style="margin:0;">
-        <strong>Note:</strong> This report is not a recommendation engine and does not prescribe operational action. It provides a structured lens for understanding how different services behave under real operating conditions—especially in high-volume, distributed property preservation environments. The goal is informed decision-making, not automated conclusions.
-      </p>
     </div>
+    <!-- /longform-article -->
 
-    <div class="data-disclaimer">
-      <p>
-        All data presented in this analysis is anonymized or simulated and used solely for analytical demonstration and testing purposes. No real clients, vendors, properties, or organizations are represented. The intent is to illustrate operational risk patterns—not to reflect live or proprietary activity.
-      </p>
-    </div>
   </main>
 
+  <!-- ── FOOTER ── -->
   <div data-include="footer" data-path="/includes/footer.html"></div>
 
   <script src="/js/components.js"></script>
