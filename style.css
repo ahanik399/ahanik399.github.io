@@ -462,6 +462,9 @@ hr.heavy { border-top-width: 2px; border-color: var(--text-1); }
   margin-bottom: var(--s8);
   display: block;
 }
+
+/* Wrappers for hero states */
+.hero-content-wrap { position: relative; display: flex; flex-direction: column; }
 .hero-muted-wrap { position: relative; }
 .hero-muted-content {
   filter: blur(3px);
@@ -936,6 +939,7 @@ hr.heavy { border-top-width: 2px; border-color: var(--text-1); }
 }
 .tagline { /* kept for backwards compat */ font-family: var(--sans); font-size: var(--t-xs); font-weight: 700; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: var(--s2); }
 
+/* Buttons */
 .btn-report {
   font-family: var(--sans);
   font-size: var(--t-sm);
@@ -949,6 +953,26 @@ hr.heavy { border-top-width: 2px; border-color: var(--text-1); }
   transition: color .15s, border-color .15s;
 }
 .btn-report:hover { color: var(--red); border-color: var(--red); }
+
+.btn-solid-red {
+  display: inline-block;
+  padding: var(--s3) var(--s6);
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background .15s, transform .15s;
+}
+.btn-solid-red:hover {
+  background: var(--red-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
 
 /* ================================================================
    12. ARTICLE / REPORT PAGES
