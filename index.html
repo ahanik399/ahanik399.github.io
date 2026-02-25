@@ -17,9 +17,6 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════
-     BREAKING NEWS TICKER
-══════════════════════════════════════════════ -->
 <div class="ticker-bar" role="marquee" aria-label="Live data ticker">
   <div class="ticker-label">LIVE</div>
   <div class="ticker-track-wrap">
@@ -33,7 +30,6 @@
       <span class="ticker-item"><span class="ti-tag">DELHI AQI</span>  <span id="tick-delhi-aqi">—</span></span>
       <span class="ticker-item"><span class="ti-tag">BEIJING AQI</span><span id="tick-bj-aqi">—</span></span>
       <span class="ticker-item"><span class="ti-tag">INSIGHT GAPS</span> Forensic Data Journalism Bureau — Independent · Public Interest</span>
-      <!-- Duplicate for seamless loop -->
       <span class="ticker-item"><span class="ti-tag">BDT/USD</span> <span class="tick-bdt2">—</span></span>
       <span class="ticker-item"><span class="ti-tag">EUR/USD</span> <span class="tick-eur2">—</span></span>
       <span class="ticker-item"><span class="ti-tag">GBP/USD</span> <span class="tick-gbp2">—</span></span>
@@ -44,16 +40,10 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     SITE HEADER
-══════════════════════════════════════════════ -->
 <div data-include="header" data-path="/includes/header.html"></div>
 
 <main role="main">
 
-  <!-- ══════════════════════════════════════════
-       MASTHEAD
-  ══════════════════════════════════════════ -->
   <div class="masthead">
     <div class="masthead-inner wrap">
       <p class="masthead-pub">Est. 2025 &nbsp;·&nbsp; Dhaka &nbsp;·&nbsp; Independent</p>
@@ -62,9 +52,6 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       LIVE DATA STRIP — Currencies + AQI quick view
-  ══════════════════════════════════════════ -->
   <div class="live-strip" role="complementary" aria-label="Live market and environment data">
     <div class="live-strip-inner">
       <div class="live-item">
@@ -110,63 +97,56 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       HOME GRID — Investigation (muted) + Sidebar
-  ══════════════════════════════════════════ -->
   <div class="home-grid">
 
-    <!-- LEFT: Featured investigation (muted / blurred) -->
     <div class="hero-investigation">
-      <span class="hero-section-label">Investigations Desk</span>
+      <span class="hero-section-label">Featured Investigation</span>
 
-      <div class="hero-muted-wrap">
-        <!-- Coming-soon overlay (always sharp) -->
-        <div class="hero-coming-badge">
-          <div class="coming-pill">
-            <div class="pill-tag">Investigations</div>
-            <h3>Active Fieldwork in Progress</h3>
-            <p>The investigations desk is conducting active data collection and editorial review. Reports publish when Bureau standards are met.</p>
+      <div class="hero-content-wrap">
+        <span class="hero-tag">New Release · February 2026</span>
+        <h2 class="hero-headline">Blood Routes:<br>The Dhaka Bus Fatalities Investigation</h2>
+        <p class="hero-dek">
+          An open-source forensic dataset on bus-related fatalities in Dhaka, the structural incentives of the 
+          waybill system, and the accountability failures that perpetuate them.
+        </p>
+        <div class="hero-meta">
+          <span>Published February 2026</span>
+          <span class="sep">·</span>
+          <span>155+ Sources</span>
+          <span class="sep">·</span>
+          <span>Evidence Tier: Confirmed</span>
+        </div>
+
+        <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border);">
+          <p style="font-family: var(--sans); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-4); margin-bottom: 16px;">Primary Findings</p>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--red); flex-shrink:0; padding-top:2px;">01</span>
+              <p style="font-family: var(--sans); font-size: 0.88rem; color: var(--text-2); margin:0; max-width:100%;">
+                <strong>The Data Gap:</strong> Official figures undercount road fatalities by a factor of approximately 5.8× compared to WHO estimates.
+              </p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--red); flex-shrink:0; padding-top:2px;">02</span>
+              <p style="font-family: var(--sans); font-size: 0.88rem; color: var(--text-2); margin:0; max-width:100%;">
+                <strong>Phoenix Rebranding:</strong> Documented patterns of banned operators (e.g., Suprobhat) rebranding as Victor Classic and Akash to bypass enforcement.
+              </p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+              <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--red); flex-shrink:0; padding-top:2px;">03</span>
+              <p style="font-family: var(--sans); font-size: 0.88rem; color: var(--text-2); margin:0; max-width:100%;">
+                <strong>Economic Incentives:</strong> The "Joma" system creates rational incentives for bus racing, directly compounding pedestrian risk.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Blurred preview (SEO preserved, aria-hidden) -->
-        <div class="hero-muted-content" aria-hidden="true">
-          <span class="hero-tag">Featured Investigation</span>
-          <h2 class="hero-headline">The Maintenance Deficit:<br>How Documentation Failures Compound Loss</h2>
-          <p class="hero-dek">
-            A forensic investigation into how incomplete, mis-sequenced documentation creates systemic failure
-            points in property preservation — long before quality control review or invoicing occurs.
-          </p>
-          <div class="hero-meta">
-            <span>Published January 2026</span>
-            <span class="sep">·</span>
-            <span>Property Preservation</span>
-            <span class="sep">·</span>
-            <span>4 min read</span>
-          </div>
-
-          <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border);">
-            <p style="font-family: var(--sans); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-4); margin-bottom: 16px;">Key Findings</p>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-              <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--red); flex-shrink:0; padding-top:2px;">01</span>
-                <p style="font-family: var(--sans); font-size: 0.88rem; color: var(--text-2); margin:0; max-width:100%;">Pre-QC documentation gaps make quality control reactive, not preventative.</p>
-              </div>
-              <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--red); flex-shrink:0; padding-top:2px;">02</span>
-                <p style="font-family: var(--sans); font-size: 0.88rem; color: var(--text-2); margin:0; max-width:100%;">Rework cycles are structural incentive problems, not vendor failure.</p>
-              </div>
-              <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--red); flex-shrink:0; padding-top:2px;">03</span>
-                <p style="font-family: var(--sans); font-size: 0.88rem; color: var(--text-2); margin:0; max-width:100%;">Loss accumulates silently through administrative delays and deductions.</p>
-              </div>
-            </div>
-          </div>
+        <div style="margin-top: 32px;">
+          <a href="/investigations/blood-routes_road accident.html" class="btn-report" style="display: inline-block; padding: 12px 24px; background: var(--red); color: #fff; text-decoration: none; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px;">View Full Investigation →</a>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: Sidebar — sub stories + quick nav -->
     <aside>
       <div style="border-bottom: 2px solid var(--text-1); padding-bottom: 8px; margin-bottom: 0;">
         <span style="font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);">Analysis — Published</span>
@@ -209,7 +189,6 @@
         </div>
       </div>
 
-      <!-- Commissioned box -->
       <div style="margin-top: 28px; background: var(--ink); padding: 24px; border-radius: 3px;">
         <p style="font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 10px; max-width:100%;">Commissioned Diagnostics</p>
         <p style="font-family: var(--sans); font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 14px; max-width:100%;">Limited private engagements accepted. Same forensic standards as public work.</p>
@@ -218,9 +197,6 @@
     </aside>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       WORLD DATA SECTION — Global Air Quality + Currencies
-  ══════════════════════════════════════════ -->
   <div class="world-data-section">
     <div class="wds-inner">
 
@@ -232,18 +208,15 @@
         </div>
       </div>
 
-      <!-- AQI Section -->
       <div style="margin-bottom: 12px;">
         <span style="font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35);">Air Quality Index — Major Cities</span>
       </div>
       <div class="aqi-grid" id="aqiGrid">
-        <!-- Populated by JS -->
         <div class="aqi-card aqi-loading-card" style="background: var(--panel-surface); border: 1px solid var(--panel-border); border-radius: 3px; padding: 20px;">
           <div style="font-family: var(--mono); font-size: 0.62rem; color: rgba(255,255,255,0.3); animation: blink 1.4s infinite;">Loading AQI data…</div>
         </div>
       </div>
 
-      <!-- AQI Scale Legend -->
       <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
         <span style="font-family: var(--sans); font-size: 0.62rem; color: rgba(255,255,255,0.25); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">Scale:</span>
         <span style="font-family: var(--mono); font-size: 0.62rem; color: #4ade80;">0–50 Good</span>
@@ -254,7 +227,6 @@
         <span style="font-family: var(--mono); font-size: 0.62rem; color: #f97316;">300+ Hazardous</span>
       </div>
 
-      <!-- Currency / Rates Section -->
       <div style="margin-bottom: 12px;">
         <span style="font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35);">Currency Exchange Rates vs USD</span>
       </div>
@@ -297,9 +269,6 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       WORLD NEWS FEED
-  ══════════════════════════════════════════ -->
   <section class="news-section" aria-labelledby="news-heading">
     <div class="section-rule">
       <div class="section-rule-line"></div>
@@ -308,12 +277,10 @@
       <span class="section-rule-meta" id="news-updated">Live feed</span>
     </div>
 
-    <!-- Primary news grid (top stories) -->
     <div class="news-grid" id="newsGrid">
       <div class="news-loading">Fetching world news…</div>
     </div>
 
-    <!-- News strip (more headlines) -->
     <div class="news-strip" id="newsStrip" style="display:none;"></div>
 
     <p style="font-family: var(--mono); font-size: 0.6rem; color: var(--text-4); margin-top: 14px; margin-bottom: 0; max-width:100%;">
@@ -321,9 +288,6 @@
     </p>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       APPLIED ANALYSIS SECTION
-  ══════════════════════════════════════════ -->
   <section class="analysis-home" aria-labelledby="analysis-heading">
     <div class="section-rule">
       <div class="section-rule-line"></div>
@@ -387,7 +351,6 @@
 
 </main>
 
-<!-- Image popup -->
 <div id="imagePopup" class="popup-overlay" onclick="closePopup()" role="dialog" aria-modal="true">
   <div class="popup-content" onclick="event.stopPropagation()">
     <button class="popup-close" onclick="closePopup()" aria-label="Close">&times;</button>
@@ -396,15 +359,11 @@
   </div>
 </div>
 
-<!-- Footer -->
 <div data-include="footer" data-path="/includes/footer.html"></div>
 
 <script src="/js/components.js"></script>
 <script src="/js/ui.js"></script>
 
-<!-- ══════════════════════════════════════════
-     LIVE DATA ENGINE
-══════════════════════════════════════════ -->
 <script>
 (function() {
   'use strict';
