@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>PPRC Infographic – State of the Real Economy 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; min-height: 1350px; font-family: 'Inter', sans-serif; background: #fafafa; }
+
+  .card {
+    width: 1080px;
+    min-height: 1350px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #7B1A1A;
+    padding: 44px 60px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #C9A94B 0%, #E8C97A 50%, #C9A94B 100%);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .org-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #F5E6C8;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+  .study-tag {
+    background: #C9A94B;
+    color: #3a0e0e;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .header-title span { color: #E8C97A; }
+  .header-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .header-meta {
+    display: flex;
+    gap: 28px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .meta-chip {
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: #F5E6C8;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .meta-chip strong { color: #FFFFFF; font-weight: 700; }
+
+  /* ── INTRO BAR ── */
+  .intro-bar {
+    background: #F9F3E8;
+    border-left: 6px solid #C9A94B;
+    margin: 36px 60px 0;
+    padding: 18px 24px;
+    border-radius: 0 8px 8px 0;
+  }
+  .intro-bar p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+  .intro-bar p strong { color: #7B1A1A; }
+
+  /* ── FINDINGS GRID ── */
+  .findings {
+    padding: 32px 60px;
+    flex: 1;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C9A94B;
+    margin-bottom: 20px;
+  }
+  .findings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .finding-card {
+    border-radius: 12px;
+    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .finding-card.red {
+    background: #7B1A1A;
+    color: white;
+  }
+  .finding-card.cream {
+    background: #FBF5EA;
+    border: 1.5px solid #E8D9B0;
+  }
+  .finding-card.dark {
+    background: #2C1A1A;
+    color: white;
+  }
+  .finding-card.outline {
+    background: white;
+    border: 2px solid #7B1A1A;
+  }
+  .finding-card.gold {
+    background: linear-gradient(135deg, #C9A94B 0%, #E8C97A 100%);
+    color: #2C1A1A;
+  }
+  .finding-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 12px;
+  }
+  .finding-card.red .finding-number,
+  .finding-card.dark .finding-number { color: rgba(255,255,255,0.6); }
+  .finding-card.cream .finding-number,
+  .finding-card.outline .finding-number { color: #7B1A1A; }
+  .finding-card.gold .finding-number { color: rgba(44,26,26,0.6); }
+
+  .finding-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .finding-card.red .finding-stat { color: #E8C97A; }
+  .finding-card.cream .finding-stat { color: #7B1A1A; }
+  .finding-card.dark .finding-stat { color: #E8C97A; }
+  .finding-card.outline .finding-stat { color: #7B1A1A; }
+  .finding-card.gold .finding-stat { color: #2C1A1A; }
+
+  .finding-label {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .finding-card.red .finding-label,
+  .finding-card.dark .finding-label { color: #FFFFFF; }
+  .finding-card.cream .finding-label,
+  .finding-card.outline .finding-label { color: #2C1A1A; }
+  .finding-card.gold .finding-label { color: #2C1A1A; }
+
+  .finding-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    opacity: 0.85;
+  }
+  .finding-card.red .finding-desc,
+  .finding-card.dark .finding-desc { color: rgba(255,255,255,0.8); }
+  .finding-card.cream .finding-desc,
+  .finding-card.outline .finding-desc { color: #555; }
+  .finding-card.gold .finding-desc { color: rgba(44,26,26,0.75); }
+
+  .finding-compare {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .finding-card.red .finding-compare { background: rgba(255,255,255,0.15); color: #F5E6C8; }
+  .finding-card.cream .finding-compare { background: #7B1A1A; color: white; }
+  .finding-card.dark .finding-compare { background: rgba(232,201,122,0.2); color: #E8C97A; }
+  .finding-card.outline .finding-compare { background: #FBF5EA; color: #7B1A1A; }
+  .finding-card.gold .finding-compare { background: rgba(44,26,26,0.12); color: #2C1A1A; }
+
+  /* Wide card */
+  .finding-card.wide {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 24px 32px;
+  }
+  .wide-icon { font-size: 48px; flex-shrink: 0; }
+  .wide-content {}
+  .wide-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 14px;
+  }
+  .wide-stat {}
+  .wide-stat .ws-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+  .wide-stat .ws-label {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 3px;
+  }
+
+  /* ── RESILIENCE BAR ── */
+  .resilience {
+    margin: 0 60px 32px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2C1A1A 100%);
+    border-radius: 12px;
+    padding: 26px 32px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .res-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #E8C97A;
+    font-weight: 700;
+    flex-shrink: 0;
+    min-width: 140px;
+  }
+  .res-items {
+    display: flex;
+    gap: 32px;
+    flex: 1;
+  }
+  .res-item {
+    text-align: center;
+  }
+  .res-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #FFFFFF;
+  }
+  .res-lab {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 3px;
+    line-height: 1.3;
+  }
+  .res-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255,255,255,0.15);
+    align-self: center;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #F2EBE0;
+    border-top: 4px solid #C9A94B;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-source {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .footer-source strong { color: #7B1A1A; font-weight: 700; }
+  .footer-pprc {
+    background: #7B1A1A;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+  .footer-pprc span {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="org-tag">PPRC · Power and Participation Research Centre</div>
+      <div class="study-tag">National Study 2025</div>
+    </div>
+    <div class="header-title">
+      Bangladesh's <span>Real Economy</span><br>in Crisis
+    </div>
+    <div class="header-sub">
+      What 8,067 households reveal about poverty, livelihoods, and resilience one year after the July 2024 Uprising
+    </div>
+    <div class="header-meta">
+      <div class="meta-chip"><strong>8,067</strong> Households Surveyed</div>
+      <div class="meta-chip"><strong>May–August</strong> 2025</div>
+      <div class="meta-chip">Commissioned by <strong>Ministry of Finance</strong></div>
+      <div class="meta-chip">64 Districts · <strong>Nationwide</strong></div>
+    </div>
+  </div>
+
+  <!-- INTRO BAR -->
+  <div class="intro-bar">
+    <p>In the year after Bangladesh's historic <strong>July Uprising</strong>, a nationally representative survey exposes a sobering reality: poverty has reversed sharply, inequality has deepened, and millions of households are struggling under the weight of debt, illness, and underemployment — yet a majority refuse to lose hope.</p>
+  </div>
+
+  <!-- FINDINGS -->
+  <div class="findings">
+    <div class="section-label">▸ 5 Key Findings from the PPRC National Study</div>
+    <div class="findings-grid">
+
+      <!-- Finding 1: Poverty -->
+      <div class="finding-card red">
+        <div class="finding-number">Finding 01 · Poverty</div>
+        <div class="finding-stat">27.9%</div>
+        <div class="finding-label">Poverty Reversal — Nearly 10 Points in 3 Years</div>
+        <div class="finding-desc">More than a quarter of all Bangladeshi households now live below the upper poverty line — up from 18.7% in 2022. Extreme poverty nearly doubled: from 5.6% to 9.35%.</div>
+        <div class="finding-compare">▲ Was 18.7% in 2022 (HIES)</div>
+      </div>
+
+      <!-- Finding 2: Inequality -->
+      <div class="finding-card cream">
+        <div class="finding-number">Finding 02 · Inequality</div>
+        <div class="finding-stat">0.532</div>
+        <div class="finding-label">Urban Gini Coefficient — Alarming Inequality Surge</div>
+        <div class="finding-desc">Bangladesh's urban inequality has reached crisis levels. The national Gini stands at 0.436, up from 0.334 in 2022. Cities are becoming deeply divided between rich and poor.</div>
+        <div class="finding-compare">National Gini was 0.334 in 2022</div>
+      </div>
+
+      <!-- Finding 3: Health — wide card -->
+      <div class="finding-card dark wide">
+        <div class="wide-icon">🏥</div>
+        <div class="wide-content">
+          <div class="finding-number">Finding 03 · Health & Financial Stress</div>
+          <div class="finding-label" style="font-size:17px;">Chronic Illness is Driving Households Into Debt</div>
+          <div class="finding-desc">Over half of all households have at least one chronically ill member — and medical costs are the single biggest trigger of financial crisis.</div>
+          <div class="wide-stats">
+            <div class="wide-stat">
+              <div class="ws-num">51%</div>
+              <div class="ws-label">Households with a<br>chronically ill member</div>
+            </div>
+            <div class="wide-stat">
+              <div class="ws-num">67.4%</div>
+              <div class="ws-label">Financial crises<br>caused by medical costs</div>
+            </div>
+            <div class="wide-stat">
+              <div class="ws-num">2×</div>
+              <div class="ws-label">Debt vs savings<br>for bottom 40%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finding 4: Employment -->
+      <div class="finding-card outline">
+        <div class="finding-number">Finding 04 · Employment</div>
+        <div class="finding-stat">38%</div>
+        <div class="finding-label">Disguised Unemployment — An Employment Emergency</div>
+        <div class="finding-desc">38% of workers are underemployed (under 40 hrs/week). Female labour force participation stands at just 26%, and 45% of all workers are self-employed with no job security.</div>
+        <div class="finding-compare">Only 52% of adults worked last week</div>
+      </div>
+
+      <!-- Finding 5: Food -->
+      <div class="finding-card gold">
+        <div class="finding-number">Finding 05 · Food Security</div>
+        <div class="finding-stat">12.2%</div>
+        <div class="finding-label">Poorest Households Skipping Meals</div>
+        <div class="finding-desc">Among the poorest 10% of households, 12.2% skipped at least one meal last week. Nearly 9% went an entire day without food in the past month.</div>
+        <div class="finding-compare">8.8% went a full day without food</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESILIENCE BAR -->
+  <div class="resilience">
+    <div class="res-title">Signs of<br>Resilience →</div>
+    <div class="res-items">
+      <div class="res-item">
+        <div class="res-num">54%</div>
+        <div class="res-lab">Households remain<br>optimistic about future</div>
+      </div>
+      <div class="res-divider"></div>
+      <div class="res-item">
+        <div class="res-num">74%</div>
+        <div class="res-lab">Households own<br>a smartphone</div>
+      </div>
+      <div class="res-divider"></div>
+      <div class="res-item">
+        <div class="res-num">$211B</div>
+        <div class="res-lab">Domestic consumer<br>market size (USD)</div>
+      </div>
+      <div class="res-divider"></div>
+      <div class="res-item">
+        <div class="res-num">23.5%</div>
+        <div class="res-lab">SSN coverage —<br>must be expanded</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-source">
+      <strong>Source:</strong> Rahman, H. Z., et al. (2025). <em>The State of the Real Economy.</em> PPRC.<br>
+      National survey of 8,067 households · May–August 2025 · Commissioned by Finance Division, Ministry of Finance, Bangladesh.<br>
+      <strong>Software:</strong> HTML/CSS (browser-based infographic) · AI-assisted layout (Claude, Anthropic)
+    </div>
+    <div class="footer-pprc">
+      PPRC
+      <span>www.pprc-bd.org</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
