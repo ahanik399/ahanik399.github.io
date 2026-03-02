@@ -65,8 +65,24 @@
         <div class="live-item-value loading" id="strip-jpy">···</div>
       </div>
       <div class="live-item">
+        <div class="live-item-label">CNY / USD</div>
+        <div class="live-item-value loading" id="strip-cny">···</div>
+      </div>
+      <div class="live-item">
         <div class="live-item-label">Dhaka AQI <span class="live-dot"></span></div>
         <div class="live-item-value loading" id="strip-dhaka">···</div>
+      </div>
+      <div class="live-item">
+        <div class="live-item-label">Delhi AQI</div>
+        <div class="live-item-value loading" id="strip-delhi">···</div>
+      </div>
+      <div class="live-item">
+        <div class="live-item-label">Beijing AQI</div>
+        <div class="live-item-value loading" id="strip-beijing">···</div>
+      </div>
+      <div class="live-item">
+        <div class="live-item-label">London AQI</div>
+        <div class="live-item-value loading" id="strip-london">···</div>
       </div>
       <div class="live-item">
         <div class="live-item-label">Updated</div>
@@ -112,14 +128,14 @@
         </div>
 
         <div style="margin-top: 32px;">
-           <a href="/investigations/blood-routes.html" class="btn-report">View Full Investigation →</a>
+           <a href="/investigations/blood-routes.html" class="btn-report" style="display: inline-block; padding: 12px 24px; background: var(--red); color: #fff; text-decoration: none; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px;">View Full Investigation →</a>
         </div>
       </div>
     </div>
 
     <aside>
       <div style="border-bottom: 2px solid var(--text-1); padding-bottom: 8px;">
-        <span class="label">Analysis — Published</span>
+        <span style="font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);">Analysis — Published</span>
       </div>
       <div class="hero-sub-stories">
         <div class="sub-story">
@@ -133,6 +149,13 @@
           <div class="ss-content">
             <div class="ss-num">02 — LEAKAGE</div>
             <div class="ss-title"><a href="/analysis/property-preservation/leakage-breakdown.html">Leakage Breakdown: Structural Autopsy</a></div>
+            <div class="ss-cat">Property Preservation · Jan 2026</div>
+          </div>
+        </div>
+        <div class="sub-story">
+          <div class="ss-content">
+            <div class="ss-num">03 — WORK ORDER</div>
+            <div class="ss-title"><a href="/analysis/property-preservation/work-order-breakdown.html">Work Order Risk Breakdown</a></div>
             <div class="ss-cat">Property Preservation · Jan 2026</div>
           </div>
         </div>
@@ -171,6 +194,18 @@
           <a href="/analysis/property-preservation/leakage-breakdown.html" class="btn-report">View Analysis →</a>
         </div>
       </article>
+      
+      <article class="forensic-card">
+        <div class="card-preview-stage">
+          <img src="/analysis/property-preservation/images/risk-matrix.png" alt="Risk matrix" class="card-preview-img">
+        </div>
+        <div class="card-content">
+          <span class="card-tag workorder">Work Order Risk</span>
+          <h3>Work Order Breakdown</h3>
+          <p>Identifies which service types scale profitably and which quietly magnify operational risk.</p>
+          <a href="/analysis/property-preservation/work-order-breakdown.html" class="btn-report">View Analysis →</a>
+        </div>
+      </article>
     </div>
   </section>
 </main>
@@ -180,8 +215,82 @@
 <script src="/js/ui.js"></script>
 
 <script>
-  /* [Keep original fetchCurrencies, fetchAQI, and fetchNews script logic here] */
-</script>
+(function() {
+  'use strict';
+  function formatRate(n, decimals) {
+    if (!n) return '—';
+    return parseFloat(n).toFixed(decimals !== undefined ? decimals : 4);
+  }
+  function setText(id, val) {
+    var el = document.getElementById(id);
+    if (el) { el.textContent = val; el.classList.remove('loading'); }
+  }
+  function nowStr() {
+    var d = new Date();
+    return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
+  }
 
-</body>
-</html>
+  function fetchCurrencies() {
+    var url = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.min.json';
+    fetch(url)
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        var r = data.usd;
+        if (!r) return;
+        var bdt = r.bdt, eur = r.eur, gbp = r.gbp, jpy = r.jpy, cny = r.cny;
+
+        setText('tick-bdt',  '৳' + formatRate(bdt, 2));
+        setText('tick-eur',  '€' + formatRate(eur, 4));
+        setText('tick-gbp',  '£' + formatRate(gbp, 4));
+        setText('tick-jpy',  '¥' + formatRate(jpy, 2));
+        setText('tick-cny',  '¥' + formatRate(cny, 4));
+
+        setText('strip-bdt', '৳' + formatRate(bdt,2));
+        setText('strip-eur', '€' + formatRate(eur,4));
+        setText('strip-gbp', '£' + formatRate(gbp,4));
+        setText('strip-jpy', '¥' + formatRate(jpy,2));
+        setText('strip-cny', '¥' + formatRate(cny,4));
+        setText('strip-time', nowStr());
+      })
+      .catch(function(){});
+  }
+
+  var AQI_TOKEN = 'demo'; 
+  var cities = [
+    { id: 'dhaka',   name: 'Dhaka',     slug: 'dhaka',   stripId: 'strip-dhaka',  tickId: 'tick-dhaka-aqi'  },
+    { id: 'delhi',   name: 'Delhi',     slug: 'delhi',   stripId: 'strip-delhi',  tickId: 'tick-delhi-aqi'  },
+    { id: 'beijing', name: 'Beijing',   slug: 'beijing', stripId: 'strip-beijing',tickId: 'tick-bj-aqi'     },
+    { id: 'london',  name: 'London',    slug: 'london',  stripId: 'strip-london', tickId: null              }
+  ];
+
+  function fetchAQI() {
+    cities.forEach(function(city) {
+      var url = 'https://api.waqi.info/feed/' + city.slug + '/?token=' + AQI_TOKEN;
+      fetch(url)
+        .then(function(r){ return r.json(); })
+        .then(function(data) {
+          var aqi = null;
+          if (data && data.status === 'ok' && data.data && typeof data.data.aqi === 'number') {
+            aqi = data.data.aqi;
+          }
+          if (city.stripId) {
+            var stripEl = document.getElementById(city.stripId);
+            if (stripEl) {
+              stripEl.textContent = aqi !== null ? aqi : '—';
+              stripEl.classList.remove('loading');
+            }
+          }
+          if (city.tickId) {
+            var tickEl = document.getElementById(city.tickId);
+            if (tickEl) tickEl.textContent = aqi !== null ? aqi + ' AQI' : '—';
+          }
+        })
+        .catch(function() {});
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchCurrencies();
+    fetchAQI();
+    setInterval(fetchCurrencies, 5 * 60 * 1000);
+    setInterval(fetchAQI,
